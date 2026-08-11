@@ -16,17 +16,17 @@ The family did not disappear. It changed and became larger. Love, grief, and cou
 
 ## Core Loop
 
-Explore a region as a two-character party (switching overworld leader for complementary field abilities) → encounter transformed domestic/environmental enemies → recruit animal allies with distinct combat identities → confront a personal-fear boss → return home through a looping world structure where earlier places have changed.
+Explore a region as your locked overworld leader (Mango or Cooper, set by the title-screen choice — see Protagonist Choice) → encounter transformed domestic/environmental enemies → recruit animal allies with distinct combat identities → confront a personal-fear boss → return home through a looping world structure where earlier places have changed. Areas gated to the other pet's traversal ability are left for a replay as that character.
 
 ## Main Characters
 
 - **Mango** — aloof, magically powerful ex-street cat. Arc: survival → love. Learns that opening up emotionally is not weakness.
 - **Cooper** — earnest, anxious dog. Arc: anxiety → courage. Learns that courage means acting while still afraid.
 - **Rocky** — berserker dog ally (a friend's dog). Immense, uncontrollable power; teaches that bravery isn't the same as recklessness.
-- **Milo** — Cooper's best friend/lover; temporary guest companion for the Eastern Cavoodle Kingdom chapter.
-- **Charlie** — Yuichi's elderly cat; the old sage who joins the final journey and passes away during it. His death is a sincere, central emotional beat, not a shock twist.
-- **Yuichi** — Charlie's human; present only through memory/environmental storytelling, not as a playable character.
-- **King Jeff, the Chad Cavoodle** — ruler of the satirical Eastern Cavoodle Kingdom; comic but can carry real themes of status and belonging.
+- **Milo** — Cooper's best friend/lover; temporary guest companion for the Eastern Cavoodle Forest chapter.
+- **Charlie** — an elderly cat sage who joins the party late in the journey and passes away during it. His death is a sincere, central emotional beat, not a shock twist. His exact connection to the party's world is still being worked out — don't invent backstory for him without Sean's input.
+- **The Goose** — tram driver connecting the Park to the Industrial Zone; minor recurring NPC, comic tone.
+- **King Jeff, the Chad Cavoodle** — ruler of the satirical Eastern Cavoodle Kingdom (within the Eastern Cavoodle Forest); comic but can carry real themes of status and belonging.
 - **Sean and Lillian** — the missing/returning humans; affectionate, unreliable quest-givers whose absence drives the plot and whose return resolves it.
 
 ## World Rules
@@ -42,31 +42,47 @@ Explore a region as a two-character party (switching overworld leader for comple
 | Region | Element / theme | Major feature |
 |---|---|---|
 | The Empty House | dust / domestic magic | Mi-chan and awakened appliances |
-| The Drowned Park | water | sprinkler puzzle and aquatic enemies |
-| The Iron Estate | metal / machinery | Rocky and industrial monsters |
-| The Eastern Cavoodle Kingdom | sun / orange / community | orange cavoodle NPC civilisation, King Jeff |
-| The Tower of Wind | air | Cooper's hot-air-balloon trial |
-| The High Overworld | sky | balloon-airship navigation |
+| The Park | water | The Goose's tram stop; sprinkler puzzle and aquatic enemies |
+| The Industrial Zone (Iron Estate) | metal / machinery | Rocky and industrial monsters |
+| The Helipad / Airport | air | Cooper's hot-air-balloon trial |
+| The Eastern Cavoodle Forest | sun / orange / community | King Jeff's Cavoodle Kingdom, Milo |
 | The Road Home | remixed elements | return journey and boss rush |
 | The Centre of Absence | void / memory | chimeric final boss |
 
 ## Story Spine
 
-1. **The Empty House** — Mango and Cooper wake to an empty apartment; explore; fight domestic enemies (Dust Bunnies, Crumb Slimes, the Mop Serpent, etc.); first boss **Mi-chan** (the robot vacuum), defeated but not destroyed — it retreats and returns stronger later.
-2. **Beyond the house** — party expands with allies (Rocky in the Iron Estate, Milo in the Cavoodle Kingdom); world grows from house → neighbourhood → wider regions.
-3. **The Hot-Air Balloon** — major personal boss built around Cooper's specific fear; victory turns the balloon into the game's airship, unlocking free exploration and backtracking.
-4. **The Road Home** — the loop bends back; earlier areas are revisited, changed, and made passable by new abilities/allies.
-5. **Homecoming boss rush** — evolved rematches of earlier fears and bosses, ending in Mecha Mi-chan's final form.
-6. **The Absence** — final boss, a chimera assembled from the journey's fears (Mi-chan parts, TV faces, balloons, storms, cages, empty bowls, distorted human silhouettes). Not defeated by denying the fear was real — defeated by acknowledging love, memory, and the allies gathered along the way.
-7. **The humans return** — magic fades, speech disappears, and the owners come home carrying a newborn baby: the real reason for their absence. Mango and Cooper become guardians/older siblings rather than being replaced. The destroyed vacuum cleaner (Mi-chan) is the game's ambiguous final wink — did any of it really happen?
+1. **Tutorial Room** — the player chooses Mango or Cooper as their starting character (see Protagonist Choice below). Alone in their own room, they get into the spider plant — this is the inciting trigger: it kicks off the hallucinatory/magical awakening (speech, powers, the world shifting). They leave the room and meet the other pet for the first time; the party of two forms here.
+2. **The Empty House** — Mango and Cooper explore the rest of the apartment together; fight domestic enemies (Dust Bunnies, Crumb Slimes, the Mop Serpent, etc.); first boss **Mi-chan** (the robot vacuum), defeated but not destroyed — it retreats and returns stronger later. The apartment's sealed exit opens.
+3. **The Park → The Goose's Tram** — outside for the first time; a sprinkler/water puzzle region. The Goose drives a tram connecting the Park to the Industrial Zone.
+4. **The Industrial Zone** — Rocky is recruited here as the berserker ally.
+5. **The Helipad / Airport** — a tower-climb dungeon building to the hot-air-balloon boss, Cooper's major personal-fear encounter. Victory turns the balloon into the game's airship.
+6. **The Eastern Cavoodle Forest** — reached by air; King Jeff's satirical Cavoodle Kingdom; Milo is recruited as a temporary guest companion for this chapter.
+7. **Return to meet Charlie** — the party heads back and meets Charlie, the old sage, who instils the courage needed to face the final boss. (Exactly how Charlie enters the story and what he wants/needs from the party is still being worked out.)
+8. **The Road Home** — the loop bends back; earlier areas are revisited, changed, and made passable by new abilities/allies.
+9. **Homecoming boss rush** — evolved rematches of earlier fears and bosses, ending in Mecha Mi-chan's final form.
+10. **The Absence** — final boss, a chimera assembled from the journey's fears (Mi-chan parts, TV faces, balloons, storms, cages, empty bowls, distorted human silhouettes). Not defeated by denying the fear was real — defeated by acknowledging love, memory, and the allies gathered along the way. Charlie's presence (learned ability, protective light, remembered line, or musical motif) is mechanically felt here even after his farewell.
+11. **The humans return** — magic fades, speech disappears, and the owners come home carrying a newborn baby: the real reason for their absence. Mango and Cooper become guardians/older siblings rather than being replaced. The destroyed vacuum cleaner (Mi-chan) is the game's ambiguous final wink — did any of it really happen?
 
 ## Charlie's Arc
 
-Charlie is based on a real, elderly cat nearing the end of his life. In the game he is the old sage who joins the final journey, sees through Mango's guarded exterior, recognises Cooper's courage before Cooper does, and passes away during the story — a quiet, loving farewell rather than a shock beat. His memory stays mechanically present afterward (a learned ability, protective light, remembered line, or musical motif). This is the emotional key that lets Mango and Cooper understand: courage does not prevent loss, it lets you love fully anyway.
+Charlie is an elderly cat sage nearing the end of his life, joining the party late in the journey (after the Eastern Cavoodle Forest, before the final stretch — see Story Spine). He sees through Mango's guarded exterior, recognises Cooper's courage before Cooper does, and passes away during the story — a quiet, loving farewell rather than a shock beat. His memory stays mechanically present afterward (a learned ability, protective light, remembered line, or musical motif). This is the emotional key that lets Mango and Cooper understand: courage does not prevent loss, it lets you love fully anyway. His backstory/connection to the wider world is intentionally unresolved for now — don't invent details for him without checking first.
+
+## Protagonist Choice ("Red/Blue" opening)
+
+One game, one build — not separate versions, and the underlying game is identical either way. At the very start, the title screen asks:
+
+> Do you like cats or dogs?
+
+- **Cats** → title screen and default party order present as "Mango & Cooper"; Mango is the overworld leader for the entire playthrough, and the Tutorial Room's solo intro plays from his perspective.
+- **Dogs** → title screen and default party order present as "Cooper & Mango"; Cooper is the overworld leader for the entire playthrough, and the Tutorial Room's solo intro plays from his perspective.
+
+The choice determines the title screen framing, the Tutorial Room's solo intro/POV, and — importantly — **the overworld leader is locked to this choice for the whole playthrough.** The other pet joins the party and fights in every battle, but does not become the exploration leader. Traversal-gating is identical regardless of choice — **Cooper swims, pulls, tracks scent, and digs; Mango climbs, squeezes through gaps, balances, and senses hidden things** — but a single playthrough only has access to whichever set of abilities its leader has. Areas, shortcuts, or optional content gated to the other pet's ability are genuinely missed on that run.
+
+This is a deliberate replay hook: the story, route, and regions are the same either way (see Story Spine), but a Mango playthrough and a Cooper playthrough physically move through each region differently and can see different optional content. Region design from Stage 3 onward needs a route that is fully completable by *either* leader alone — content exclusive to one leader's ability should be optional/bonus, not required for main-path progress, unless we deliberately decide otherwise for a specific beat.
 
 ## Key Systems (see CONTENT_SCHEMA.md for data shape)
 
-- **Field ability leader-switching** — Mango climbs/squeezes/senses hidden things; Cooper swims/pulls/tracks scent/digs. Exploration is lightly ability-gated.
+- **Protagonist choice + locked leader traversal** — see above. Exploration is ability-gated by whichever character was chosen at the title screen; that choice holds for the whole playthrough and is the game's main replay hook.
 - **Zoom Meter** — shared limit-break system built on real pet zoomies. Meter fills on damage/excitement; at max, the character automatically unleashes a signature move the player doesn't choose. Rocky is permanently maxed.
 - **Animal-needs items** — kibble, treats, water, toys as HP/MP-equivalent restoratives, with species affinities and the running joke that cat kibble is surprisingly effective on dogs.
 - **Toileting mechanics** — scent-marking as save points/fast travel, territory claiming, and similar reinterpretations rather than literal bodily-needs meters.

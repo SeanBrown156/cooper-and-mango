@@ -10,32 +10,32 @@ Prove the smallest possible thing: a character that can move and interact with o
 
 ## Stage 1 — Room (the Vertical Slice)
 
-See `VERTICAL_SLICE.md` for full detail. One room (the apartment living room), Mango and Cooper both playable, one battle, one ending beat.
+See `VERTICAL_SLICE.md` for full detail. The Tutorial Room from `GAME_BIBLE.md`'s Story Spine: the player picks Mango or Cooper, plays a short solo intro, the spider-plant trigger kicks off the magical awakening, they leave the room, and meet the other pet — the party of two forms.
 
 **Exit criteria:**
-1. Mango walks across the apartment
-2. Mango inspects the empty food bowl
-3. Mango and Cooper exchange dialogue
-4. Mango and Cooper fight and beat the Vacuum Cleaner using complementary abilities
-5. One closing emotional beat plays
+1. Protagonist choice screen (Mango or Cooper) works and actually changes the opening scene
+2. The chosen character walks their starting room and interacts with at least one object
+3. The spider-plant trigger event plays (the inciting hallucination/awakening beat)
+4. The character leaves the room and meets the other pet
+5. A short two-character dialogue beat plays and the party of two is formed
 
-This is the proof that "moving Mango already feels recognisably like Mango" — the decisive early milestone, not merely a generic cat moving.
+This is the proof that "moving Mango (or Cooper) already feels recognisably like them" — the decisive early milestone, not merely a generic cat or dog moving. The Mi-chan battle is deliberately **not** part of this stage — it's the climax of Stage 2.
 
 ## Stage 2 — House
 
-Expand from one room to the full **Empty House** chapter: the rest of the apartment, the full set of domestic enemies (Dust Bunnies, Crumb Slimes, Static Sprites, Vinegar Wisps, the Mop Serpent, Hairdryer Wyvern, Washing Machine Mimic, the Doorbell), and the complete first Mi-chan boss encounter (not just a placeholder fight).
+Expand from the Tutorial Room into the full **Empty House** chapter: the rest of the apartment, the full set of domestic enemies (Dust Bunnies, Crumb Slimes, Static Sprites, Vinegar Wisps, the Mop Serpent, Hairdryer Wyvern, Washing Machine Mimic, the Doorbell), and the complete first Mi-chan boss encounter (not just a placeholder fight).
 
-**Exit criteria:** the apartment's sealed exit opens; Mi-chan retreats rather than being destroyed, setting up its return; leader-switching field abilities (climb/squeeze/sense for Mango, swim/pull/track/dig for Cooper) are implemented and used to solve at least one traversal puzzle.
+**Exit criteria:** the apartment's sealed exit opens; Mi-chan retreats rather than being destroyed, setting up its return; the locked-leader traversal ability (climb/squeeze/sense for a Mango playthrough, swim/pull/track/dig for a Cooper playthrough) is implemented and used to solve at least one puzzle, tested for **both** starting choices.
 
 ## Stage 3 — Neighbourhood
 
-Move outside the house. Build **The Drowned Park** (sprinkler mini-game) and **The Iron Estate** (Rocky's recruitment and berserker behaviour system). Introduce the Zoom Meter as a real mechanic, not a placeholder.
+Move outside the house, following the route from `GAME_BIBLE.md`: **The Park** (sprinkler/water puzzle region) → **The Goose's tram** (connects Park to Industrial Zone) → **The Industrial Zone** (Rocky's recruitment and berserker behaviour system). Introduce the Zoom Meter as a real mechanic, not a placeholder.
 
-**Exit criteria:** three playable party members (Mango, Cooper, Rocky) with distinct combat identities; one environmental puzzle region (Drowned Park) fully playable; Rocky's probabilistic action system implemented and balanced enough to feel characterful rather than random.
+**Exit criteria:** three playable party members (Mango, Cooper, Rocky) with distinct combat identities; the Park's environmental puzzle fully playable; the tram sequence (with the Goose) connects the two regions; Rocky's probabilistic action system implemented and balanced enough to feel characterful rather than random.
 
 ## Stage 4 — Open World
 
-Build out the remaining regions: **The Eastern Cavoodle Kingdom** (Milo, King Jeff), **The Tower of Wind / hot-air-balloon boss** (unlocks the airship and free world navigation), **The Road Home** (the loop back, changed), the **homecoming boss rush**, and the **Centre of Absence** final confrontation and ending.
+Continue the route: **The Helipad/Airport** (tower-climb dungeon → hot-air-balloon boss, unlocks the airship) → **The Eastern Cavoodle Forest** (King Jeff's Kingdom, Milo recruited) → **return to meet Charlie**, who instils the courage needed for the final stretch → **The Road Home** (the loop back, changed) → **homecoming boss rush** → **The Centre of Absence** final confrontation and ending.
 
 **Exit criteria:** the full story spine from `GAME_BIBLE.md` is playable start to finish, with Charlie's arc and farewell implemented with the intended sincerity, and the ending (the humans' return, the baby, the broken vacuum) in place.
 

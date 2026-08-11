@@ -57,14 +57,37 @@ Walk cycle loop: `step left → neutral → step right → neutral`.
 ## PixelLab → Aseprite → Godot Pipeline
 
 1. Photograph pets across the required poses (see above).
-2. Lock the art grammar before generating quantity: 32×32 overworld sprites, 32×32 tiles, four movement directions, three walking frames per direction, one shared palette/outline colour, one fixed top-down perspective.
-3. Generate turnarounds and one neutral sprite per pet in PixelLab.
-4. Select and manually correct one canonical design per pet.
-5. Use approved sprites as references for every later pose/animation — never regenerate characters from scratch.
-6. Generate only the minimum needed for the current production stage (see `PRODUCTION_ROADMAP.md`) — first room needs idle, walk, interact, hurt, one battle pose.
-7. Clean up in Aseprite (eyes, markings, paws, silhouette, transparency, palette drift).
-8. Export PNG sprite sheets, import into Godot as `SpriteFrames` resources.
-9. Test at integer scaling with nearest-neighbour filtering before producing the wider cast.
+2. Drop every raw photo into `assets/source/reference/<mango|cooper>/raw/` — no need to pre-sort or resize, see "Reference Photo Drop Zone" below.
+3. Lock the art grammar before generating quantity: 32×32 overworld sprites, 32×32 tiles, four movement directions, three walking frames per direction, one shared palette/outline colour, one fixed top-down perspective.
+4. Generate turnarounds and one neutral sprite per pet in PixelLab.
+5. Select and manually correct one canonical design per pet; save the chosen source photo into `assets/source/reference/<pet>/approved/` alongside the generated result, so the winning reference is easy to reuse later.
+6. Use approved sprites as references for every later pose/animation — never regenerate characters from scratch.
+7. Generate only the minimum needed for the current production stage (see `PRODUCTION_ROADMAP.md`) — the Tutorial Room slice needs idle, walk, interact, hurt, one battle pose.
+8. Clean up in Aseprite (eyes, markings, paws, silhouette, transparency, palette drift).
+9. Export PNG sprite sheets, import into Godot as `SpriteFrames` resources.
+10. Test at integer scaling with nearest-neighbour filtering before producing the wider cast.
+
+## Reference Photo Drop Zone
+
+```
+assets/source/reference/
+├── mango/
+│   ├── raw/        ← drop every Mango photo here, any resolution, unsorted
+│   └── approved/   ← the specific photo(s) actually used as the PixelLab identity reference
+└── cooper/
+    ├── raw/        ← drop every Cooper photo here
+    └── approved/   ← the specific photo(s) actually used as the PixelLab identity reference
+```
+
+**Why `raw/` isn't auto-ingested:** PixelLab's character-generation tool (`create_character`, mode `v3`) accepts exactly **one** reference image per call — either a base64 PNG (max 256×256) or an HTTPS URL — not a folder or batch. There's no "point PixelLab at a directory" option. So the practical workflow is:
+
+1. Sean/Lillian drop as many raw photos as they want into `raw/` — front, both profiles, sitting, standing, a characteristic expression, close-ups of markings (see Character Reference Process above). No curation needed at drop time.
+2. When generating, Claude Code or Codex picks (or is told) which single photo best matches the pose needed, resizes/crops it as required, and passes it to the PixelLab MCP tool directly from the local file.
+3. Once a generation is approved, the winning source photo gets copied into `approved/` so it's easy to find and reuse as the reference for every subsequent pose/animation (per the "never regenerate from scratch" rule above).
+
+This means: just keep dropping photos into `raw/` as you take them — no online editor, no manual pre-processing. Tell Claude/Codex when a fresh batch has landed and which pet/pose it covers, and generation can start from there.
+
+**Note:** `assets/source/` is currently gitignored (see the open Git LFS question in the project setup) — reference photos live locally and are not yet pushed to GitHub. Worth revisiting once a real batch of photos lands.
 
 ## Current Status
 

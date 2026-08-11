@@ -27,6 +27,7 @@ Priorities, in order:
 - Preserve the approved art direction (`docs/ART_BIBLE.md`) and audio direction (`docs/AUDIO_BIBLE.md`)
 - Preserve the emotional premise — especially Charlie's arc, which should stay sincere rather than played for shock or cheap sentiment
 - Do not open the next production stage's scope before the current stage's exit criteria are actually true in the running game
+- The overworld leader is locked to the title-screen choice for the whole playthrough (`docs/GAME_BIBLE.md`'s Protagonist Choice) — every region needs a route fully completable by *either* leader alone; don't gate main-path progress behind the other pet's ability
 
 ## Where things live
 

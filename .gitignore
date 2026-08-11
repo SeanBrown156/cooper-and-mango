@@ -12,7 +12,9 @@ export_presets.cfg
 *.swp
 
 # Raw source material (photos, Ableton projects, PixelLab exports, sketches).
-# This is intentionally excluded for now — decide whether to move it to
-# Git LFS before the first big batch of assets lands (see docs/PRODUCTION_ROADMAP.md).
-assets/source/*
-!assets/source/.gitkeep
+# Folder structure (the reference photo drop zone, see docs/ART_BIBLE.md) is
+# tracked via .gitkeep; actual media files are excluded until the Git LFS
+# decision is made (see docs/PRODUCTION_ROADMAP.md).
+assets/source/**
+!assets/source/**/
+!assets/source/**/.gitkeep
