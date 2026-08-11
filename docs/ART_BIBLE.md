@@ -1,0 +1,99 @@
+# Art Bible
+
+## Perspective and Dimensions
+
+- Three-quarter top-down JRPG perspective (SNES/early-PlayStation JRPG energy — not a literal simulation of any existing game's assets)
+- Overworld character frames: 32×32 or 48×48 pixels
+- Environment tiles: 32×32 pixels
+- Battle sprites: larger, 64×64 or 96×96, for expressive attacks/reactions/victory poses
+
+## Palette and Line
+
+- Shared palette of roughly 16–24 colours across the whole game
+- Dark brown or navy outlines, never pure black
+- Minimal texture, no antialiasing, no soft edges
+- Strong, readable animal silhouettes above all else
+
+## Mood
+
+Warm domestic fantasy — a distinctive internal description to reuse in prompts is:
+
+> "Warm domestic fantasy, limited autumn palette, chunky pixel art, expressive animal silhouettes"
+
+Avoid leaning only on "Final Fantasy style" as a prompt — it's too generic to hold a consistent identity across hundreds of assets.
+
+## Animal Vision / Colour Note
+
+Dogs and cats perceive colour weighted toward blue/yellow. This can inform world palettes (warm yellow, ochre, blue, violet-grey, muted earth tones), an optional "Animal Vision" overlay for clues/scent/hidden paths, and dialogue jokes (animals arguing over human colour names) — without forcing the whole screen into a restrictive simulation. Readability and art direction win over scientific accuracy.
+
+## Character Reference Process
+
+1. Photograph each pet: front, left profile, right profile, standing, sitting, one characteristic expression, close-ups of distinctive markings.
+2. Identify which features must survive pixel reduction:
+   - **Mango:** exact coat colours and facial markings, tail shape, judgemental eyes, a tiny mage mantle/charm/magical collar
+   - **Cooper:** ear shape, coat and paw markings, open expressive face, a scarf/shield/harness resembling armour
+3. Generate clean front/back/side concept turnarounds in PixelLab first.
+4. Select one approved design per pet — treat it as the source of truth for every later pose.
+5. Generate one neutral sprite before requesting all directions and animations.
+6. Use Mango's approved sprite as a style reference when generating Cooper so both characters visibly belong to the same game.
+
+## Sprite Cleanup
+
+AI-generated sprites are starting material, not final assets. Correct manually in Aseprite: stray/semi-transparent pixels, markings that drift between frames, wobbly outlines, inconsistent eye positions, limbs that appear/disappear, off-palette colours, anything that weakens silhouette or likeness. At 32×32, a few pixels can change a whole face — this is closer to icon design than illustration.
+
+## Animation Plan
+
+| Animation | Frames | Detail |
+|---|---:|---|
+| Idle | 2–4 | Mango's tail flick; Cooper's breathing/ear movement |
+| Walk | 3 per direction | 12 frames across four directions |
+| Attack | 4–6 | One strong, readable action |
+| Hurt | 2–3 | Recoil and brief flash |
+| Victory | 3–5 | A characterful celebration |
+| Knockout | 1–2 | A static collapsed pose is sufficient |
+
+Walk cycle loop: `step left → neutral → step right → neutral`.
+
+## PixelLab → Aseprite → Godot Pipeline
+
+1. Photograph pets across the required poses (see above).
+2. Lock the art grammar before generating quantity: 32×32 overworld sprites, 32×32 tiles, four movement directions, three walking frames per direction, one shared palette/outline colour, one fixed top-down perspective.
+3. Generate turnarounds and one neutral sprite per pet in PixelLab.
+4. Select and manually correct one canonical design per pet.
+5. Use approved sprites as references for every later pose/animation — never regenerate characters from scratch.
+6. Generate only the minimum needed for the current production stage (see `PRODUCTION_ROADMAP.md`) — first room needs idle, walk, interact, hurt, one battle pose.
+7. Clean up in Aseprite (eyes, markings, paws, silhouette, transparency, palette drift).
+8. Export PNG sprite sheets, import into Godot as `SpriteFrames` resources.
+9. Test at integer scaling with nearest-neighbour filtering before producing the wider cast.
+
+## Current Status
+
+PixelLab has been test-driven and is more demanding than expected — treat that as normal pipeline learning, not a signal the idea isn't working. Immediate next goal (Stage 1 prerequisite):
+
+1. One approved glossy profile portrait of Mango
+2. One approved glossy profile portrait of Cooper, same style
+3. A simple character reference sheet for each
+4. One neutral overworld sprite generated from each approved design
+5. A documented, reproducible recipe (exact imports, prompt, model, dimensions, palette, settings) before attempting directions, walk cycles, or the wider cast
+
+## Division of Labour
+
+- **Sean:** monster/creature concepts, silhouettes, personality, final selection, hand-drawn details — his existing strength in drawing monsters/animals over humans is a real asset here, especially for the game's large cast of awakened-object enemies
+- **Lillian:** pet likeness, humour, story reactions, taste and character approval
+- **AI tools (PixelLab):** variations, clean turnarounds, palette experiments, pose exploration, production assistance
+- **Aseprite:** consistency, animation, pixel cleanup, final authorship
+
+## Turning Real Places into the World
+
+Photograph real objects (sofa, food bowls, beds, hallway, houseplants, windows, toys, vacuum cleaner) and reinterpret them rather than generating a generic fantasy kingdom. Example naming convention:
+
+| Real object | RPG version |
+|---|---|
+| Sofa | The Great Upholstered Range |
+| Kitchen | Provisioning Hall |
+| Cat tree | Tower of the Oracle |
+| Dog bed | Guardian's Sanctuary |
+| Vacuum cleaner | Mechanical Devourer |
+| Robot vacuum | Wandering Iron Slime |
+| Food bowl | Sacred Basin |
+| Front door | Sealed Gate of Walkies |
