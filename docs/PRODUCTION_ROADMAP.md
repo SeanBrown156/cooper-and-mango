@@ -23,9 +23,9 @@ This is the proof that "moving Mango (or Cooper) already feels recognisably like
 
 ## Stage 2 — House
 
-Expand from the Tutorial Room into the full **Empty House** chapter: the rest of the apartment, the full set of domestic enemies (Dust Bunnies, Crumb Slimes, Static Sprites, Vinegar Wisps, the Mop Serpent, Hairdryer Wyvern, Washing Machine Mimic, the Doorbell), and the complete first Mi-chan boss encounter (not just a placeholder fight).
+Expand from the Tutorial Room into the full **Empty House** chapter: the rest of the apartment, the full set of domestic enemies (Dust Bunnies, Crumb Slimes, Static Sprites, Vinegar Wisps, the Mop Serpent, Hairdryer Wyvern, Washing Machine Mimic, the Doorbell), and the complete Mecha Mi-chan boss encounter (not just a placeholder fight).
 
-**Exit criteria:** the apartment's sealed exit opens; Mi-chan retreats rather than being destroyed, setting up its return; the locked-leader traversal ability (climb/squeeze/sense for a Mango playthrough, swim/pull/track/dig for a Cooper playthrough) is implemented and used to solve at least one puzzle, tested for **both** starting choices.
+**Exit criteria:** the apartment's sealed exit opens; Mecha Mi-chan is destroyed; the locked-leader traversal ability (climb/squeeze/sense for a Mango playthrough, swim/pull/track/dig for a Cooper playthrough) is implemented and used to solve at least one puzzle, tested for **both** starting choices.
 
 ## Stage 3 — Neighbourhood
 

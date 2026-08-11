@@ -41,7 +41,7 @@ Explore a region as your locked overworld leader (Mango or Cooper, set by the ti
 
 | Region | Element / theme | Major feature |
 |---|---|---|
-| The Empty House | dust / domestic magic | Mi-chan and awakened appliances |
+| The Empty House | dust / domestic magic | Mecha Mi-chan and awakened appliances |
 | The Park | water | The Goose's tram stop; sprinkler puzzle and aquatic enemies |
 | The Industrial Zone (Iron Estate) | metal / machinery | Rocky and industrial monsters |
 | The Helipad / Airport | air | Cooper's hot-air-balloon trial |
@@ -52,15 +52,15 @@ Explore a region as your locked overworld leader (Mango or Cooper, set by the ti
 ## Story Spine
 
 1. **Tutorial Room** — the player chooses Mango or Cooper as their starting character (see Protagonist Choice below). Alone in their own room, they get into the spider plant — this is the inciting trigger: it kicks off the hallucinatory/magical awakening (speech, powers, the world shifting). They leave the room and meet the other pet for the first time; the party of two forms here.
-2. **The Empty House** — Mango and Cooper explore the rest of the apartment together; fight domestic enemies (Dust Bunnies, Crumb Slimes, the Mop Serpent, etc.); first boss **Mi-chan** (the robot vacuum), defeated but not destroyed — it retreats and returns stronger later. The apartment's sealed exit opens.
+2. **The Empty House** — Mango and Cooper explore the rest of the apartment together; fight domestic enemies (Dust Bunnies, Crumb Slimes, the Mop Serpent, etc.); first boss **Mecha Mi-chan** (based on the real household's Xiaomi robot vacuum) starts the fight in its ordinary disc-shaped form and transforms mid-battle into a giant Gundam-like mecha — destroyed here, ending the demo/Stage 2 climax. The apartment's sealed exit opens.
 3. **The Park → The Goose's Tram** — outside for the first time; a sprinkler/water puzzle region. The Goose drives a tram connecting the Park to the Industrial Zone.
 4. **The Industrial Zone** — Rocky is recruited here as the berserker ally.
 5. **The Helipad / Airport** — a tower-climb dungeon building to the hot-air-balloon boss, Cooper's major personal-fear encounter. Victory turns the balloon into the game's airship.
 6. **The Eastern Cavoodle Forest** — reached by air; King Jeff's satirical Cavoodle Kingdom; Milo is recruited as a temporary guest companion for this chapter.
 7. **Return to meet Charlie** — the party heads back and meets Charlie, the old sage, who instils the courage needed to face the final boss. (Exactly how Charlie enters the story and what he wants/needs from the party is still being worked out.)
 8. **The Road Home** — the loop bends back; earlier areas are revisited, changed, and made passable by new abilities/allies.
-9. **Homecoming boss rush** — evolved rematches of earlier fears and bosses, ending in Mecha Mi-chan's final form.
-10. **The Absence** — final boss, a chimera assembled from the journey's fears (Mi-chan parts, TV faces, balloons, storms, cages, empty bowls, distorted human silhouettes). Not defeated by denying the fear was real — defeated by acknowledging love, memory, and the allies gathered along the way. Charlie's presence (learned ability, protective light, remembered line, or musical motif) is mechanically felt here even after his farewell.
+9. **Homecoming boss rush** — evolved rematches of earlier fears and bosses.
+10. **The Absence** — final boss, a chimera assembled from the journey's fears (Mecha Mi-chan's parts, TV faces, balloons, storms, cages, empty bowls, distorted human silhouettes). Not defeated by denying the fear was real — defeated by acknowledging love, memory, and the allies gathered along the way. Charlie's presence (learned ability, protective light, remembered line, or musical motif) is mechanically felt here even after his farewell.
 11. **The humans return** — magic fades, speech disappears, and the owners come home carrying a newborn baby: the real reason for their absence. Mango and Cooper become guardians/older siblings rather than being replaced. The destroyed vacuum cleaner (Mi-chan) is the game's ambiguous final wink — did any of it really happen?
 
 ## Charlie's Arc
