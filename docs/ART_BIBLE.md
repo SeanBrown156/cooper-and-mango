@@ -91,6 +91,17 @@ assets/source/reference/
 
 This means: just keep dropping photos into `raw/` as you take them — no online editor, no manual pre-processing. Tell Claude/Codex when a fresh batch has landed and which pet/pose it covers, and generation can start from there.
 
+## Mango's Locked Design Direction (2026-08-11)
+
+Sean/Lillian also generated exploratory sprite sheets via Gemini (`assets/source/reference/mango/raw/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`) — full-body turnarounds, battle sprites, and portrait busts in a FF6/FFTA-inspired style. **v3 is the locked direction**, with one change:
+
+- Mage identity: purple hoodie (not a full robe/cloak — v1/v2 read too "oracle," v3's more casual hoodie is right)
+- Expression: the grumpy/judgemental hooded close-up from v3 — matches Mango's "judgemental eyes" personality note above better than v1/v2's softer expressions
+- **Wand: a black rod with a simple bird-shaped feather flutterer on the end** (a cat-teaser-wand toy), not the fish-on-a-line from any of the three Gemini sheets and not the rainbow-coloured rod from v3 specifically
+- **Not yet verified:** eye colour and exact markings against real photos — the Gemini sheets are Gemini's independent interpretation, not generated from Mango's actual photos, so treat them as a strong style/personality reference but confirm likeness details (eye colour, marking pattern) against `assets/source/reference/mango/raw/` photos before this becomes final
+
+PixelLab's `create_character` cannot take the Gemini sheet and a real photo together (see above — one image per call). Practical use of the Gemini sheets: crop one clean frame as a starting reference_image for a PixelLab attempt (it's already flattened into sprite form, an easier starting point than a raw photo), and/or describe this locked look (hoodie not robe, judgemental expression, black feather-wand) in the text prompt when generating from a real photo, so results converge on this direction regardless of which image is used as the identity anchor.
+
 **Note:** `assets/source/` is currently gitignored (see the open Git LFS question in the project setup) — reference photos live locally and are not yet pushed to GitHub. Worth revisiting once a real batch of photos lands.
 
 ## Current Status
