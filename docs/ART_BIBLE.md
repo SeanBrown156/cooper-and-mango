@@ -3,9 +3,13 @@
 ## Perspective and Dimensions
 
 - Three-quarter top-down JRPG perspective (SNES/early-PlayStation JRPG energy — not a literal simulation of any existing game's assets)
-- Overworld character frames: 32×32 or 48×48 pixels
+- Overworld character frames: **48×48 pixels, locked** (decided 2026-08-11 over a larger 92×92 "Octopath/HD-2D" option — see rationale below)
+- 8 directions per character (PixelLab's default; better than the originally-planned 4 for a top-down game, keep it)
 - Environment tiles: 32×32 pixels
 - Battle sprites: larger, 64×64 or 96×96, for expressive attacks/reactions/victory poses
+- Portraits (dialogue/profile): a separate, higher-detail asset category — see Character Reference Process below. This is deliberately where pet-likeness detail lives, not the overworld sprite.
+
+**Why 48×48 and not larger:** PixelLab's default output for the first Mango sprite came out at 92×92 (an unrequested default, not a deliberate choice). Weighed against the alternative of keeping that larger "Octopath-style" scale: 48×48 matches the SNES-chunky mood already set below and the reference-games table, stays forgiving of AI-generation imperfections and frame-to-frame drift, and keeps per-sprite production cost sane across the game's large planned cast (dozens of enemies/NPCs across 8 regions, built by two people plus AI assist — not a studio). The trade-off (less likeness detail directly in the overworld sprite) is deliberately absorbed by the separate portrait and battle-sprite channels instead. Any sprite already generated at 92×92 should be regenerated at 48×48 from the same approved reference — don't algorithmically downscale, pixel art doesn't survive that cleanly.
 
 ## Palette and Line
 
@@ -39,14 +43,14 @@ Dogs and cats perceive colour weighted toward blue/yellow. This can inform world
 
 ## Sprite Cleanup
 
-AI-generated sprites are starting material, not final assets. Correct manually in Aseprite: stray/semi-transparent pixels, markings that drift between frames, wobbly outlines, inconsistent eye positions, limbs that appear/disappear, off-palette colours, anything that weakens silhouette or likeness. At 32×32, a few pixels can change a whole face — this is closer to icon design than illustration.
+AI-generated sprites are starting material, not final assets. Correct manually in Aseprite: stray/semi-transparent pixels, markings that drift between frames, wobbly outlines, inconsistent eye positions, limbs that appear/disappear, off-palette colours, anything that weakens silhouette or likeness. At 48×48, a few pixels can change a whole face — this is closer to icon design than illustration.
 
 ## Animation Plan
 
 | Animation | Frames | Detail |
 |---|---:|---|
 | Idle | 2–4 | Mango's tail flick; Cooper's breathing/ear movement |
-| Walk | 3 per direction | 12 frames across four directions |
+| Walk | 3 per direction | 24 frames across eight directions |
 | Attack | 4–6 | One strong, readable action |
 | Hurt | 2–3 | Recoil and brief flash |
 | Victory | 3–5 | A characterful celebration |
@@ -58,7 +62,7 @@ Walk cycle loop: `step left → neutral → step right → neutral`.
 
 1. Photograph pets across the required poses (see above).
 2. Drop every raw photo into `assets/source/reference/<mango|cooper>/raw/` — no need to pre-sort or resize, see "Reference Photo Drop Zone" below.
-3. Lock the art grammar before generating quantity: 32×32 overworld sprites, 32×32 tiles, four movement directions, three walking frames per direction, one shared palette/outline colour, one fixed top-down perspective.
+3. Lock the art grammar before generating quantity: 48×48 overworld sprites, 32×32 tiles, eight movement directions, three walking frames per direction, one shared palette/outline colour, one fixed top-down perspective.
 4. Generate turnarounds and one neutral sprite per pet in PixelLab.
 5. Select and manually correct one canonical design per pet; save the chosen source photo into `assets/source/reference/<pet>/approved/` alongside the generated result, so the winning reference is easy to reuse later.
 6. Use approved sprites as references for every later pose/animation — never regenerate characters from scratch.
