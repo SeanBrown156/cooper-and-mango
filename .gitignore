@@ -18,3 +18,4 @@ export_presets.cfg
 assets/source/**
 !assets/source/**/
 !assets/source/**/.gitkeep
+!assets/source/.gdignore
