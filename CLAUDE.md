@@ -24,7 +24,7 @@ Priorities, in order:
 - AI output (art, music drafts, dialogue drafts) is provisional until Sean/Lillian approve it
 - Do not invent major character traits, story beats, or historical/cultural claims without approval — especially for the Eastern Cavoodle Kingdom satire, which needs to stay playful and specific rather than mapping onto anything real
 - Do not copy copyrighted assets or named visual identities
-- Preserve the approved art direction (`docs/ART_BIBLE.md`) and audio direction (`docs/AUDIO_BIBLE.md`)
+- Preserve the approved art direction (`docs/ART_BIBLE.md`) and use `docs/ART_PRODUCTION_PIPELINE.md` for the project-specific iterative AI/human asset-production workflow
 - Preserve the emotional premise — especially Charlie's arc, which should stay sincere rather than played for shock or cheap sentiment
 - Do not open the next production stage's scope before the current stage's exit criteria are actually true in the running game
 - The overworld leader is locked to the title-screen choice for the whole playthrough (`docs/GAME_BIBLE.md`'s Protagonist Choice) — every region needs a route fully completable by *either* leader alone; don't gate main-path progress behind the other pet's ability
@@ -34,7 +34,9 @@ Priorities, in order:
 - `docs/GAME_BIBLE.md` — the full story/world/cast (the destination)
 - `docs/PRODUCTION_ROADMAP.md` — staged build order (the path)
 - `docs/VERTICAL_SLICE.md` — current first-milestone detail
-- `docs/ART_BIBLE.md` / `docs/AUDIO_BIBLE.md` — visual/audio direction and pipelines
+- `docs/ART_BIBLE.md` — visual direction and technical art rules
+- `docs/ART_PRODUCTION_PIPELINE.md` — project-specific character, tiles, props, AI multiplication, cleanup and Godot-validation workflow
+- `docs/AUDIO_BIBLE.md` — audio direction and pipeline
 - `docs/CONTENT_SCHEMA.md` — data shape and ID conventions
 - `docs/INSPIRATION.md` — reference material for art direction, tone, and structure (visual reference board + thematic references)
 - `data/` — actual content records
