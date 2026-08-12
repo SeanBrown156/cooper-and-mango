@@ -2,7 +2,7 @@
 
 > **Canonical visual source of truth for Cooper & Mango.**
 >
-> **Decision update — 2026-08-12:** this document supersedes the 2026-08-11 experiment that used 48×48 overworld characters and 32×32 environment tiles. The locked direction is now a tighter late-SNES / FFVI-inspired visual grammar: **24×24 overworld characters, 32×32 battle characters, 48×48 portraits, 16×16 environment tiles, and a 320×180 target logical presentation.**
+> **Decision update — 2026-08-12 (revised):** this document supersedes the 2026-08-11 experiment (48×48 overworld characters, 32×32 environment tiles) and the initial 2026-08-12 pass (24×24 overworld, 40×40 portraits). The final locked visual formula is: **16×16 world grid, 24×16 quadruped overworld heroes, 32×32 theatrical battle heroes, 48×48 expressive portraits (with a 64×64 tier reserved for major story-beat close-ups), four-direction movement, a limited shared palette, and chunky GBA/SNES-inspired UI — modern tooling underneath, old-school discipline on top.**
 
 ## 1. North Star
 
@@ -16,6 +16,8 @@ A useful shorthand for prompts and reviews:
 
 Avoid using only “Final Fantasy style” as a prompt. It is too broad and encourages inconsistent or derivative output.
 
+UI direction follows the same principle: **chunky GBA/SNES-inspired UI** — thick borders, blocky text-box frames, high-contrast readable menus — built with modern Godot tooling underneath, not literal hardware constraints. Modern tooling underneath, old-school discipline on top.
+
 ---
 
 ## 2. Locked Technical Art Specification
@@ -26,29 +28,29 @@ Avoid using only “Final Fantasy style” as a prompt. It is too broad and enco
 |---|---:|---:|---|
 | Logical game presentation | **320×180** | — | Modern 16:9 canvas with deliberately low-resolution composition |
 | Environment tile | **16×16** | — | Canonical world-building grid |
-| Overworld player / NPC | **24×24** | ~18–22 px tall | Tiny symbolic representation; silhouette first |
+| Overworld hero (quadruped) | **24×16** | ~20–22 px wide, ~12–14 px tall | Tiny symbolic representation; silhouette first; on-all-fours proportions |
 | Battle player character | **32×32** | ~24–30 px tall | Redrawn for combat; not an enlarged overworld sprite |
 | Small battle enemy | **32×32** | variable | Only where deliberately tiny |
 | Regular battle enemy | **48×48** | variable | Standard enemy target |
 | Large enemy / mini-boss | **64×64** | variable | May overflow visual mass within battle layout |
 | Major boss | **64×64 to ~128×96** | variable | Set-piece art may break regular sprite scale |
-| Dialogue portrait | **48×48** | ~42–46 px | Separate drawing; primary likeness/expression layer |
-| Optional major/menu portrait | **64×64** | ~56–62 px | For special UI or important scenes, not required by default |
+| Dialogue portrait | **48×48** | ~42–46 px | Separate drawing; primary likeness/expression layer; bipedal pose |
+| Major story-beat portrait | **64×64** | ~56–62 px | Reserved for major story beats (e.g. Charlie's farewell, the final confrontation) where the face carries the scene, not required by default |
 | Common prop | **16×16 / 16×32 / 32×32** | variable | Align to the environment grid wherever sensible |
 
 ### Historical reference, not a production constraint
 
 The classic SNES presentation was commonly built around a roughly **256×224** visible canvas and an 8×8 hardware tile vocabulary. Final Fantasy VI used extremely small playable character art — roughly the visual territory of a ~16×24 character — and reused compact character sprites very economically.
 
-We are deliberately giving Mango and Cooper a little more room because animal silhouettes need ears, tails, fluff, posture and signature props to remain readable. **24×24 is our SNES-plus compromise.**
+We are deliberately giving Mango and Cooper a little more room because animal silhouettes need ears, tails, fluff, posture and signature props to remain readable. **24×16 is our SNES-plus compromise.**
 
 ### Important hierarchy rule
 
-The same character is **redrawn at different levels of abstraction**:
+The same character is **redrawn at different levels of abstraction — and different body postures:**
 
-- **24×24 overworld:** icon of the character
-- **32×32 battle:** pose and action readability
-- **48×48 portrait:** likeness, fluff, face, emotion, costume detail
+- **24×16 overworld:** icon of the character, on all fours (quadruped)
+- **32×32 battle:** pose and action readability, upright/bipedal
+- **48×48 portrait:** likeness, fluff, face, emotion, costume detail, upright/bipedal
 
 Do **not** create one large drawing and algorithmically scale it down into all three roles. They are separate drawings of the same design.
 
@@ -56,15 +58,15 @@ Do **not** create one large drawing and algorithmically scale it down into all t
 
 ## 3. Mango at Each Scale
 
-### Overworld Mango — 24×24
+### Overworld Mango — 24×16 (quadruped)
 
-This is an icon of Mango, not a miniature illustration.
+This is an icon of Mango, not a miniature illustration. Mango moves on all fours here — a real cat's proportions, not the upright hoodie-mage pose used for battle/portrait.
 
 Must survive reduction:
 
-- orange-cat silhouette
+- orange-cat silhouette, on all fours
 - oversized readable ears
-- purple hoodie / hood shape
+- purple hoodie draped over the back like a cape, not worn like a person
 - fluffy cheek or chest suggestion
 - tail silhouette
 - black cat-teaser wand / fishing-rod-like toy silhouette where the pose allows
@@ -72,13 +74,13 @@ Must survive reduction:
 
 Facial detail may be only a handful of pixels. Eyes may literally be one pixel each. If the silhouette does not read at native 1× scale, adding more detail is the wrong fix.
 
-### Battle Mango — 32×32
+### Battle Mango — 32×32 (bipedal)
 
-Redraw rather than enlarge.
+Redraw rather than enlarge. Upright/bipedal — the mage pose, not the overworld's on-all-fours stance.
 
 Direction:
 
-- slightly more upright / bipedal
+- upright / bipedal
 - chubby and fluffy
 - 3/4 combat stance
 - one paw clearly gripping the wand
@@ -86,9 +88,9 @@ Direction:
 - enough face to sell confidence / mild arrogance / warmth
 - robe/hoodie movement can animate by only one or two pixels
 
-### Portrait Mango — 48×48
+### Portrait Mango — 48×48 (bipedal)
 
-This is the likeness layer.
+This is the likeness layer. Upright/bipedal, same posture family as the battle sprite.
 
 Use the extra resolution for:
 
@@ -188,26 +190,50 @@ Individual assets should use much smaller subsets:
 
 The master palette creates world coherence; the per-asset limitation creates readable pixel art.
 
-### Mango palette principle
+### The two-pole system
 
-A typical Mango asset might use:
+The world runs on a deliberate dichotomy, not one uniform mood: a bright, warm **Hero/World pole** (Mother/EarthBound/OMORI-adjacent) for everyday exploration and party members, and a dark, high-contrast **Threat/Boss pole** (Blasphemous-adjacent) reserved for awakened-object monsters, bosses, and fear beats. Every region leans somewhere on this axis rather than picking one absolutely — see `GAME_BIBLE.md`'s "A Single Day" for how that lean tracks the story's literal dawn-to-night timeline. Both poles are built from one shared master palette so the game still reads as one coherent world, not two different art styles.
 
-**Orange ramp**
-- yellow-orange highlight
-- Mango orange midtone
-- red-orange shadow
-- warm brown / burgundy deep shadow
+### Master palette — hex reference
 
-**Purple hoodie ramp**
-- pink-lavender highlight
-- rich purple midtone
-- blue-purple shadow
-- indigo deep shadow
+Every ramp below draws from the same ~20-colour core; individual assets still pull only the 8-12 colours they actually need per the palette hierarchy above.
 
-**Accents**
-- cream / pale fur
-- warm near-black or deep navy-brown outline
-- restrained pink for nose/ear detail
+| Ramp | Highlight | Midtone | Shadow | Deep shadow |
+|---|---|---|---|---|
+| Mango orange (fur) | `#FFCF7A` | `#F0913E` | `#C85A2E` | `#7A3524` |
+| Purple hoodie | `#E8C9E8` | `#7C4FD6` | `#4A2D73` | `#241B4A` |
+| Neutral/accent | `#FFFFFF` cream-white | `#F3ECD1` pale fur | `#E28FA0` pink accent | `#181425` outline (warm near-black, never pure black) |
+| Cooper black/grey (coat) | `#8A857A` | `#55504A` | `#2E2A26` | `#171412` |
+| Cooper cream (muzzle/paws/chest) | `#FBF6EC` | `#E0D6C4` | `#BFB29A` | `#8A7C63` |
+| Cooper green (collar) | `#9FCDB0` | `#4E9873` | `#2E5F49` | `#1A3A2C` |
+| Rocky chestnut (fur, linked to Mango's orange) | `#F0C9A0` | `#C17F4A` | `#8C4A2E` | `#7A3524` (shared with Mango's deepest shadow — deliberate kinship) |
+| Rocky white (body) | `#FBF3E8` | `#E2CCB9` | `#C9AF98` | `#A0937E` |
+| Threat/Boss pole | `#584A3A` faded gold-brown | `#3E2731` desaturated mid | `#181425` near-black | `#0F0015` deepest void |
+| Threat accent (sparing use only) | `#C9A227` dread gold | — | `#8C1F28` blood-red (higher-intensity alt) | — |
+| Water / The Park | `#8FD9D6` | `#2F8A8F` | `#1C5559` | `#193C3E` |
+| Autumn / Eastern Cavoodle Forest | `#FFE1A3` | `#E08A3C` | `#A85A28` | `#5C3018` |
+| Rust / The Industrial Zone | `#E8B796` | `#B86F50` | `#733E39` | `#3E2731` |
+| Metal / The Industrial Zone | `#C0CBDC` | `#8A8A82` | `#55554E` | `#2E2E28` |
+| Wood / earth (general domestic) | `#C28569` | `#8A5F3A` | `#733E39` | `#181425` |
+
+As of tonight, the neutral/utility ramps (Neutral/accent, Threat/Boss pole, Water/The Park, Rust/Industrial Zone, Metal/Industrial Zone, Wood/earth) have had every swatch with a genuinely close Endesga-32 match realigned to that exact Endesga-32 hex, for palette compatibility with the CC0 `rgsdev_cc0_topdown_template` tileset. Swatches with no close Endesga-32 counterpart (wrong hue family or too great a distance) were deliberately left bespoke rather than forced. Mango orange, Purple hoodie, Cooper black/grey, Cooper cream, Cooper green, Rocky chestnut, Rocky white, and Threat accent remain fully bespoke/photo-grounded and were not touched.
+
+The Autumn/Cavoodle ramp deliberately echoes Mango's own orange ramp — a nice quiet resonance between the protagonist's colour story and the "sun/orange" region theme, not a coincidence to fix.
+
+Cooper's and Rocky's ramps above are sampled from real reference photos in `assets/reference/cooper/` and `assets/reference/rocky/` — not invented. Rocky's deepest shadow deliberately shares Mango's exact hex, a quiet visual "kinship" between the game's two orange-family characters, while Cooper's black/white/grey-plus-green reads as the cool contrast to both.
+
+### Time-of-day light grading
+
+Since the whole story takes place across one day (`GAME_BIBLE.md`, "A Single Day"), use these as scene-level colour-grade/overlay tints layered on top of the ramps above — they shift mood without requiring separate art per time of day.
+
+| Time of day | Tint | Use |
+|---|---|---|
+| Dawn | `#3A4A6B` cool blue-grey | Tutorial Room, Empty House opening |
+| Morning | `#FFF2C9` warm pale gold | Empty House resolving, The Park |
+| Midday | `#FEF9E8` neutral bright | The Industrial Zone |
+| Golden hour | `#FFB35C` warm amber | The Helipad/Airport, Cavoodle Forest arrival |
+| Dusk | `#7A4A6B` purple-pink twilight | Cavoodle Forest's haunted turn, meeting Charlie |
+| Night | `#1A1F3A` deep blue-black | Road Home, boss rush, Centre of Absence |
 
 ### Hue-shift shadows
 
@@ -256,7 +282,7 @@ Readability and the core bright-poppy art direction win over scientific literali
 2. Identify the features that must survive reduction.
 3. Develop the **portrait / character design first**, because likeness is easiest to judge at 48×48 or in concept art.
 4. Lock one approved design per pet.
-5. Redraw that design deliberately into the 32×32 battle and 24×24 overworld grammars.
+5. Redraw that design deliberately into the 32×32 battle and 24×16 overworld grammars.
 6. Use the approved design as the reference for later poses and animations.
 7. Use Mango and Cooper’s approved art as style anchors for the wider cast.
 
@@ -274,9 +300,17 @@ Readability and the core bright-poppy art direction win over scientific literali
 
 ### Cooper identity notes
 
+- Cavoodle — black/white/grey coat with a warm, "ruddy" (never cold-grey) undertone throughout
+- shaggy, grizzled muzzle and beard; warm cream/tan eyebrow markings, chest, and paw "socks" against the black body
 - preserve real ear shape, coat, paw markings and open expressive face
 - anxiety-to-courage personality should be readable in posture and animation
-- any armour-like accessory should still feel derived from a real pet object: scarf, harness, tag, etc.
+- signature item: a **green collar in a Japanese Shiba-style**, worn always — his equivalent of Mango's hoodie; not a scarf/harness substitute, this is his defining accessory
+
+### Rocky identity notes
+
+- Cavalier King Charles Spaniel — ruddy chestnut/copper patches (ears, back, tail base) on a clean white body, freckled white-and-brown muzzle, long silky ears
+- deliberately colour-linked to Mango's orange family rather than treated as an unrelated hue — same warm "kin" story, redder/richer than Mango's more yellow-leaning orange
+- immense, uncontrollable power should read in posture even at rest — never a small or dainty silhouette despite the breed's real-life daintiness
 
 ---
 
@@ -284,7 +318,7 @@ Readability and the core bright-poppy art direction win over scientific literali
 
 Exploratory Gemini sprite sheets exist locally under:
 
-`assets/source/reference/mango/raw/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`
+`assets/reference/mango/raw/sprites/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`
 
 **v3 remains the strongest style/personality reference**, but it is not production truth.
 
@@ -304,7 +338,7 @@ Correct / replace:
 - generated palettes must be conformed to the project palette
 - generated pixel noise must be cleaned manually
 
-Do not algorithmically downscale old 48×48 or ~92×92 experiments and call them final overworld sprites. Use them as reference and **redraw/regenerate at 24×24**.
+Do not algorithmically downscale old 48×48 or ~92×92 experiments and call them final overworld sprites. Use them as reference and **redraw/regenerate at 24×16, on all fours**.
 
 ---
 
@@ -312,7 +346,7 @@ Do not algorithmically downscale old 48×48 or ~92×92 experiments and call them
 
 Do not overanimate. Late-SNES character comes from strong poses and economical changes.
 
-### Overworld — 24×24
+### Overworld — 24×16
 
 Minimum production set:
 
@@ -426,7 +460,7 @@ The repository currently contains an earlier 480×270 viewport experiment in `pr
 ### GitHub — source control and documentation
 
 - `docs/ART_BIBLE.md` is the canonical visual specification
-- raw/reference material belongs under `assets/source/` locally unless/until storage policy changes
+- raw/reference material belongs under `assets/reference/` locally unless/until storage policy changes
 - game-ready exports belong under `assets/`
 - changes to locked dimensions/palette rules must update this document in the same change
 
@@ -506,7 +540,7 @@ The exact folder migration can happen incrementally. The important rule is conce
 Current local reference drop zone remains:
 
 ```text
-assets/source/reference/
+assets/reference/
 ├── mango/
 │   ├── raw/
 │   └── approved/
@@ -591,8 +625,8 @@ Before scaling production to the wider cast, produce and approve:
 
 1. **Mango 48×48 portrait**
 2. **Cooper 48×48 portrait** in the same visual language
-3. **Mango 24×24 neutral overworld sprite**
-4. **Cooper 24×24 neutral overworld sprite**
+3. **Mango 24×16 neutral overworld sprite (quadruped)**
+4. **Cooper 24×16 neutral overworld sprite (quadruped)**
 5. **Mango 32×32 battle sprite**
 6. **Cooper 32×32 battle sprite**
 7. one small **16×16 environment test tileset** using the shared palette
@@ -606,4 +640,4 @@ Do not generate the entire cast before these samples look like one coherent game
 
 # One-Sentence Rule
 
-> **Cooper & Mango uses a bright, warm late-SNES visual grammar: 16×16 world tiles, 24×24 symbolic overworld characters, 32×32 expressive battle characters, 48×48 likeness-rich portraits, compact per-asset palettes drawn from a shared ~48–64 colour master palette, hard pixel clusters with no antialiasing, and Godot presentation designed around a 320×180 low-resolution canvas with nearest-neighbour integer scaling.**
+> **Cooper & Mango uses a bright, warm late-SNES visual grammar: 16×16 world tiles, 24×16 symbolic quadruped overworld characters, 32×32 expressive bipedal battle characters, 48×48 likeness-rich bipedal portraits (64×64 for major story-beat close-ups), four-direction movement, compact per-asset palettes drawn from a shared ~48–64 colour master palette, hard pixel clusters with no antialiasing, chunky GBA/SNES-inspired UI, and Godot presentation designed around a 320×180 low-resolution canvas with nearest-neighbour integer scaling. Modern tooling underneath, old-school discipline on top.**

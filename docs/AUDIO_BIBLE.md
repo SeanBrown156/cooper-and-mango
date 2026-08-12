@@ -33,14 +33,14 @@ Per the source note's "Handmade Emotional Core": record real barks, meows, purri
 assets/audio/
 ├── music/
 │   └── <theme-name>/
-│       ├── source/        (Ableton project files, stems — gitignored via assets/source pattern if large; confirm LFS decision first)
+│       ├── source/        (Ableton project files, stems — gitignored via assets/reference pattern if large; confirm LFS decision first)
 │       └── exports/       (final mixed/mastered exports, e.g. mango_theme_v1.ogg)
 └── sfx/
     └── <category>/        (e.g. battle/, ui/, pet-sounds/)
 ```
 
 - Export files use a stable name + version suffix (`cooper_theme_v2.ogg`) so Godot references don't break when a track is revised — bump the version rather than overwriting silently.
-- Raw Ableton projects and unprocessed pet-sound recordings live under `assets/source/` per the same provenance rule as visual source material (see `ART_BIBLE.md` and the open Git LFS question in the project plan).
+- Raw Ableton projects and unprocessed pet-sound recordings live under `assets/reference/` per the same provenance rule as visual reference material (see `ART_BIBLE.md` and the open Git LFS question in the project plan).
 - Only finished, mixed exports go under `assets/audio/*/exports/` and get referenced by the game.
 
 ## Open Questions

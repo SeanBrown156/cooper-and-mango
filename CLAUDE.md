@@ -40,5 +40,5 @@ Priorities, in order:
 - `docs/CONTENT_SCHEMA.md` — data shape and ID conventions
 - `docs/INSPIRATION.md` — reference material for art direction, tone, and structure (visual reference board + thematic references)
 - `data/` — actual content records
-- `assets/` — game-ready art/audio (raw source material lives in `assets/source/`, gitignored for now)
+- `assets/` — game-ready art/audio (raw reference material lives in `assets/reference/`, gitignored for now)
 - `scenes/`, `scripts/` — Godot project

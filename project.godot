@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Mango and Cooper"
+config/name="Cooper & Mango"
 config/description="A 2D RPG starring our real pets, Mango and Cooper."
 run/main_scene="res://scenes/rooms/tutorial_room.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")

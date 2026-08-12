@@ -21,12 +21,12 @@ Explore a region as your locked overworld leader (Mango or Cooper, set by the ti
 ## Main Characters
 
 - **Mango** — aloof, magically powerful ex-street cat. Arc: survival → love. Learns that opening up emotionally is not weakness.
-- **Cooper** — earnest, anxious dog. Arc: anxiety → courage. Learns that courage means acting while still afraid.
+- **Cooper** — earnest, anxious Cavoodle. Arc: anxiety → courage. Learns that courage means acting while still afraid. Signature item: a green collar in a Japanese Shiba-style, worn always — his equivalent of Mango's purple hoodie.
 - **Rocky** — berserker dog ally (a friend's dog). Immense, uncontrollable power; teaches that bravery isn't the same as recklessness.
 - **Milo** — Cooper's best friend/lover; temporary guest companion for the Eastern Cavoodle Forest chapter.
 - **Charlie** — an elderly cat sage who joins the party late in the journey and passes away during it. His death is a sincere, central emotional beat, not a shock twist. His exact connection to the party's world is still being worked out — don't invent backstory for him without Sean's input.
 - **The Goose** — tram driver connecting the Park to the Industrial Zone; minor recurring NPC, comic tone.
-- **King Jeff, the Chad Cavoodle** — ruler of the satirical Eastern Cavoodle Kingdom (within the Eastern Cavoodle Forest); comic but can carry real themes of status and belonging.
+- **King Jeff, the Chad Cavoodle** — ruler of the satirical Eastern Cavoodle Kingdom (within the Eastern Cavoodle Forest); comic but can carry real themes of status and belonging. As dusk falls after Milo joins the party, he twists into an abominable, haunted form — the chapter's boss reveal, following the same "ordinary thing hides a fear" pattern as Mecha Mi-chan.
 - **Sean and Lillian** — the missing/returning humans; affectionate, unreliable quest-givers whose absence drives the plot and whose return resolves it.
 
 ## World Rules
@@ -36,6 +36,7 @@ Explore a region as your locked overworld leader (Mango or Cooper, set by the ti
 - The world is real Melbourne homes/parks/suburbs/industrial areas, reinterpreted through animal perception as elemental fantasy regions.
 - Dogs and cats perceive colour differently (blue/yellow-weighted); this can inform palettes, puzzles, and dialogue without becoming a literal simulation.
 - The overworld forms a large loop: the journey out and the journey home cross the same places, which have visibly changed.
+- The entire journey unfolds across **a single day**, dawn to night — every region's light and mood tracks real diegetic time passing, not just metaphorical tone. See "A Single Day" below.
 
 ## Elemental Regions
 
@@ -45,7 +46,7 @@ Explore a region as your locked overworld leader (Mango or Cooper, set by the ti
 | The Park | water | The Goose's tram stop; sprinkler puzzle and aquatic enemies |
 | The Industrial Zone (Iron Estate) | metal / machinery | Rocky and industrial monsters |
 | The Helipad / Airport | air | Cooper's hot-air-balloon trial |
-| The Eastern Cavoodle Forest | sun / orange / community | King Jeff's Cavoodle Kingdom, Milo |
+| The Eastern Cavoodle Forest | sun / orange / community | King Jeff's Cavoodle Kingdom, Milo — turns haunted at dusk as King Jeff transforms |
 | The Road Home | remixed elements | return journey and boss rush |
 | The Centre of Absence | void / memory | chimeric final boss |
 
@@ -56,12 +57,30 @@ Explore a region as your locked overworld leader (Mango or Cooper, set by the ti
 3. **The Park → The Goose's Tram** — outside for the first time; a sprinkler/water puzzle region. The Goose drives a tram connecting the Park to the Industrial Zone.
 4. **The Industrial Zone** — Rocky is recruited here as the berserker ally.
 5. **The Helipad / Airport** — a tower-climb dungeon building to the hot-air-balloon boss, Cooper's major personal-fear encounter. Victory turns the balloon into the game's airship.
-6. **The Eastern Cavoodle Forest** — reached by air; King Jeff's satirical Cavoodle Kingdom; Milo is recruited as a temporary guest companion for this chapter.
+6. **The Eastern Cavoodle Forest** — reached by air, arriving at golden hour; King Jeff's satirical Cavoodle Kingdom; Milo is recruited as a temporary guest companion for this chapter. Cooper — himself a Cavoodle — faces a real personal conflict here: whether to join King Jeff's cult-like kingdom, among his own kind for the first time in the story. It's watching Cooper wrestle with this that Mango realises he actually cares about him, wants to be friends, despite the two of them bickering since the party first formed — a real beat in Mango's survival-to-love arc, not just a plot turn. As dusk falls, the forest turns haunted and King Jeff twists into an abominable form — this chapter's boss reveal, echoing Mecha Mi-chan's transformation.
 7. **Return to meet Charlie** — the party heads back and meets Charlie, the old sage, who instils the courage needed to face the final boss. (Exactly how Charlie enters the story and what he wants/needs from the party is still being worked out.)
 8. **The Road Home** — the loop bends back; earlier areas are revisited, changed, and made passable by new abilities/allies.
 9. **Homecoming boss rush** — evolved rematches of earlier fears and bosses.
 10. **The Absence** — final boss, a chimera assembled from the journey's fears (Mecha Mi-chan's parts, TV faces, balloons, storms, cages, empty bowls, distorted human silhouettes). Not defeated by denying the fear was real — defeated by acknowledging love, memory, and the allies gathered along the way. Charlie's presence (learned ability, protective light, remembered line, or musical motif) is mechanically felt here even after his farewell.
 11. **The humans return** — magic fades, speech disappears, and the owners come home carrying a newborn baby: the real reason for their absence. Mango and Cooper become guardians/older siblings rather than being replaced. The destroyed vacuum cleaner (Mi-chan) is the game's ambiguous final wink — did any of it really happen?
+
+## A Single Day
+
+The entire journey unfolds across one day, dawn to night — every region's light and mood tracks real diegetic time passing, not just metaphorical tone. This also quietly reinforces the ending's ambiguity: the humans could plausibly have been gone only a single day (out for the birth), which is part of why "did any of this really happen?" lands the way it does.
+
+| Story beat | Time of day | Mood |
+|---|---|---|
+| Tutorial Room | Dawn, just waking | Dark, uncertain |
+| The Empty House | Dawn → morning | Fear giving way to the awakening's hope |
+| The Park | Late morning | Bright, but hollow — empty of people |
+| The Industrial Zone | Midday → early afternoon | Dusty, dystopian, danger becoming visible |
+| The Helipad / Airport | Afternoon → golden hour | Open and vertiginous, building toward Cooper's trial |
+| The Eastern Cavoodle Forest | Golden hour → dusk | Peak warmth curdling into a haunted turn |
+| Return to meet Charlie | Dusk | Twilight — fitting for a sage nearing the end of his life |
+| The Road Home | Evening, darkening | Familiar places remixed and dimmed |
+| Homecoming boss rush | Night | Full dread |
+| The Centre of Absence | Night / void | The story's darkest point |
+| The humans return | Night | Resolves — magic fades, ordinary night restored |
 
 ## Charlie's Arc
 

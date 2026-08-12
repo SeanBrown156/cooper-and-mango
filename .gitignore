@@ -11,11 +11,27 @@ export_presets.cfg
 .vscode/
 *.swp
 
-# Raw source material (photos, Ableton projects, PixelLab exports, sketches).
+# Raw reference material (photos, Ableton projects, PixelLab exports, sketches).
 # Folder structure (the reference photo drop zone, see docs/ART_BIBLE.md) is
 # tracked via .gitkeep; actual media files are excluded until the Git LFS
 # decision is made (see docs/PRODUCTION_ROADMAP.md).
-assets/source/**
-!assets/source/**/
-!assets/source/**/.gitkeep
-!assets/source/.gdignore
+assets/reference/**
+!assets/reference/**/
+!assets/reference/**/.gitkeep
+!assets/reference/.gdignore
+
+# Large third-party asset packs, pending the same Git LFS decision above.
+# Provenance/license terms are recorded in docs/ASSET_LICENSES.md regardless
+# of whether the raw files are committed. The two packs already wired into
+# the Tutorial Room (rgsdev, bitglow) predate this rule and stay tracked as
+# before — this only stops new large packs from being added uncompressed.
+assets/environments/thirdparty/0x72_industrial_tileset/
+assets/environments/thirdparty/kenney_ui_pack/
+assets/environments/thirdparty/kenney_fantasy_ui_borders/
+assets/environments/thirdparty/limezu_modern_exteriors/
+assets/environments/thirdparty/limezu_modern_interiors_full/
+assets/environments/thirdparty/limezu_serene_village/
+assets/environments/thirdparty/superretroworld_interior_pack/
+
+# Agent scratch output, not meant to be permanent
+.scratch/
