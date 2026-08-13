@@ -238,7 +238,7 @@ As of 2026-08-12, the neutral/utility ramps (Neutral/accent, Threat/Boss pole, W
 
 The Autumn/Cavoodle ramp deliberately echoes Mango's own orange ramp — a nice quiet resonance between the protagonist's colour story and the "sun/orange" region theme, not a coincidence to fix.
 
-Cooper's and Rocky's ramps above are sampled from real reference photos in `raw/reference/cooper/` and `raw/reference/rocky/` — not invented. Rocky's deepest shadow deliberately shares Mango's exact hex, a quiet visual "kinship" between the game's two orange-family characters, while Cooper's black/white/grey-plus-green reads as the cool contrast to both.
+Cooper's and Rocky's ramps above are sampled from real reference photos in `assets/characters/cooper/reference/` and `assets/characters/rocky/reference/` — not invented. Rocky's deepest shadow deliberately shares Mango's exact hex, a quiet visual "kinship" between the game's two orange-family characters, while Cooper's black/white/grey-plus-green reads as the cool contrast to both.
 
 ### Time-of-day light grading
 
@@ -336,7 +336,7 @@ Readability and the core bright-poppy art direction win over scientific literali
 
 Exploratory Gemini sprite sheets exist locally under:
 
-`raw/reference/mango/raw/sprites/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`
+`assets/characters/mango/reference/sprites/superseded/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`
 
 **v3 remains the strongest style/personality reference**, but it is not production truth.
 
@@ -478,7 +478,7 @@ The repository currently contains an earlier 480×270 viewport experiment in `pr
 ### GitHub — source control and documentation
 
 - `docs/ART_BIBLE.md` is the canonical visual specification
-- raw/reference material belongs under `raw/reference/` locally unless/until storage policy changes
+- raw/reference material belongs under each family's `assets/<family>/reference/` locally unless/until storage policy changes
 - game-ready exports belong under `assets/`
 - changes to locked dimensions/palette rules must update this document in the same change
 
@@ -555,16 +555,23 @@ assets/
 
 The exact folder migration can happen incrementally. The important rule is conceptual: **editable source art and game-ready exports are different things.**
 
-Current local reference drop zone remains:
+Current local reference drop zone remains (one `reference/` folder per character, under that character's own family folder):
 
 ```text
-raw/reference/
+assets/characters/
 ├── mango/
-│   ├── raw/
-│   └── approved/
-└── cooper/
-    ├── raw/
-    └── approved/
+│   └── reference/
+│       ├── photos/
+│       ├── sketches/
+│       ├── sprites/
+│       └── approved/
+├── cooper/
+│   └── reference/
+│       ├── photos/
+│       └── approved/
+└── rocky/
+    └── reference/
+        └── photos/
 ```
 
 ---

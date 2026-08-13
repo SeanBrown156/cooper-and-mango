@@ -11,30 +11,42 @@ export_presets.cfg
 .vscode/
 *.swp
 
-# Raw reference material (photos, Ableton projects, PixelLab exports, sketches).
-# Folder structure (the reference photo drop zone, see docs/ART_BIBLE.md) is
-# tracked via .gitkeep; actual media files are excluded until the Git LFS
-# decision is made (see docs/PRODUCTION_ROADMAP.md).
-# 2026-08-13: moved out of assets/ into raw/ (see CLAUDE.md's "Where things live").
-raw/reference/**
-!raw/reference/**/
-!raw/reference/**/.gitkeep
-!raw/reference/.gdignore
+# Reference material (personal photos/sketches — likeness truth, never edited
+# directly) and input (vendor/found source assets meant to be cut, remixed,
+# or composited into final art — or fresh, not-yet-reviewed generated output —
+# not currently being actively worked on), wherever they live under assets/.
+# Every family's reference/ and input/ folders (see CLAUDE.md's "Where things
+# live") are excluded except their own folder structure, tracked via
+# .gitkeep/.gdignore, so Godot's editor also skips scanning them. Actual media
+# files stay untracked until the Git LFS decision is made (see
+# docs/PRODUCTION_ROADMAP.md).
+# 2026-08-14: renamed from material/ to input/ — same lifecycle stage, clearer
+# name (see CLAUDE.md's "Where things live", GitHub issue #20).
+assets/**/reference/**
+assets/**/input/**
+!assets/**/reference/**/
+!assets/**/input/**/
+!assets/**/reference/**/.gitkeep
+!assets/**/input/**/.gitkeep
+!assets/**/reference/**/.gdignore
+!assets/**/input/**/.gdignore
 
-# Large third-party asset packs, pending the same Git LFS decision above.
-# Provenance/license terms are recorded in docs/ASSET_LICENSES.md regardless
-# of whether the raw files are committed. The two packs already wired into
-# the Tutorial Room (rgsdev, bitglow) predate this rule and stay tracked as
-# before — this only stops new large packs from being added uncompressed.
-# 2026-08-13: unified from assets/environments/thirdparty/ + assets/characters/thirdparty/
-# into one assets/thirdparty/ (see CLAUDE.md's "Where things live").
-assets/thirdparty/0x72_industrial_tileset/
-assets/thirdparty/kenney_ui_pack/
-assets/thirdparty/kenney_fantasy_ui_borders/
-assets/thirdparty/limezu_modern_exteriors/
-assets/thirdparty/limezu_modern_interiors_full/
-assets/thirdparty/limezu_serene_village/
-assets/thirdparty/superretroworld_interior_pack/
-
-# Agent scratch output, not meant to be permanent
-.scratch/
+# wip/ folders ARE tracked by default — that's the point, it's the shared
+# handoff point with Lillian for in-progress art. Only specific oversized
+# third-party packs below are carved out as an exception, for size/LFS
+# reasons independent of which lifecycle bucket they landed in.
+# 2026-08-13: these packs moved out of the old flat assets/thirdparty/ into
+# their new per-family reference/input/wip homes as part of the same
+# restructure; the size-based ignore rule travels with them (see CLAUDE.md's
+# "Where things live", GitHub issue #20). Provenance/license terms are
+# recorded in docs/ASSET_LICENSES.md regardless of whether the raw files are
+# committed. The small packs (bitglow, rgsdev, 0x72_dungeon_tileset_ii,
+# pet_cats_pack, basic_asset_pack) predate/are exempt from this rule and stay
+# tracked as before.
+assets/environments/input/limezu_modern_interiors_full/
+assets/environments/input/limezu_modern_exteriors/
+assets/environments/input/limezu_serene_village/
+assets/environments/input/0x72_industrial_tileset/
+assets/environments/input/superretroworld_interior_pack/
+assets/ui/input/kenney_ui_pack/
+assets/ui/input/kenney_fantasy_ui_borders/

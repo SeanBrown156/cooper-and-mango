@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" path="res://scenes/interactables/spider_plant.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/room_exit.tscn" id="3"]
 [ext_resource type="Script" path="res://scripts/systems/tutorial_room_limezu_variant_controller.gd" id="4"]
-[ext_resource type="TileSet" path="res://assets/environments/rooms/tutorial_room/tutorial_room_tileset.tres" id="5"]
-[ext_resource type="Texture2D" path="res://assets/environments/rooms/tutorial_room/bookshelf.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/environments/rooms/tutorial_room/sofa.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/environments/rooms/tutorial_room/rug.png" id="8"]
+[ext_resource type="TileSet" path="res://assets/environments/tutorial_room/composite/tutorial_room_tileset_limezu_variant.tres" id="5"]
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room/approved/tutorial_room_bookshelf.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room/approved/tutorial_room_sofa.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room/approved/tutorial_room_rug.png" id="8"]
 
 [sub_resource type="RectangleShape2D" id="WallHorizontal"]
 size = Vector2(480, 16)
