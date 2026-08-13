@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=2 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/environments/thirdparty/bitglow_pixelinterior_lrk_v1_1/floorswalls_LRK.png" id="1_tex"]
+[ext_resource type="Texture2D" path="res://assets/thirdparty/bitglow_pixelinterior_lrk_v1_1/floorswalls_LRK.png" id="1_tex"]
 
 [sub_resource type="TileSetAtlasSource" id="1"]
 texture = ExtResource("1_tex")

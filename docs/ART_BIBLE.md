@@ -215,12 +215,30 @@ Every ramp below draws from the same ~20-colour core; individual assets still pu
 | Rust / The Industrial Zone | `#E8B796` | `#B86F50` | `#733E39` | `#3E2731` |
 | Metal / The Industrial Zone | `#C0CBDC` | `#8A8A82` | `#55554E` | `#2E2E28` |
 | Wood / earth (general domestic) | `#C28569` | `#8A5F3A` | `#733E39` | `#181425` |
+| Forest green (verdant foliage) | `#C6E88F` | `#63C74D` | `#3E8948` | `#265C42` |
+| Bright water / sky (lush blue accent) | `#2CE8F5` | `#0099DB` | `#124E89` | `#262B44` |
 
-As of tonight, the neutral/utility ramps (Neutral/accent, Threat/Boss pole, Water/The Park, Rust/Industrial Zone, Metal/Industrial Zone, Wood/earth) have had every swatch with a genuinely close Endesga-32 match realigned to that exact Endesga-32 hex, for palette compatibility with the CC0 `rgsdev_cc0_topdown_template` tileset. Swatches with no close Endesga-32 counterpart (wrong hue family or too great a distance) were deliberately left bespoke rather than forced. Mango orange, Purple hoodie, Cooper black/grey, Cooper cream, Cooper green, Rocky chestnut, Rocky white, and Threat accent remain fully bespoke/photo-grounded and were not touched.
+**2026-08-13 addition:** two new environment ramps — Forest green and Bright water/sky — added to push the master palette toward ~60 colours, per direction to bring more verdant green and lusher, brighter blue into the world (the existing Water/The Park ramp is teal-leaning; this new ramp gives a genuinely saturated sky/water blue for contrast). Midtone/Shadow/Deep-shadow on both are exact Endesga-32 matches (`#63C74D`/`#3E8948`/`#265C42` and `#0099DB`/`#124E89`/`#262B44`), keeping them compatible with the CC0 tileset the same way the other utility ramps are; each Highlight is bespoke since Endesga-32 has no light-enough match in either hue family. Forest green is for general foliage/tree/bush environment art — distinct from the Autumn/Eastern Cavoodle Forest ramp, which stays orange-toned for that specific region's sun/community theme.
+
+### Single accent colours (not full ramps)
+
+Three gaps identified when pushing the master palette to the full 64-colour ceiling — each is a standalone accent rather than a 4-tier ramp, because each fills a specific missing role rather than needing its own highlight/shadow family:
+
+| Accent | Hex | Purpose |
+|---|---|---|
+| UI danger / critical-HP red | `#E43B44` | Semantic UI red (low-HP flash, danger prompts). Distinct from Threat accent's blood-red, which is a *monster/boss* colour, not a UI state colour — using the same hex for both would blur "this enemy is scary" and "you are about to die." |
+| Reward / treasure gold | `#FEE761` | Positive UI gold (loot, currency, level-up flashes). Distinct from Threat accent's dread-gold (`#C9A227`), which is deliberately desaturated/ominous — this one needs to read as unambiguously good news. |
+| Dust / Empty House domestic magic | `#C9BFE0` | The Empty House was the one region in the Elemental Regions table with no colour identity of its own (everything else had a ramp: water, metal, autumn, industrial rust). A soft dust-lilac gives the game's first region — and Mecha Mi-chan's awakening — its own quiet magical-dust palette note, distinct from the plain Wood/earth domestic ramp. |
+
+`#E43B44` and `#FEE761` are both exact Endesga-32 matches. `#C9BFE0` is bespoke — it's evoking a specific in-fiction "magic dust" feeling rather than a neutral utility colour, so it gets the same treatment as the character ramps (left unforced).
+
+This brings the master palette to its full **64-colour ceiling.**
+
+As of 2026-08-12, the neutral/utility ramps (Neutral/accent, Threat/Boss pole, Water/The Park, Rust/Industrial Zone, Metal/Industrial Zone, Wood/earth) have had every swatch with a genuinely close Endesga-32 match realigned to that exact Endesga-32 hex, for palette compatibility with the CC0 `rgsdev_cc0_topdown_template` tileset. Swatches with no close Endesga-32 counterpart (wrong hue family or too great a distance) were deliberately left bespoke rather than forced. Mango orange, Purple hoodie, Cooper black/grey, Cooper cream, Cooper green, Rocky chestnut, Rocky white, and Threat accent remain fully bespoke/photo-grounded and were not touched.
 
 The Autumn/Cavoodle ramp deliberately echoes Mango's own orange ramp — a nice quiet resonance between the protagonist's colour story and the "sun/orange" region theme, not a coincidence to fix.
 
-Cooper's and Rocky's ramps above are sampled from real reference photos in `assets/reference/cooper/` and `assets/reference/rocky/` — not invented. Rocky's deepest shadow deliberately shares Mango's exact hex, a quiet visual "kinship" between the game's two orange-family characters, while Cooper's black/white/grey-plus-green reads as the cool contrast to both.
+Cooper's and Rocky's ramps above are sampled from real reference photos in `raw/reference/cooper/` and `raw/reference/rocky/` — not invented. Rocky's deepest shadow deliberately shares Mango's exact hex, a quiet visual "kinship" between the game's two orange-family characters, while Cooper's black/white/grey-plus-green reads as the cool contrast to both.
 
 ### Time-of-day light grading
 
@@ -318,7 +336,7 @@ Readability and the core bright-poppy art direction win over scientific literali
 
 Exploratory Gemini sprite sheets exist locally under:
 
-`assets/reference/mango/raw/sprites/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`
+`raw/reference/mango/raw/sprites/mango-sprite-sheet-gemini-raw-v{1,2,3}.png`
 
 **v3 remains the strongest style/personality reference**, but it is not production truth.
 
@@ -460,7 +478,7 @@ The repository currently contains an earlier 480×270 viewport experiment in `pr
 ### GitHub — source control and documentation
 
 - `docs/ART_BIBLE.md` is the canonical visual specification
-- raw/reference material belongs under `assets/reference/` locally unless/until storage policy changes
+- raw/reference material belongs under `raw/reference/` locally unless/until storage policy changes
 - game-ready exports belong under `assets/`
 - changes to locked dimensions/palette rules must update this document in the same change
 
@@ -540,7 +558,7 @@ The exact folder migration can happen incrementally. The important rule is conce
 Current local reference drop zone remains:
 
 ```text
-assets/reference/
+raw/reference/
 ├── mango/
 │   ├── raw/
 │   └── approved/

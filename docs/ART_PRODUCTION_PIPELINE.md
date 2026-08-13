@@ -364,6 +364,16 @@ Avoid `final-final-v7.png` chaos. One obvious canonical master per asset family 
 
 Use predictable naming and keep raw AI generations out of game-ready asset folders.
 
+### Where experimentation lives
+
+`.scratch/` (repo root, gitignored) is the sandbox for the "draft" and "multiply" steps of the core loop — trial crops, candidate palette remaps, composite mockups, side-by-side comparisons, anything produced while figuring out whether an approach works. Nothing in `.scratch/` is canon and nothing in it should be referenced by a `res://` path in a scene or `.tres` file. If a candidate is worth keeping but isn't finished, it graduates to `src/` (below), not straight to `assets/`; if it's actually done, it exports straight to `assets/`. Either way the scratch copy can then be deleted — it was never meant to be permanent.
+
+### Where the "not final, but getting there" stuff lives
+
+`src/` is the polishing tier — **versioned** (unlike `.scratch/`), holding the editable `.aseprite` masters you iterate on over time but that Godot never loads directly (`res://` paths always point into `assets/`). This is where a WIP asset belongs once it's past "is this a good idea" and into "I'm touching up this specific piece": redrawing a chipped sprite edge, adjusting a palette-remapped tile by hand, refining a pose. Layout mirrors `assets/` — e.g. `src/environments/tutorial_room/sofa.aseprite` is the editable master for `assets/environments/rooms/tutorial_room/sofa.png`. Workflow: open the `.aseprite` file, edit, re-export over the matching PNG in `assets/`, reimport in Godot. `src/palette/` (the master palette source) follows the same pattern.
+
+So the full map: reference/raw material lives in `raw/`, third-party source lives in `assets/thirdparty/`, disposable experiments live in `.scratch/`, WIP editable masters live in `src/`, and only exported, approved, tested output lives in `assets/` proper.
+
 ---
 
 ## 14. Acceptance criteria

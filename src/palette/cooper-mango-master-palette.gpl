@@ -1,0 +1,68 @@
+GIMP Palette
+Name: Cooper & Mango Master Palette
+Columns: 4
+#
+255 207 122    Mango orange / Highlight
+240 145  62    Mango orange / Midtone
+200  90  46    Mango orange / Shadow
+122  53  36    Mango orange / Deep shadow
+232 201 232    Purple hoodie / Highlight
+124  79 214    Purple hoodie / Midtone
+ 74  45 115    Purple hoodie / Shadow
+ 36  27  74    Purple hoodie / Deep shadow
+255 255 255    Neutral accent / Cream-white
+243 236 209    Neutral accent / Pale fur
+226 143 160    Neutral accent / Pink accent
+ 24  20  37    Neutral accent / Outline
+138 133 122    Cooper black-grey / Highlight
+ 85  80  74    Cooper black-grey / Midtone
+ 46  42  38    Cooper black-grey / Shadow
+ 23  20  18    Cooper black-grey / Deep shadow
+251 246 236    Cooper cream / Highlight
+224 214 196    Cooper cream / Midtone
+191 178 154    Cooper cream / Shadow
+138 124  99    Cooper cream / Deep shadow
+159 205 176    Cooper green / Highlight
+ 78 152 115    Cooper green / Midtone
+ 46  95  73    Cooper green / Shadow
+ 26  58  44    Cooper green / Deep shadow
+240 201 160    Rocky chestnut / Highlight
+193 127  74    Rocky chestnut / Midtone
+140  74  46    Rocky chestnut / Shadow
+251 243 232    Rocky white / Highlight
+226 204 185    Rocky white / Midtone
+201 175 152    Rocky white / Shadow
+160 147 126    Rocky white / Deep shadow
+ 88  74  58    Threat-Boss pole / Highlight
+ 62  39  49    Threat-Boss pole / Midtone
+ 15   0  21    Threat-Boss pole / Deep shadow
+201 162  39    Threat accent / Dread gold
+140  31  40    Threat accent / Blood red
+143 217 214    Water The Park / Highlight
+ 47 138 143    Water The Park / Midtone
+ 28  85  89    Water The Park / Shadow
+ 25  60  62    Water The Park / Deep shadow
+255 225 163    Autumn Cavoodle Forest / Highlight
+224 138  60    Autumn Cavoodle Forest / Midtone
+168  90  40    Autumn Cavoodle Forest / Shadow
+ 92  48  24    Autumn Cavoodle Forest / Deep shadow
+232 183 150    Rust Industrial / Highlight
+184 111  80    Rust Industrial / Midtone
+115  62  57    Rust Industrial / Shadow
+192 203 220    Metal Industrial / Highlight
+138 138 130    Metal Industrial / Midtone
+ 85  85  78    Metal Industrial / Shadow
+ 46  46  40    Metal Industrial / Deep shadow
+194 133 105    Wood earth / Highlight
+138  95  58    Wood earth / Midtone
+198 232 143    Forest green foliage / Highlight
+ 99 199  77    Forest green foliage / Midtone
+ 62 137  72    Forest green foliage / Shadow
+ 38  92  66    Forest green foliage / Deep shadow
+ 44 232 245    Bright water sky / Highlight
+  0 153 219    Bright water sky / Midtone
+ 18  78 137    Bright water sky / Shadow
+ 38  43  68    Bright water sky / Deep shadow
+228  59  68    Single accents / UI danger red
+254 231  97    Single accents / Reward gold
+201 191 224    Single accents / Dust Empty House

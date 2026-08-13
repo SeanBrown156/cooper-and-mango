@@ -15,23 +15,26 @@ export_presets.cfg
 # Folder structure (the reference photo drop zone, see docs/ART_BIBLE.md) is
 # tracked via .gitkeep; actual media files are excluded until the Git LFS
 # decision is made (see docs/PRODUCTION_ROADMAP.md).
-assets/reference/**
-!assets/reference/**/
-!assets/reference/**/.gitkeep
-!assets/reference/.gdignore
+# 2026-08-13: moved out of assets/ into raw/ (see CLAUDE.md's "Where things live").
+raw/reference/**
+!raw/reference/**/
+!raw/reference/**/.gitkeep
+!raw/reference/.gdignore
 
 # Large third-party asset packs, pending the same Git LFS decision above.
 # Provenance/license terms are recorded in docs/ASSET_LICENSES.md regardless
 # of whether the raw files are committed. The two packs already wired into
 # the Tutorial Room (rgsdev, bitglow) predate this rule and stay tracked as
 # before — this only stops new large packs from being added uncompressed.
-assets/environments/thirdparty/0x72_industrial_tileset/
-assets/environments/thirdparty/kenney_ui_pack/
-assets/environments/thirdparty/kenney_fantasy_ui_borders/
-assets/environments/thirdparty/limezu_modern_exteriors/
-assets/environments/thirdparty/limezu_modern_interiors_full/
-assets/environments/thirdparty/limezu_serene_village/
-assets/environments/thirdparty/superretroworld_interior_pack/
+# 2026-08-13: unified from assets/environments/thirdparty/ + assets/characters/thirdparty/
+# into one assets/thirdparty/ (see CLAUDE.md's "Where things live").
+assets/thirdparty/0x72_industrial_tileset/
+assets/thirdparty/kenney_ui_pack/
+assets/thirdparty/kenney_fantasy_ui_borders/
+assets/thirdparty/limezu_modern_exteriors/
+assets/thirdparty/limezu_modern_interiors_full/
+assets/thirdparty/limezu_serene_village/
+assets/thirdparty/superretroworld_interior_pack/
 
 # Agent scratch output, not meant to be permanent
 .scratch/

@@ -1,0 +1,64 @@
+#FFCF7A  Mango orange / Highlight
+#F0913E  Mango orange / Midtone
+#C85A2E  Mango orange / Shadow
+#7A3524  Mango orange / Deep shadow
+#E8C9E8  Purple hoodie / Highlight
+#7C4FD6  Purple hoodie / Midtone
+#4A2D73  Purple hoodie / Shadow
+#241B4A  Purple hoodie / Deep shadow
+#FFFFFF  Neutral accent / Cream-white
+#F3ECD1  Neutral accent / Pale fur
+#E28FA0  Neutral accent / Pink accent
+#181425  Neutral accent / Outline
+#8A857A  Cooper black-grey / Highlight
+#55504A  Cooper black-grey / Midtone
+#2E2A26  Cooper black-grey / Shadow
+#171412  Cooper black-grey / Deep shadow
+#FBF6EC  Cooper cream / Highlight
+#E0D6C4  Cooper cream / Midtone
+#BFB29A  Cooper cream / Shadow
+#8A7C63  Cooper cream / Deep shadow
+#9FCDB0  Cooper green / Highlight
+#4E9873  Cooper green / Midtone
+#2E5F49  Cooper green / Shadow
+#1A3A2C  Cooper green / Deep shadow
+#F0C9A0  Rocky chestnut / Highlight
+#C17F4A  Rocky chestnut / Midtone
+#8C4A2E  Rocky chestnut / Shadow
+#FBF3E8  Rocky white / Highlight
+#E2CCB9  Rocky white / Midtone
+#C9AF98  Rocky white / Shadow
+#A0937E  Rocky white / Deep shadow
+#584A3A  Threat-Boss pole / Highlight
+#3E2731  Threat-Boss pole / Midtone
+#0F0015  Threat-Boss pole / Deep shadow
+#C9A227  Threat accent / Dread gold
+#8C1F28  Threat accent / Blood red
+#8FD9D6  Water The Park / Highlight
+#2F8A8F  Water The Park / Midtone
+#1C5559  Water The Park / Shadow
+#193C3E  Water The Park / Deep shadow
+#FFE1A3  Autumn Cavoodle Forest / Highlight
+#E08A3C  Autumn Cavoodle Forest / Midtone
+#A85A28  Autumn Cavoodle Forest / Shadow
+#5C3018  Autumn Cavoodle Forest / Deep shadow
+#E8B796  Rust Industrial / Highlight
+#B86F50  Rust Industrial / Midtone
+#733E39  Rust Industrial / Shadow
+#C0CBDC  Metal Industrial / Highlight
+#8A8A82  Metal Industrial / Midtone
+#55554E  Metal Industrial / Shadow
+#2E2E28  Metal Industrial / Deep shadow
+#C28569  Wood earth / Highlight
+#8A5F3A  Wood earth / Midtone
+#C6E88F  Forest green foliage / Highlight
+#63C74D  Forest green foliage / Midtone
+#3E8948  Forest green foliage / Shadow
+#265C42  Forest green foliage / Deep shadow
+#2CE8F5  Bright water sky / Highlight
+#0099DB  Bright water sky / Midtone
+#124E89  Bright water sky / Shadow
+#262B44  Bright water sky / Deep shadow
+#E43B44  Single accents / UI danger red
+#FEE761  Single accents / Reward gold
+#C9BFE0  Single accents / Dust Empty House

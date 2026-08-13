@@ -40,5 +40,7 @@ Priorities, in order:
 - `docs/CONTENT_SCHEMA.md` — data shape and ID conventions
 - `docs/INSPIRATION.md` — reference material for art direction, tone, and structure (visual reference board + thematic references)
 - `data/` — actual content records
-- `assets/` — game-ready art/audio (raw reference material lives in `assets/reference/`, gitignored for now)
+- `raw/` — inert input material, never loaded by Godot: `raw/reference/` (photos, Ableton projects, PixelLab drafts, sketches — gitignored for now), `raw/thirdparty/` is NOT here, see below
+- `src/` — editable source masters not directly consumed by the engine (`.aseprite` character files, the master palette source in `src/palette/`) — the game imports exports made *from* these, not these files themselves
+- `assets/` — everything Godot actually loads via `res://`, organized by type (`characters/`, `environments/`, `ui/`, `audio/`, `enemies/`, `portraits/`); `assets/thirdparty/` holds every licensed external pack in one unified place regardless of what content type it contains (was previously split across `assets/environments/thirdparty/` and `assets/characters/thirdparty/` — unified 2026-08-13)
 - `scenes/`, `scripts/` — Godot project
