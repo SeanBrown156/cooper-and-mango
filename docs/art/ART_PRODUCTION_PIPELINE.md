@@ -2,13 +2,13 @@
 
 > Project-specific workflow for turning references, sketches, AI drafts and premade assets into consistent, game-ready pixel art.
 >
-> This document complements `docs/ART_BIBLE.md`. The Art Bible defines **what the game should look like**; this file defines **how we produce and scale the art without losing that look**.
+> This document complements `docs/art/ART_BIBLE.md`. The Art Bible defines **what the game should look like**; this file defines **how we produce and scale the art without losing that look**.
 
 ## Core loop
 
 The art pipeline is **iterative, not linear**:
 
-> Ideate → draft → canonicalise → multiply → clean → test in Godot → feed the improved result back into the loop.
+> Gather input → choose relevant assets → palette-remap into WIP → compose and test in Godot → promote the working set to approved.
 
 AI is not a single upstream step. PixelLab can appear both at the beginning and later in production once a strong canonical asset exists.
 
@@ -148,7 +148,7 @@ Different sources have different authority:
 - **FigJam references** = visual-direction truth.
 - **Gemini / generic AI concepts** = approximation and ideation.
 - **Locked project palette** = colour truth.
-- **`docs/ART_BIBLE.md`** = style and technical truth.
+- **`docs/art/ART_BIBLE.md`** = style and technical truth.
 - **Approved canonical `.aseprite` / Pixquare source** = production truth.
 
 A clean AI image is not automatically canon. A hand-drawn image is not automatically canon either. Canon is the approved master asset that downstream generation and implementation reference.
@@ -255,15 +255,15 @@ For these, licensed premade 16px-friendly asset packs are encouraged.
 For commodity tiles and props:
 
 1. Find a good **licensed** base asset or coherent tileset family.
-2. Record the licence/source in `docs/ASSET_LICENSES.md`.
+2. Record the licence/source in `docs/art/ASSET_LICENSES.md`.
 3. Preserve the useful structure and silhouette.
-4. Remap its colours into the locked Cooper & Mango palette.
-5. Check whether the original pixel grammar fits our Art Bible.
-6. Restyle outlines, shading, clusters or detail density where needed.
-7. Promote the cleaned result as an approved environment reference.
-8. Use PixelLab to extend that approved family with compatible variations where useful.
-9. Clean the generated extensions in Aseprite/Pixquare.
-10. Test the family in Godot against the actual characters and UI.
+4. Identify which sheets are actually relevant to the room.
+5. Palette-remap the relevant sheets into the locked Cooper & Mango palette.
+6. Move the remapped sheets and editable masters into that room's `wip/`.
+7. Compose the room in Godot using TileSet atlases for terrain and Sprite2D regions/scenes for furniture and props.
+8. Test scale, layering, collisions, readability and the relationship between room and characters.
+9. Iterate in `wip/` until the room composition is working.
+10. Promote only the accepted sheets, masters and Godot composition resources to `approved/` and `composite/`.
 
 This is not merely “change the hue.” Distinguish:
 
@@ -272,6 +272,35 @@ This is not merely “change the hue.” Distinguish:
 - **Restyle** — alter clusters, outlines, shading and detail so the asset obeys our game’s pixel grammar.
 
 Palette remapping is the baseline. Restyle only as much as necessary.
+
+### Third-party sheet curation workflow
+
+For downloaded sprite sheets, use this as the standard workflow:
+
+1. Download the licensed source into the relevant `input/` folder.
+2. Choose only the sheets relevant to the room or asset family.
+3. Palette-remap those sheets into the Cooper & Mango palette.
+4. Move the remapped sheet and editable Aseprite master into the relevant
+   `wip/` folder.
+5. In Aseprite, manually mark and name meaningful slices: sofas, tables,
+   trees, bookcases, rugs, animated props and other reusable objects. A slice
+   may cover one 16×16 cell or a larger multi-cell object.
+6. Export the slice metadata so bounds, names and pivots become machine-readable.
+7. Use the original WIP sheet in Godot: define atlas cells for grid-native
+   tiles, and use exact slice rectangles for furniture or coherent props.
+8. Compose and test the room in Godot, including scale, layering, collision,
+   interaction and character readability.
+9. When the composition is accepted, promote the used sheets, masters and
+   metadata to `approved/`, and promote/update the matching Godot resources in
+   `composite/`.
+
+This small manual curation pass is intentional. It establishes the artistic
+meaning and exact bounds once, allowing later automation to remain accurate
+without asking an AI to infer object edges from a visual screenshot.
+
+Keep the original sheet intact. Only export a separate PNG when an object
+needs to be animated, independently reused, independently edited or given a
+distinct scene-level behaviour.
 
 ---
 
@@ -289,7 +318,7 @@ Examples:
 
 Preferred loop:
 
-> good base structure → palette remap → clean canonical example → PixelLab extension → cleanup → palette check → Godot.
+> good base structure → palette remap → WIP room composition → Godot test → cleanup/adjustment → approval.
 
 For tile assets, connectivity and seam behaviour matter more than whether a single tile looks beautiful in isolation.
 
@@ -332,6 +361,29 @@ This is the environment equivalent of a canonical character packet.
 ---
 
 ## 12. Godot is the reality check
+
+Godot is not merely the final step after every asset has been individually
+approved. For environment work, Godot is the composition workbench. Relevant,
+palette-remapped sheets belong in the room's `wip/` while we decide whether
+they actually work in context. They become `approved/` only after the room
+composition is accepted.
+
+Keep most static content on its original sheet:
+
+- use a 16×16 TileSet atlas for floors, walls and other grid-native tiles;
+- select only the atlas cells the room needs;
+- keep a 32×32 desk, tree or furniture piece as a two-by-two arrangement or
+  larger atlas tile rather than shrinking it;
+- use a Sprite2D with `region_enabled` for a coherent multi-cell furniture
+  region when it should remain one visual object;
+- use a separate PNG or `.aseprite` only for animated, interactive or
+  independently reusable props;
+- keep collisions and interaction logic in Godot scenes, not in crops.
+
+The TileSet `.tres` and other Godot-side composition resources belong in the
+room's `composite/` folder. During active composition they may reference WIP
+textures. When the room is accepted, promote the referenced textures and
+masters to `approved/`, then update and test the composition resources.
 
 Art is not complete until it works in the running game.
 
@@ -378,7 +430,7 @@ Each family's `input/` folder (e.g. `assets/environments/input/`, `assets/ui/inp
 
 ### Where experimentation lives
 
-Each asset family's `wip/` folder (e.g. `assets/environments/tutorial_room/wip/`, tracked in git) is the sandbox for the "draft" and "multiply" steps of the core loop — trial crops, candidate palette remaps, composite mockups, side-by-side comparisons, editable `.aseprite` masters — anything a human is actively mid-edit on right now, having already been picked out of `input/`. Nothing in a `wip/` folder is canon and nothing in it should be referenced by a `res://` path in a scene or `.tres` file. Godot's editor skips scanning/importing `wip/` folders entirely (empty `.gdignore` file in each one). Split into type subfolders (`overworld/`, `battle/`, `portrait/`, etc.) only when a family genuinely has more than one type in flight simultaneously — not a hard requirement, unlike `approved/` below. Workflow: open the `.aseprite` file, edit, re-export over the matching PNG in the family's `approved/` folder, reimport in Godot. `assets/palette/` (the master palette source and its exported `.png`) is an exception to the whole lifecycle — it's a production resource used directly by Godot with no meaningful draft state, so it lives at the top level of its family with no `wip/`/`reference/`/`input/`/`approved/` subfolder.
+Each asset family's `wip/` folder (e.g. `assets/environments/tutorial_room/wip/`, tracked in git) is the active editing **and composition** stage: palette-remapped sheets, editable masters, candidate atlases, composite mockups and room-specific experiments. For room work, Godot may reference WIP textures while composition is being evaluated. WIP is not canon and must not be treated as shipped content. Once the room is accepted, promote the used raw assets and masters to `approved/`, update the corresponding `composite/` resources, and reimport/test. Split into type subfolders (`overworld/`, `battle/`, `portrait/`, etc.) only when a family genuinely has more than one type in flight simultaneously — not a hard requirement, unlike `approved/` below. `assets/palette/` (the master palette source and its exported `.png`) is an exception to the whole lifecycle — it's a production resource used directly by Godot with no meaningful draft state, so it lives at the top level of its family with no `wip/`/`reference/`/`input/`/`approved/` subfolder.
 
 ### Where approved (Godot-loaded) content lives
 

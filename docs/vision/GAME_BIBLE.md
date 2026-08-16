@@ -99,7 +99,7 @@ The choice determines the title screen framing, the Tutorial Room's solo intro/P
 
 This is a deliberate replay hook: the story, route, and regions are the same either way (see Story Spine), but a Mango playthrough and a Cooper playthrough physically move through each region differently and can see different optional content. Region design from Stage 3 onward needs a route that is fully completable by *either* leader alone — content exclusive to one leader's ability should be optional/bonus, not required for main-path progress, unless we deliberately decide otherwise for a specific beat.
 
-## Key Systems (see CONTENT_SCHEMA.md for data shape)
+## Key Systems (see [`../design/CONTENT_SCHEMA.md`](../design/CONTENT_SCHEMA.md) for data shape)
 
 - **Protagonist choice + locked leader traversal** — see above. Exploration is ability-gated by whichever character was chosen at the title screen; that choice holds for the whole playthrough and is the game's main replay hook.
 - **Zoom Meter** — shared limit-break system built on real pet zoomies. Meter fills on damage/excitement; at max, the character automatically unleashes a signature move the player doesn't choose. Rocky is permanently maxed.
@@ -108,4 +108,4 @@ This is a deliberate replay hook: the story, route, and regions are the same eit
 
 ## Scope Boundary (for now)
 
-This is a full-scope game, staged deliberately — see `PRODUCTION_ROADMAP.md` for how the above story spine gets built incrementally starting from one room. This document is the destination, not a build order.
+This is a full-scope game, staged deliberately — see [`../production/PRODUCTION_ROADMAP.md`](../production/PRODUCTION_ROADMAP.md) for how the above story spine gets built incrementally starting from one room. This document is the destination, not a build order.
