@@ -1,7 +1,7 @@
 extends Interactable
 class_name SpiderPlant
 
-## The Tutorial Room's inciting trigger — see docs/GAME_BIBLE.md "Story Spine".
+## The Tutorial Room's inciting trigger — see docs/vision/GAME_BIBLE.md "Story Spine".
 signal awakening_triggered
 
 var _triggered: bool = false

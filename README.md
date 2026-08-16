@@ -2,11 +2,11 @@
 
 A full-scope 2D RPG starring our real pets, Mango (cat) and Cooper (dog). Their humans vanish one night; the animals gain speech and magical powers, household technology awakens as monsters, and the truth — a new baby — isn't revealed until the end. It's a story about love, grief, courage, and a family changing rather than disappearing.
 
-Full premise, world, and cast: [`docs/GAME_BIBLE.md`](docs/GAME_BIBLE.md).
+Full premise, world, and cast: [`docs/vision/GAME_BIBLE.md`](docs/vision/GAME_BIBLE.md).
 
 ## Status
 
-Pre-vertical-slice. See [`docs/PRODUCTION_ROADMAP.md`](docs/PRODUCTION_ROADMAP.md) for the staged build order (Room → House → Neighbourhood → Open World) and [`docs/VERTICAL_SLICE.md`](docs/VERTICAL_SLICE.md) for the current first milestone.
+Pre-vertical-slice. See [`docs/production/PRODUCTION_ROADMAP.md`](docs/production/PRODUCTION_ROADMAP.md) for the staged build order (Room → House → Neighbourhood → Open World) and [`docs/production/VERTICAL_SLICE.md`](docs/production/VERTICAL_SLICE.md) for the current first milestone.
 
 ## How this gets built
 
@@ -22,13 +22,10 @@ Platform target: **PC via Steam**, keyboard + controller. Mobile/Switch are open
 - **Ableton** — music composition, alongside AI-assisted drafting and possible composer collaborators
 - **Claude Code / Codex** — GDScript, content schema, tests, repetitive asset integration
 - **GitHub** — source of truth for code, content, and docs
-- **Supabase** — optional future content-authoring layer once the schema is proven (see `docs/CONTENT_SCHEMA.md`)
+- **Supabase** — optional future content-authoring layer once the schema is proven (see `docs/design/CONTENT_SCHEMA.md`)
 
-## Docs
+## Documentation
 
-- [`docs/GAME_BIBLE.md`](docs/GAME_BIBLE.md) — full story, world, cast
-- [`docs/PRODUCTION_ROADMAP.md`](docs/PRODUCTION_ROADMAP.md) — staged build order
-- [`docs/VERTICAL_SLICE.md`](docs/VERTICAL_SLICE.md) — current milestone
-- [`docs/ART_BIBLE.md`](docs/ART_BIBLE.md) — visual direction and asset pipeline
-- [`docs/AUDIO_BIBLE.md`](docs/AUDIO_BIBLE.md) — music/audio direction and pipeline
-- [`docs/CONTENT_SCHEMA.md`](docs/CONTENT_SCHEMA.md) — data model and ID conventions
+Start with [`docs/README.md`](docs/README.md), the canonical documentation
+map. It points to the source-of-truth document for each area and explains who
+owns each kind of decision.

@@ -19,7 +19,7 @@ export_presets.cfg
 # live") are excluded except their own folder structure, tracked via
 # .gitkeep/.gdignore, so Godot's editor also skips scanning them. Actual media
 # files stay untracked until the Git LFS decision is made (see
-# docs/PRODUCTION_ROADMAP.md).
+# docs/production/PRODUCTION_ROADMAP.md).
 # 2026-08-14: renamed from material/ to input/ — same lifecycle stage, clearer
 # name (see CLAUDE.md's "Where things live", GitHub issue #20).
 assets/**/reference/**
@@ -39,7 +39,7 @@ assets/**/input/**
 # their new per-family reference/input/wip homes as part of the same
 # restructure; the size-based ignore rule travels with them (see CLAUDE.md's
 # "Where things live", GitHub issue #20). Provenance/license terms are
-# recorded in docs/ASSET_LICENSES.md regardless of whether the raw files are
+# recorded in docs/art/ASSET_LICENSES.md regardless of whether the raw files are
 # committed. The small packs (bitglow, rgsdev, 0x72_dungeon_tileset_ii,
 # pet_cats_pack, basic_asset_pack) predate/are exempt from this rule and stay
 # tracked as before.

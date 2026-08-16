@@ -200,7 +200,7 @@ The master palette creates world coherence; the per-asset limitation creates rea
 
 ### The two-pole system
 
-The world runs on a deliberate dichotomy, not one uniform mood: a bright, warm **Hero/World pole** (Mother/EarthBound/OMORI-adjacent) for everyday exploration and party members, and a dark, high-contrast **Threat/Boss pole** (Blasphemous-adjacent) reserved for awakened-object monsters, bosses, and fear beats. Every region leans somewhere on this axis rather than picking one absolutely — see `GAME_BIBLE.md`'s "A Single Day" for how that lean tracks the story's literal dawn-to-night timeline. Both poles are built from one shared master palette so the game still reads as one coherent world, not two different art styles.
+The world runs on a deliberate dichotomy, not one uniform mood: a bright, warm **Hero/World pole** (Mother/EarthBound/OMORI-adjacent) for everyday exploration and party members, and a dark, high-contrast **Threat/Boss pole** (Blasphemous-adjacent) reserved for awakened-object monsters, bosses, and fear beats. Every region leans somewhere on this axis rather than picking one absolutely — see [`../vision/GAME_BIBLE.md`](../vision/GAME_BIBLE.md)'s "A Single Day" for how that lean tracks the story's literal dawn-to-night timeline. Both poles are built from one shared master palette so the game still reads as one coherent world, not two different art styles.
 
 ### Master palette — hex reference
 
@@ -250,7 +250,7 @@ Cooper's and Rocky's ramps above are sampled from real reference photos in `asse
 
 ### Time-of-day light grading
 
-Since the whole story takes place across one day (`GAME_BIBLE.md`, "A Single Day"), use these as scene-level colour-grade/overlay tints layered on top of the ramps above — they shift mood without requiring separate art per time of day.
+Since the whole story takes place across one day ([`../vision/GAME_BIBLE.md`](../vision/GAME_BIBLE.md), "A Single Day"), use these as scene-level colour-grade/overlay tints layered on top of the ramps above — they shift mood without requiring separate art per time of day.
 
 | Time of day | Tint | Use |
 |---|---|---|
@@ -459,7 +459,7 @@ Use licensed external assets for things whose uniqueness does not define the gam
 Before use:
 
 1. check the individual licence
-2. log it in `docs/ASSET_LICENSES.md`
+2. log it in `docs/art/ASSET_LICENSES.md`
 3. resize/redraw only in a pixel-safe way
 4. recolour into the project palette where required
 5. make sure the asset matches the 16×16 world grammar
@@ -485,7 +485,7 @@ The repository currently contains an earlier 480×270 viewport experiment in `pr
 
 ### GitHub — source control and documentation
 
-- `docs/ART_BIBLE.md` is the canonical visual specification
+- `docs/art/ART_BIBLE.md` is the canonical visual specification
 - raw/reference material belongs under each family's `assets/<family>/reference/` locally unless/until storage policy changes
 - game-ready exports belong under `assets/`
 - changes to locked dimensions/palette rules must update this document in the same change

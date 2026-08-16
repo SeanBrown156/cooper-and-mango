@@ -1,0 +1,33 @@
+# Project-scoped MCP servers for Cooper & Mango.
+#
+# Codex only loads this file for trusted workspaces. The project is already
+# trusted in the local Codex config; teammates should trust this workspace
+# before expecting these servers to appear.
+
+[mcp_servers.pixellab]
+# Codex CLI uses stdio, so bridge PixelLab's remote HTTP MCP through
+# mcp-remote. The shell expands PIXELLAB_API_TOKEN at launch time; the
+# secret is never stored in this file. PIXELLAB_API_TOKEN must be exported
+# before starting Codex.
+command = "/bin/sh"
+args = [
+  "-c",
+  "exec npx -y mcp-remote@latest https://api.pixellab.ai/mcp --header \"Authorization: Bearer ${PIXELLAB_API_TOKEN}\""
+]
+
+[mcp_servers.godot-mcp]
+# Requires the local Godot MCP server and a running Godot editor on port 6505.
+command = "node"
+args = ["/Users/sean/.local/share/godot-mcp/server/build/index.js"]
+
+[mcp_servers.godot-mcp.env]
+GODOT_MCP_PORT = "6505"
+
+[mcp_servers.aseprite]
+# npx keeps the MCP server definition repo-local without vendoring its
+# dependencies. Aseprite itself remains a local desktop prerequisite.
+command = "npx"
+args = ["-y", "@iborymagic/aseprite-mcp"]
+
+[mcp_servers.aseprite.env]
+ASEPRITE_PATH = "/Applications/Aseprite.app/Contents/MacOS/aseprite"

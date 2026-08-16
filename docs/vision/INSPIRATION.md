@@ -1,6 +1,6 @@
 # Inspiration
 
-Reference material for art direction, tone, and structure — separate from `ART_BIBLE.md` (which holds the *locked decisions*, e.g. the 24×16/32×32/40×40 sprite scales, palette rules). This doc is the raw inspiration feeding those decisions, not a source of truth itself. Update it as new references come up in conversation; don't let it go stale.
+Reference material for art direction, tone, and structure — separate from [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) (which holds the *locked decisions*, e.g. the 24×16/32×32/40×40 sprite scales, palette rules). This doc is the raw inspiration feeding those decisions, not a source of truth itself. Update it as new references come up in conversation; don't let it go stale.
 
 ## Visual / Sprite-Style Reference Board
 
@@ -13,12 +13,12 @@ What each entry is there for:
 | **Final Fantasy VI** | The core target: SNES chibi overworld sprites + dialogue portrait busts. Closest match to the locked 24×16 overworld scale and general JRPG mood. |
 | **Chrono Trigger** | Same SNES chibi-overworld lineage as FF6, more expressive small sprites — reference for packing personality into a tiny frame count. |
 | **Cat Quest / Cat Quest II** | Literal cat-and-dog dual-protagonist fantasy world. Reference for keeping species-specific silhouettes readable at small scale. |
-| **Ace Attorney** | Character profile/portrait art used in dialogue — reference for the separate, higher-detail portrait asset category (see `ART_BIBLE.md`'s Character Reference Process). |
+| **Ace Attorney** | Character profile/portrait art used in dialogue — reference for the separate, higher-detail portrait asset category (see [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md)'s Character Reference Process). |
 | **OMORI** | Modern indie execution of pixel-art overworld sprites — proof this style still reads well outside a retro-hardware context. |
 | **Final Fantasy Tactics / Tactics Advance** | Portrait bust style and expression range. |
 | **EarthBound / MOTHER** | Overworld and battle sprite tone; quirky, personality-forward enemy design (relevant to the awakened-object enemy cast). |
 | **Mario & Luigi: Superstar Saga** | Dual-protagonist reference — paired sprite work and a dialogue/expression system built around two characters acting in tandem, close to the Mango/Cooper pairing. |
-| **Paper Mario (N64 / TTYD)** | Everyday objects reimagined as RPG enemies/set-pieces — direct structural parallel to this project's "sofa → The Great Upholstered Range" naming convention (see `ART_BIBLE.md`'s "Turning Real Places into the World"). |
+| **Paper Mario (N64 / TTYD)** | Everyday objects reimagined as RPG enemies/set-pieces — direct structural parallel to this project's "sofa → The Great Upholstered Range" naming convention (see [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md)'s "Turning Real Places into the World"). |
 
 ## Thematic / Structural References
 

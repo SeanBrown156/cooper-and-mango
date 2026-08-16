@@ -1,0 +1,66 @@
+# Cooper & Mango documentation
+
+This folder is organised by the part of the game-making process a document
+serves. Use the most specific document below as the source of truth; do not
+duplicate a decision in several bibles.
+
+## How the project points together
+
+```text
+README.md       project landing page
+    ↓
+CLAUDE.md       agent startup rules
+    ↓
+docs/README.md  canonical documentation map
+    ↓
+specific source-of-truth document
+```
+
+The root README is for orienting a person to the project. `CLAUDE.md` is the
+short operational context loaded for agents. This file is the complete map;
+the documents below contain the actual decisions.
+
+## Vision
+
+- [Game Bible](vision/GAME_BIBLE.md) — premise, player fantasy, world, cast and story spine.
+- [Inspiration](vision/INSPIRATION.md) — reference board and thematic/structural inspiration. This is reference material, not locked direction.
+
+## Art
+
+- [Art Bible](art/ART_BIBLE.md) — locked visual rules, dimensions, palette, pixel grammar and art acceptance criteria.
+- [Art Production Pipeline](art/ART_PRODUCTION_PIPELINE.md) — how references, third-party assets, PixelLab output, Aseprite masters and Godot composition move through the lifecycle.
+- [Asset Licenses](art/ASSET_LICENSES.md) — provenance and permissions for external assets.
+
+## Design and content
+
+- [Content Schema](design/CONTENT_SCHEMA.md) — structured content records, IDs, relationships and publishing shape.
+
+## Production
+
+- [Production Roadmap](production/PRODUCTION_ROADMAP.md) — stages, sequencing and scope.
+- [Vertical Slice](production/VERTICAL_SLICE.md) — the current playable validation target and definition of done.
+
+## Audio
+
+- [Audio Bible](audio/AUDIO_BIBLE.md) — music, sound, pet recordings and audio production direction.
+
+## Engineering and tools
+
+- [MCP Guide](engineering/MCP.md) — MCP setup, capabilities, limits and governance.
+
+## Ownership model
+
+The project is small, so these are areas of ownership rather than separate
+departments:
+
+- Creative direction: Sean, with Lillian's taste and character approval.
+- Character likeness and humour: Lillian and Sean.
+- Art production: Aseprite/PixLab workflows, palette and asset promotion.
+- Environment composition: Godot TileSets, Sprite2D regions, scenes and collisions.
+- Design and narrative: Game Bible, systems, dialogue and content records.
+- Engineering: Godot code, tools, integrations and runtime systems.
+- Audio: music, ambience, sound effects and pet recordings.
+- Production/QA: roadmap, vertical-slice validation, playtesting and release hygiene.
+
+When a decision changes a locked rule, update the relevant source-of-truth
+document and any affected implementation guidance in the same change.

@@ -16,7 +16,7 @@ Every content record gets a permanent, stable, machine-readable ID: `<type>_<sna
 - `dialogue` — conversation nodes and choices
 - `quests` — objectives and their steps
 - `statuses` — status effects (confusion, protection, etc.)
-- `regions` — the elemental regions and their metadata (see `GAME_BIBLE.md`)
+- `regions` — the elemental regions and their metadata (see [`../vision/GAME_BIBLE.md`](../vision/GAME_BIBLE.md))
 
 Each table has a matching folder under `data/` (`data/actors/`, `data/abilities/`, etc.) holding one file per record or one file per small group of related records — decide the split when the first real records are added; don't pre-optimize file layout before there's real content to organize.
 
@@ -75,4 +75,4 @@ The source note recommends Supabase as an eventual **editable master catalogue**
 
 ## Immediate Next Step
 
-Populate the smallest possible real dataset needed for the Stage 1 vertical slice (see `PRODUCTION_ROADMAP.md`): Mango, Cooper, one item (cat kibble), one ability each, one enemy (Dust Bunny or the Vacuum Cleaner), one encounter, one short dialogue sequence. Prove the schema with this before expanding it.
+Populate the smallest possible real dataset needed for the Stage 1 vertical slice (see [`../production/PRODUCTION_ROADMAP.md`](../production/PRODUCTION_ROADMAP.md)): Mango, Cooper, one item (cat kibble), one ability each, one enemy (Dust Bunny or the Vacuum Cleaner), one encounter, one short dialogue sequence. Prove the schema with this before expanding it.
