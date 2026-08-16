@@ -26,7 +26,7 @@ UI direction follows the same principle: **chunky GBA/SNES-inspired UI** — thi
 
 | Asset | Locked frame / grid | Typical subject occupancy | Notes |
 |---|---:|---:|---|
-| Logical game presentation | **320×180** | — | Modern 16:9 canvas with deliberately low-resolution composition |
+| Logical game presentation | **480×270** | — | Modern 16:9 canvas; integer 4× presentation at 1080p while keeping the asset grid deliberately low-resolution |
 | Environment tile | **16×16** | — | Canonical world-building grid |
 | Overworld hero (quadruped) | **24×16** | ~20–22 px wide, ~12–14 px tall | Tiny symbolic representation; silhouette first; on-all-fours proportions |
 | Battle player character | **32×32** | ~24–30 px tall | Redrawn for combat; not an enlarged overworld sprite |
@@ -37,6 +37,14 @@ UI direction follows the same principle: **chunky GBA/SNES-inspired UI** — thi
 | Dialogue portrait | **48×48** | ~42–46 px | Separate drawing; primary likeness/expression layer; bipedal pose |
 | Major story-beat portrait | **64×64** | ~56–62 px | Reserved for major story beats (e.g. Charlie's farewell, the final confrontation) where the face carries the scene, not required by default |
 | Common prop | **16×16 / 16×32 / 32×32** | variable | Align to the environment grid wherever sensible |
+
+### Presentation resolution is not asset resolution
+
+The game presents at **480×270** logical pixels (the current Godot project setting). This is a modern 16:9 presentation canvas which displays at a clean 4× scale on a 1920×1080 screen.
+
+This does **not** change the world unit or demand larger art. The canonical environment unit remains **16×16**, and the locked 24×16 overworld heroes, 32×32 battle sprites and 48×48 portraits remain exactly as specified above. Raising the logical viewport gives the camera more room to show the world; raising the tile or sprite dimensions would increase asset-detail and production complexity. We are deliberately doing the first, not the second.
+
+A 480×270 camera may reveal a partial 16×16 row at an edge. That is normal camera framing, not a reason to introduce a second tile size or force room boundaries to the viewport.
 
 ### Historical reference, not a production constraint
 

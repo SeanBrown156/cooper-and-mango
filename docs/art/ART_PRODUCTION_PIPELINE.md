@@ -498,3 +498,50 @@ For generated directions or animations, also check:
 > **Handcraft the things players remember. Industrialise the things they merely need to believe are there.**
 
 Use AI to multiply clear intent rather than replace art direction. As Cooper & Mango accumulates canonical characters, palette rules, environment kits and approved asset families, the AI-assisted parts of the pipeline should become faster and more reliable rather than more random.
+
+---
+
+## 16. Locked presentation and environment-tile practice
+
+### Keep these three concerns separate
+
+| Concern | Locked decision | What it changes |
+|---|---|---|
+| Logical presentation | **480×270** | Camera composition and how much of a room is visible |
+| World grid / TileMap cell | **16×16** | Placement, collision, reusable environment vocabulary |
+| Character asset tiers | **24×16 overworld; 32×32 battle; 48×48 portrait** | The deliberate amount of detail in each character role |
+
+Do not raise the tile grid or character frames merely because PixelLab can generate on a larger canvas. Screen resolution is not sprite resolution. The 480×270 presentation gives useful camera space and a clean 4× 1080p scale; it does not make the art more complex.
+
+### Tilesets are atlas sheets, not a pile of manually chopped PNGs
+
+Keep a compatible tileset as one source PNG. In Aseprite, turn on a **16×16 grid**; in Godot, create a TileSet Atlas source from the approved sheet, set the atlas tile size to **16×16**, define the usable cells and their collision/navigation metadata, then paint the room with a TileMap. The resulting TileSet resource belongs in the room's composite folder.
+
+Individual exported PNGs are only needed when an asset is genuinely standalone (for example, a Sprite2D prop, an animated object, or a hand-managed reusable component). Aseprite slices can batch-export such regions where useful, but manual chopping is not the default workflow.
+
+A 32×32 or 48×32 piece of furniture is a **meta-tile** occupying several 16×16 world cells, not a reason to change the grid. Do not algorithmically downscale a good 32×32 object to 16×16 just to make it one cell.
+
+### PixelLab's role in environment work
+
+Use PixelLab to generate:
+- a small, coherent top-down terrain family or transition set;
+- style-matched individual props and variants;
+- environmental extensions from an approved room screenshot or kit;
+- multiplication passes after an approved art/palette anchor exists.
+
+Do not treat a giant generated “complete apartment tileset” as production-ready. It must still be checked for repeated-edge seams, compatible palette use, grid alignment, recognisable domestic forms, collision meaning and reuse value.
+
+For a generated environment request, name the production constraints: three-quarter top-down RPG view, hard edges, transparent background where appropriate, **16×16 tile grid**, master-palette subset, and whether the output is a single prop, a 2×2 meta-tile, or a terrain/transition set. A generated result enters input; it moves to wip the moment human cleanup starts; only the tested export belongs in approved.
+
+### PixelLab's role in characters
+
+Ask PixelLab for the intended **role frame**, not a vague large character image:
+- overworld: **24×16**, quadruped, transparent background;
+- battle: **32×32**, upright/bipedal;
+- portrait: **48×48**, upright/bipedal;
+- animation: explicit frame size, direction count and shared baseline.
+
+If PixelLab is more reliable at a larger generation canvas, treat that output as a draft/reference and deliberately redraw/crop it into the locked production frame in Aseprite or Pixquare. Never resize a detailed large sprite down and call it a finished 24×16 overworld asset.
+
+The loop remains: **reference and approved anchors → PixelLab candidate/multiplication → Aseprite/Pixquare canonicalisation → Godot validation → new approved anchor**.
+
