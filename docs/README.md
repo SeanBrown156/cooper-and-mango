@@ -33,12 +33,14 @@ the documents below contain the actual decisions.
 
 ## Design and content
 
+- [Technical Game Design](design/TECHNICAL_GAME_DESIGN.md) — reusable runtime contracts for player movement, interaction, dialogue, encounters, states and scene responsibility.
 - [Content Schema](design/CONTENT_SCHEMA.md) — structured content records, IDs, relationships and publishing shape.
 
 ## Production
 
 - [Production Roadmap](production/PRODUCTION_ROADMAP.md) — stages, sequencing and scope.
 - [Vertical Slice](production/VERTICAL_SLICE.md) — the current playable validation target and definition of done.
+- [Tutorial Room Build Card](production/slices/TUTORIAL_ROOM_BUILD.md) — current executable work order and Godot acceptance checks for Mango's first playable postcard.
 
 ## Audio
 
