@@ -172,7 +172,7 @@ Every visible pixel should feel intentional.
 
 Prefer coherent blocks and shapes over scattered single-pixel texture.
 
-Good pixel art reads as clusters first, details second. Generated art with isolated sparkle/noise pixels everywhere must be cleaned before approval.
+Good pixel art reads as clusters first, details second. Generated art with isolated sparkle/noise pixels everywhere must be corrected—by regeneration or targeted cleanup—before approval.
 
 ### Silhouette before detail
 
