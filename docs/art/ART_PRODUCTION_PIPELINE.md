@@ -8,7 +8,13 @@
 
 The art pipeline is **iterative, not linear**:
 
-> Gather input → choose relevant assets → palette-remap into WIP → compose and test in Godot → promote the working set to approved.
+> Reference pack → PixelLab generation → direct WIP room integration → Godot composition/test → promote the working set to approved.
+
+**PixelLab is the default environment-production engine.** When a request has
+clear reference images, target dimensions, palette/style constraints and room
+purpose, its output may be imported directly into WIP and promoted after the
+Godot check. Aseprite/Pixquare cleanup is useful when it solves a real problem;
+it is not a compulsory ceremonial gate.
 
 AI is not a single upstream step. PixelLab can appear both at the beginning and later in production once a strong canonical asset exists.
 
@@ -105,7 +111,33 @@ A common Cooper & Mango loop is:
 6. The corrected result becomes a stronger input for the next PixelLab pass.
 7. Repeat until the full asset family is coherent.
 
-Do **not** treat PixelLab as either “only concept art” or “one-click final art.” Its value increases as the project accumulates canonical references and constraints.
+Do **not** treat PixelLab as only concept art. For well-briefed environment
+kits, tilesets, room props and non-identity assets, PixelLab is allowed to
+produce the first game-ready candidate—not merely a sketch. It earns direct
+promotion when the output passes the room's visual and technical checks.
+
+### PixelLab production brief
+
+Every room-generation request should include:
+
+- reference images: real room/object photos plus the strongest approved
+  character, palette, UI or environment anchors available;
+- use: exact room/region and whether the result is terrain, a tile family,
+  a meta-tile, an interactable or passive scenery;
+- grid: **16×16** cells, including how many cells each larger object occupies;
+- perspective: three-quarter top-down domestic JRPG;
+- visual hierarchy: crisp dark near-black outlines for actors and key
+  interactables; softer/faded outlines for passive scenery;
+- target: transparent background for props, or an explicitly stated tileset /
+  map sheet layout for environment output;
+- constraints: hard edges, no anti-aliasing, project palette subset,
+  clear silhouettes, and no copied game-specific art;
+- acceptance target: the exact Godot scene/screenshot in which it will be
+  judged.
+
+A strong reference packet is more valuable than a vague “make a cosy room”
+prompt. Gemini/ChatGPT concept images are welcome as compositional and mood
+references; real photos remain truth for distinctive household objects.
 
 ---
 
@@ -217,7 +249,8 @@ These may involve heavy hand-drawing, PixelLab iteration, bespoke AI generation 
 
 ### Tier B — distinctive world assets
 
-These matter because they make the world feel like **Cooper & Mango**, but they can begin from references or existing art:
+These matter because they make the world feel like **Cooper & Mango**, and
+PixelLab should normally generate them from photo/reference packets:
 - the real sofa;
 - cat tree;
 - food bowls;
@@ -226,27 +259,25 @@ These matter because they make the world feel like **Cooper & Mango**, but they 
 - Mi-chan / the robot vacuum;
 - recognisable architecture and regional objects.
 
-Typical flow:
+Typical fast flow:
 
-> Photo / sketch / reference → PixelLab or premade base → palette remap → Aseprite/Pixquare restyle → approve → PixelLab extend if useful → Godot test.
+> Photo / reference packet → PixelLab room-ready candidate → Godot composition and test → approved
+
+Use Aseprite/Pixquare only to correct actual drift, bad bounds, palette or
+silhouette problems. Do not delay room work waiting for a manual redraw.
 
 ### Tier C — commodity environment assets
 
-Do not waste bespoke production time where the player only needs a convincing world:
-- grass;
-- dirt;
-- generic floors;
-- plain walls;
-- rocks;
-- fences;
-- pots;
-- crates;
-- barrels;
-- bushes;
-- common tables/chairs;
-- generic decorative objects.
+Use the fastest coherent source:
+- PixelLab-generated 16×16 terrain/tileset families when a room needs a
+  bespoke visual identity;
+- licensed premade packs for plants, pots, generic furniture, rocks, crates,
+  barrels, bushes, particles and other sensible commodity fill;
+- PixelLab extensions to bring either source into a room's specific mood.
 
-For these, licensed premade 16px-friendly asset packs are encouraged.
+The goal is not to generate every plant or pot. The goal is to generate the
+parts that make a room feel specifically like Cooper & Mango without
+compromising the room around a generic pack.
 
 ---
 
@@ -304,9 +335,11 @@ distinct scene-level behaviour.
 
 ---
 
-## 9. PixelLab as environment extender
+## 9. PixelLab as environment-production engine
 
-Once one environment family is canonical, PixelLab can accelerate variation rather than invent everything from nothing.
+PixelLab can generate a room-specific base tileset or a complete small
+environment kit from a strong reference packet. It is not limited to extending
+a pre-existing asset family.
 
 Examples:
 - approved grass tiles → flower/weed/worn variants;
@@ -318,9 +351,9 @@ Examples:
 
 Preferred loop:
 
-> good base structure → palette remap → WIP room composition → Godot test → cleanup/adjustment → approval.
+> references + precise brief → PixelLab tileset/kit → WIP room composition → Godot test → direct approval or targeted correction.
 
-For tile assets, connectivity and seam behaviour matter more than whether a single tile looks beautiful in isolation.
+For tile assets, connectivity and seam behaviour matter more than whether a single tile looks beautiful in isolation. “Direct approval” means it passes the test; it does not mean it is approved merely because it was generated.
 
 ---
 
@@ -478,11 +511,12 @@ For generated directions or animations, also check:
 - photos
 - game / manga / UI references
 
-### Draft and multiply
-- PixelLab
-- Gemini for looser concept exploration
+### Generate and multiply
+- PixelLab — primary generator for bespoke environment kits, tilesets,
+  props, variants and character candidates
+- Gemini — references, composition/mood exploration and loose concepts
 
-### Canonicalise, redraw and clean
+### Correct only when needed
 - Aseprite
 - Pixquare
 
