@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Made PixelLab the primary environment-production engine: well-briefed generated tilesets, room kits and non-identity props can move directly through WIP into Godot and be approved after runtime validation, without mandatory manual cleanup.
+- Added the interaction visual grammar: crisp dark near-black outlines for characters/key interactables, softer outlines for passive scenery, and a 16×16 default footprint for small inspectable props.
+
 - Added `docs/design/TECHNICAL_GAME_DESIGN.md`, defining reusable runtime contracts for player movement, interaction, dialogue, encounters, explicit game modes and scene responsibilities.
 - Added `docs/production/slices/TUTORIAL_ROOM_BUILD.md`, a narrow executable build card for the first Mango movement postcard in the Tutorial Room.
 - Linked technical design and active build-card guidance from the documentation index and agent startup guide.
