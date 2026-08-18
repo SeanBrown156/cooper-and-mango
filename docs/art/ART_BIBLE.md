@@ -129,6 +129,29 @@ The same scale hierarchy applies to Cooper and every major character.
 
 The world should feel like **real domestic spaces becoming enormous mythical geography from the animals’ point of view**, not a generic medieval fantasy tileset.
 
+### Interaction visual grammar
+
+The player should be able to read what is playable before opening a menu.
+
+| Asset class | Outline rule | Size / placement rule |
+|---|---|---|
+| Player characters, party members, enemies | Crisp dark near-black outline | Use their locked role frame; silhouette must read first. |
+| Key interactables | Crisp dark near-black outline | Default to one **16×16** world cell where possible; larger objects are clean 16px meta-tiles. |
+| Passive furniture and background scenery | Softer/faded outline or lower-contrast edge treatment | May span any sensible number of 16×16 cells. |
+| Terrain and atmospheric decoration | No attention-grabbing full outline unless needed for readability | Supports the room; must not compete with actors or interactables. |
+
+“Black” means a deliberate near-black from the project palette—usually warm
+brown, indigo or navy—not arbitrary pure RGB black. Use the same outline
+weight within one room kit.
+
+An object becomes interactive through a Godot interaction component, not just
+its outline. The outline is the player's fast visual cue; the component,
+collision and prompt are the runtime truth.
+
+**Small inspectable props are designed as 16×16 by default.** A sweater,
+bowl, toy or note may occupy a single cell; a sofa, cat tree or counter may be
+a larger multi-cell meta-tile while still exposing one clear interaction point.
+
 ---
 
 ## 5. Pixel Discipline
