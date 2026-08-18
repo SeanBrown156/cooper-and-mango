@@ -88,7 +88,7 @@ The authority order is:
 
 1. real photos and likeness references for real animals;
 2. [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) for dimensions, perspective, palette and style;
-3. approved `.aseprite` files for production truth;
+3. approved game-ready assets plus recorded source/recipe for production truth;
 4. [`../art/ART_PRODUCTION_PIPELINE.md`](../art/ART_PRODUCTION_PIPELINE.md) for lifecycle and handoff;
 5. MCP schemas and server limits for technical capability;
 6. human review for promotion to approved content.
