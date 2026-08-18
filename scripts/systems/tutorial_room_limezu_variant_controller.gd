@@ -1,7 +1,7 @@
 extends Node2D
 
 ## Tutorial Room build using the approved LimeZu-derived kit in
-## assets/environments/rooms/tutorial_room/ (palette-remapped into the
+## assets/environments/tutorial_room_mango/ (palette-remapped into the
 ## Cooper & Mango master palette, cropped from the licensed
 ## limezu_modern_interiors_full pack — see docs/art/ASSET_LICENSES.md).
 ##

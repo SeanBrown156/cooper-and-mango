@@ -1,6 +1,6 @@
 extends SceneTree
 
-const TILESET_PATH := "res://assets/environments/tutorial_room/composite/tutorial_room_wip_tileset.tres"
+const TILESET_PATH := "res://assets/environments/tutorial_room_mango/composite/tutorial_room_wip_tileset.tres"
 const TILE_SIZE := 16.0
 const WALL_SOURCE := 4
 const FLOOR_SOURCE := 1

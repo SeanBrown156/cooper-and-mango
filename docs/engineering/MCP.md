@@ -1,7 +1,8 @@
 # MCP setup, capabilities and governance
 
 This document combines the project MCP setup notes with the capabilities and
-operating rules for the PixelLab, Aseprite and Godot MCP servers.
+operating rules for the PixelLab, SpriteCook, Aseprite and Godot AI
+integrations.
 
 ## Setup
 
@@ -17,8 +18,9 @@ export PIXELLAB_API_TOKEN="..."
 PixelLab is remote. Claude Code connects over HTTP; Codex uses the
 `mcp-remote` bridge because its local MCP transport is stdio.
 
-Godot MCP is local-only and requires the Godot editor running with this
-project open and the plugin enabled. The editor bridge listens on port 6505.
+Godot AI is local-only and requires the Godot editor running with this project
+open and the `godot_ai` plugin enabled. Its local server uses HTTP port 8000
+and WebSocket port 9500.
 
 Aseprite MCP is launched with `npx` and requires Aseprite installed locally.
 The current executable is configured as:
@@ -26,6 +28,10 @@ The current executable is configured as:
 ```text
 /Applications/Aseprite.app/Contents/MacOS/aseprite
 ```
+
+SpriteCook is the hosted game-art generation MCP. Claude Code and Codex use
+client-specific endpoints and authenticate through SpriteCook OAuth on first
+protected use; no API key is stored in this repository.
 
 Restart Claude Code or Codex after changing MCP configuration or environment
 variables. Codex must trust the workspace before loading `.codex/config.toml`.
@@ -48,6 +54,38 @@ PixelLab operations are asynchronous and may consume subscription generations.
 Delete operations are destructive. Generated output is always an input
 candidate until reviewed, cleaned and promoted through the art pipeline.
 
+### Tutorial Room PixelLab hard constraints
+
+For `tutorial_room_mango`, use `tools/pixellab_tutorial_room_spec.json` before
+every generation request. The default is native 16×16-grid sizing, transparent
+background, and strict orthographic high top-down view. Oblique, isometric,
+side-view, perspective, and visible-front-face outputs are invalid unless the
+request explicitly overrides the room contract. PixelLab canvas size is not
+the same as visible asset bounds: when the API requires a 32px minimum canvas,
+keep transparent padding and fit the actual content to the specified bounds.
+
+## SpriteCook
+
+SpriteCook and PixelLab overlap substantially and can both be used for most
+game-art generation tasks. SpriteCook is especially useful when the job
+benefits from a consistent family of assets, an existing local image as a
+reference, or an engine-ready export:
+
+- cohesive prop, UI and texture sets that share a visual style;
+- editing or importing an existing sprite, including background cleanup;
+- animating an approved still into explicit loops such as idle, walk, run or
+  attack;
+- reusable presets, asset IDs and manifests that keep related generations
+  connected;
+- Godot-ready character animation and top-down/platformer terrain exports,
+  including `SpriteFrames` and configured `TileSet` resources where supported.
+
+These are tendencies rather than strict boundaries: choose whichever tool
+produces the better result for the particular prompt, reference and art
+direction. Neither tool replaces Aseprite as the pixel-level cleanup, palette
+and approval tool. SpriteCook output remains provisional until it passes the
+same human review and Godot validation as every other generated asset.
+
 ## Aseprite
 
 Aseprite is the pixel-art production master. Its MCP can inspect sprites,
@@ -62,7 +100,7 @@ metadata when exact bounds are needed by Godot or future asset extraction.
 
 ## Godot
 
-Godot MCP is the local assembly and verification system. It can edit and
+Godot AI is the local assembly and verification system. It can edit and
 inspect scenes, nodes, scripts, shaders, resources, TileMaps, animations,
 AnimationTrees, physics, navigation, particles, audio, themes, cameras,
 input actions, project settings and export settings.

@@ -479,7 +479,7 @@ For generated directions or animations, also check:
 - game / manga / UI references
 
 ### Draft and multiply
-- PixelLab
+- PixelLab and SpriteCook
 - Gemini for looser concept exploration
 
 ### Canonicalise, redraw and clean
@@ -492,6 +492,24 @@ For generated directions or animations, also check:
 ### Orchestrate and remember
 - Claude Code
 - GitHub
+
+### Tool choice in practice
+
+PixelLab and SpriteCook are overlapping generation tools; either may be the
+right choice for characters, props, tilesets, textures or animation. As a
+rough preference, PixelLab is often a good fit for likeness-driven or
+directional character work, while SpriteCook is often convenient for cohesive
+asset families, editing or animating an existing image, and Godot-ready
+handoff. These are not strict assignments: compare the result against the art
+direction and keep whichever candidate is stronger. Use Aseprite or Pixquare
+for pixel-level cleanup, palette control, frame timing and final
+canonicalisation.
+
+Where available, SpriteCook's engine export can reduce setup work; it does not
+change our locked 24×16 overworld, 32×32 battle, 48×48 portrait or 16×16
+environment decisions.
+Generated exports still enter `input/` or `wip/` and require human review,
+canonical asset packets and a running Godot validation pass before promotion.
 
 ## Guiding rule
 
@@ -531,7 +549,18 @@ Use PixelLab to generate:
 
 Do not treat a giant generated “complete apartment tileset” as production-ready. It must still be checked for repeated-edge seams, compatible palette use, grid alignment, recognisable domestic forms, collision meaning and reuse value.
 
-For a generated environment request, name the production constraints: three-quarter top-down RPG view, hard edges, transparent background where appropriate, **16×16 tile grid**, master-palette subset, and whether the output is a single prop, a 2×2 meta-tile, or a terrain/transition set. A generated result enters input; it moves to wip the moment human cleanup starts; only the tested export belongs in approved.
+For a generated environment request, name the production constraints: the
+asset's exact native visible bounds, hard edges, transparent background where
+appropriate, **16×16 tile grid**, master-palette subset, and whether the output
+is a single prop, a 2×2 meta-tile, or a terrain/transition set. Tutorial Room
+props default to strict orthographic high top-down presentation; oblique,
+isometric, perspective, side-view, and visible-front-face results are invalid
+unless explicitly requested. PixelLab's padded canvas is not permission to
+scale the asset up: content must fit the canonical bounds in
+`tools/pixellab_tutorial_room_spec.json`.
+
+A generated result enters input; it moves to wip the moment human cleanup
+starts; only the tested export belongs in approved.
 
 ### PixelLab's role in characters
 
@@ -543,5 +572,4 @@ Ask PixelLab for the intended **role frame**, not a vague large character image:
 
 If PixelLab is more reliable at a larger generation canvas, treat that output as a draft/reference and deliberately redraw/crop it into the locked production frame in Aseprite or Pixquare. Never resize a detailed large sprite down and call it a finished 24×16 overworld asset.
 
-The loop remains: **reference and approved anchors → PixelLab candidate/multiplication → Aseprite/Pixquare canonicalisation → Godot validation → new approved anchor**.
-
+The loop remains: **reference and approved anchors → PixelLab or SpriteCook candidate/multiplication → Aseprite/Pixquare canonicalisation → Godot validation → new approved anchor**. Pick between PixelLab and SpriteCook based on the prompt, references, output quality and handoff convenience.

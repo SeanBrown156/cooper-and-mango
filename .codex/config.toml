@@ -12,16 +12,8 @@
 command = "/bin/sh"
 args = [
   "-c",
-  "exec npx -y mcp-remote@latest https://api.pixellab.ai/mcp --header \"Authorization: Bearer ${PIXELLAB_API_TOKEN}\""
+  "exec /bin/zsh -lc 'source ~/.zshrc; exec npx -y mcp-remote@latest https://api.pixellab.ai/mcp --header \"Authorization: Bearer $PIXELLAB_API_TOKEN\"'"
 ]
-
-[mcp_servers.godot-mcp]
-# Requires the local Godot MCP server and a running Godot editor on port 6505.
-command = "node"
-args = ["/Users/sean/.local/share/godot-mcp/server/build/index.js"]
-
-[mcp_servers.godot-mcp.env]
-GODOT_MCP_PORT = "6505"
 
 [mcp_servers.aseprite]
 # npx keeps the MCP server definition repo-local without vendoring its
@@ -31,3 +23,8 @@ args = ["-y", "@iborymagic/aseprite-mcp"]
 
 [mcp_servers.aseprite.env]
 ASEPRITE_PATH = "/Applications/Aseprite.app/Contents/MacOS/aseprite"
+
+[mcp_servers.spritecook]
+# SpriteCook's hosted MCP server. Codex handles authentication through its
+# native OAuth flow on first protected use.
+url = "https://mcp.spritecook.ai/mcp/openai"

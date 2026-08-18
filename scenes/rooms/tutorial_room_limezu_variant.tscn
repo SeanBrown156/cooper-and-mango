@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/characters/mango_placeholder.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/spider_plant.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/room_exit.tscn" id="3"]
 [ext_resource type="Script" path="res://scripts/systems/tutorial_room_limezu_variant_controller.gd" id="4"]
-[ext_resource type="TileSet" path="res://assets/environments/tutorial_room/composite/tutorial_room_tileset_limezu_variant.tres" id="5"]
-[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room/approved/tutorial_room_bookshelf.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room/approved/tutorial_room_sofa.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room/approved/tutorial_room_rug.png" id="8"]
+[ext_resource type="TileSet" path="res://assets/environments/tutorial_room_mango/composite/tutorial_room_wip_tileset.tres" id="5"]
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room_mango/wip/items/single/shelving_cm.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room_mango/wip/items/living-room-sliced_cm.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room_mango/wip/items/single/round-rug_cm.png" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/tutorial_room_mango_pixellab_props.tscn" id="9"]
 
 [sub_resource type="RectangleShape2D" id="WallHorizontal"]
 size = Vector2(480, 16)
@@ -83,6 +84,8 @@ position = Vector2(380, 164)
 
 [node name="RoomExit" parent="." instance=ExtResource("3")]
 position = Vector2(448, 125)
+
+[node name="PixelLabWipProps" parent="." instance=ExtResource("9")]
 
 [node name="Instructions" type="Label" parent="."]
 offset_left = 14.0

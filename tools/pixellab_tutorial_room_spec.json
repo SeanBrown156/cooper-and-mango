@@ -1,0 +1,33 @@
+{
+  "room": "tutorial_room_mango",
+  "native_tile_size_px": 16,
+  "mango_native_footprint_px": {"width": 20, "height": 16},
+  "default_generation": {
+    "view": "high top-down",
+    "projection": "orthographic",
+    "allow_oblique": false,
+    "allow_isometric": false,
+    "transparent_background": true,
+    "hard_pixel_edges": true,
+    "content_must_fit_native_bounds": true,
+    "pixel_lab_min_canvas_px": 32
+  },
+  "object_bounds_px": {
+    "pet_bowl": [32, 32],
+    "wastebasket": [32, 32],
+    "chair": [32, 32],
+    "pendant": [32, 32],
+    "plant_small": [32, 48],
+    "plant_large": [48, 64],
+    "chest": [64, 32],
+    "tv_console": [80, 48],
+    "desk_workstation": [64, 48],
+    "dining_table": [64, 48],
+    "clothes_rack": [80, 64],
+    "wire_shelving": [64, 64],
+    "pet_bed": [48, 32],
+    "futon_sofa_bed": [112, 64],
+    "geometric_rug": [144, 96],
+    "cat_tree": [64, 96]
+  }
+}

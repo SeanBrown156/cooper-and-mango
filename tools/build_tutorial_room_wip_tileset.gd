@@ -1,13 +1,13 @@
 extends SceneTree
 
 const TILE_SIZE := Vector2i(16, 16)
-const OUTPUT := "res://assets/environments/tutorial_room/composite/tutorial_room_wip_tileset.tres"
+const OUTPUT := "res://assets/environments/tutorial_room_mango/composite/tutorial_room_wip_tileset.tres"
 const SHEETS := [
-	"res://assets/environments/tutorial_room/wip/recoloured/atlas_16x_cm.png",
-	"res://assets/environments/tutorial_room/wip/recoloured/tiles/Floors_only_16x16_cm.png",
-	"res://assets/environments/tutorial_room/wip/recoloured/tiles/Room_Builder_Floors_16x16_cm.png",
-	"res://assets/environments/tutorial_room/wip/recoloured/tiles/Tileset_16x16_3_cm.png",
-	"res://assets/environments/tutorial_room/wip/recoloured/tiles/floorswalls_LRK_cm.png",
+	"res://assets/environments/tutorial_room_mango/input/superretroworld_interior_pack/atlas_16x.png",
+	"res://assets/environments/tutorial_room_mango/input/limezu_modern_interiors_full/1_Interiors/16x16/Old stuff/Floors_only_16x16.png",
+	"res://assets/environments/tutorial_room_mango/input/limezu_modern_interiors_full/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+	"res://assets/environments/tutorial_room_mango/input/limezu_modern_interiors_full/1_Interiors/16x16/Old stuff/Tileset_16x16_3.png",
+	"res://assets/environments/tutorial_room_mango/input/bitglow_pixelinterior_lrk_v1_1/floorswalls_LRK.png",
 ]
 
 func _initialize() -> void:
