@@ -1,0 +1,31 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/tutorial_room_mango/wip/pixellab/tileset/tutorial_room_base_atlas.png" id="1_y0uae"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xf5bp"]
+texture = ExtResource("1_y0uae")
+0:0/0 = 0
+0:0/0/custom_data_0 = "floor"
+1:0/0 = 0
+1:0/0/custom_data_0 = "floor"
+0:1/0 = 0
+0:1/0/custom_data_0 = "wall"
+1:1/0 = 0
+1:1/0/custom_data_0 = "wall"
+2:1/0 = 0
+2:1/0/custom_data_0 = "wall"
+3:1/0 = 0
+3:1/0/custom_data_0 = "wall"
+0:2/0 = 0
+0:2/0/custom_data_0 = "wall"
+1:2/0 = 0
+1:2/0/custom_data_0 = "wall"
+2:2/0 = 0
+2:2/0/custom_data_0 = "wall"
+3:2/0 = 0
+3:2/0/custom_data_0 = "wall"
+
+[resource]
+custom_data_layer_0/name = "role"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_xf5bp")

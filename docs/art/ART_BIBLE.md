@@ -119,7 +119,10 @@ The same scale hierarchy applies to Cooper and every major character.
 
 ## 4. Perspective and World Grammar
 
-- Three-quarter top-down JRPG perspective
+- **High top-down JRPG perspective** for environments: orthographic or near-orthographic,
+  with floor-facing surfaces dominant. Floor furniture must read as plan-view art, not
+  oblique/isometric furniture. Narrow depth edges are allowed only where needed for
+  readability; wall-mounted and tall vertical fixtures may use a front-elevation layer.
 - Environment grid: **16×16**
 - Characters visually align to the tile grid but are not required to fill a tile
 - Production movement set: **4 cardinal directions**
@@ -673,4 +676,4 @@ Do not generate the entire cast before these samples look like one coherent game
 
 # One-Sentence Rule
 
-> **Cooper & Mango uses a bright, warm late-SNES visual grammar: 16×16 world tiles, 24×16 symbolic quadruped overworld characters, 32×32 expressive bipedal battle characters, 48×48 likeness-rich bipedal portraits (64×64 for major story-beat close-ups), four-direction movement, compact per-asset palettes drawn from a shared ~48–64 colour master palette, hard pixel clusters with no antialiasing, chunky GBA/SNES-inspired UI, and Godot presentation designed around a 320×180 low-resolution canvas with nearest-neighbour integer scaling. Modern tooling underneath, old-school discipline on top.**
+> **Cooper & Mango uses a bright, warm late-SNES visual grammar: 16×16 world tiles, 24×16 symbolic quadruped overworld characters, 32×32 expressive bipedal battle characters, 48×48 likeness-rich bipedal portraits (64×64 for major story-beat close-ups), four-direction movement, compact per-asset palettes drawn from a shared ~48–64 colour master palette, hard pixel clusters with no antialiasing, chunky GBA/SNES-inspired UI, and Godot presentation designed around a 480×270 logical canvas with nearest-neighbour integer scaling. Modern tooling underneath, old-school discipline on top.**
