@@ -9,6 +9,11 @@ Cooper. Build it deliberately in stages; the current build target and exit
 criteria live in [`docs/production/PRODUCTION_ROADMAP.md`](docs/production/PRODUCTION_ROADMAP.md)
 and [`docs/production/VERTICAL_SLICE.md`](docs/production/VERTICAL_SLICE.md).
 
+For gameplay behaviour, follow the reusable runtime contracts in
+[`docs/design/TECHNICAL_GAME_DESIGN.md`](docs/design/TECHNICAL_GAME_DESIGN.md).
+For the active room, follow its build card before expanding scope:
+[`docs/production/slices/TUTORIAL_ROOM_BUILD.md`](docs/production/slices/TUTORIAL_ROOM_BUILD.md).
+
 ## Non-negotiable rules
 
 - Keep content data-driven. Use stable string IDs from [`docs/design/CONTENT_SCHEMA.md`](docs/design/CONTENT_SCHEMA.md); do not hard-code dialogue, items, or statistics in UI/scene scripts.
@@ -41,8 +46,9 @@ allowed only while that room is being composed; promote accepted content to
 
 - Story, world, and cast: [`docs/vision/GAME_BIBLE.md`](docs/vision/GAME_BIBLE.md)
 - Visual rules and asset workflow: [`docs/art/`](docs/art/)
+- Runtime contracts: [`docs/design/TECHNICAL_GAME_DESIGN.md`](docs/design/TECHNICAL_GAME_DESIGN.md)
 - Design and data: [`docs/design/`](docs/design/)
-- Build stages and validation: [`docs/production/`](docs/production/)
+- Build stages and active room work: [`docs/production/`](docs/production/)
 - Audio: [`docs/audio/AUDIO_BIBLE.md`](docs/audio/AUDIO_BIBLE.md)
 - MCP/tooling: [`docs/engineering/MCP.md`](docs/engineering/MCP.md)
 - Runtime content: `data/`
