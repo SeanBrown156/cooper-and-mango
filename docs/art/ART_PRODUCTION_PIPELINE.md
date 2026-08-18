@@ -181,7 +181,7 @@ Different sources have different authority:
 - **Gemini / generic AI concepts** = approximation and ideation.
 - **Locked project palette** = colour truth.
 - **`docs/art/ART_BIBLE.md`** = style and technical truth.
-- **Approved canonical `.aseprite` / Pixquare source** = production truth.
+- **Approved game-ready asset plus its recorded source/recipe** = production truth; an editable Aseprite/Pixquare master is preferred when it exists, but not required for a validated direct PixelLab promotion.
 
 A clean AI image is not automatically canon. A hand-drawn image is not automatically canon either. Canon is the approved master asset that downstream generation and implementation reference.
 
