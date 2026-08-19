@@ -263,7 +263,7 @@ For commodity tiles and props:
 7. Compose the room in Godot using TileSet atlases for terrain and Sprite2D regions/scenes for furniture and props.
 8. Test scale, layering, collisions, readability and the relationship between room and characters.
 9. Iterate in `wip/` until the room composition is working.
-10. Promote only the accepted sheets, masters and Godot composition resources to `approved/` and `composite/`.
+10. Promote the accepted sheets, masters and their Godot resources/scenes together into the complete `approved/` package.
 
 This is not merely “change the hue.” Distinguish:
 
@@ -292,7 +292,7 @@ For downloaded sprite sheets, use this as the standard workflow:
    interaction and character readability.
 9. When the composition is accepted, promote the used sheets, masters and
    metadata to `approved/`, and promote/update the matching Godot resources in
-   `composite/`.
+   `approved/` alongside the accepted art.
 
 This small manual curation pass is intentional. It establishes the artistic
 meaning and exact bounds once, allowing later automation to remain accurate
@@ -380,10 +380,10 @@ Keep most static content on its original sheet:
   independently reusable props;
 - keep collisions and interaction logic in Godot scenes, not in crops.
 
-The TileSet `.tres` and other Godot-side composition resources belong in the
-room's `composite/` folder. During active composition they may reference WIP
-textures. When the room is accepted, promote the referenced textures and
-masters to `approved/`, then update and test the composition resources.
+The TileSet `.tres` and other Godot-side resources belong in the room's WIP
+package while the room is being composed. During active composition they may
+reference WIP textures. When the room is accepted, promote the referenced
+textures, masters and resources/scenes together into `approved/`.
 
 Art is not complete until it works in the running game.
 
@@ -418,7 +418,7 @@ Use predictable naming and keep raw AI generations out of game-ready asset folde
 
 ### The lifecycle, end to end
 
-Every asset family (`assets/characters/mango/`, `assets/environments/tutorial_room/`, etc.) moves content through the same four stages, plus a same-level `composite/` for Godot wiring: **`reference/` → `input/` → `wip/` → `approved/`**, `composite/`. Not called "final" deliberately — an approved asset can still be superseded by a new approved version later; the word just isn't allowed to imply permanence it doesn't have.
+Every meaningful independently managed asset family (`assets/characters/mango/overworld/`, `assets/environments/tutorial_room_mango/`, etc.) moves content through **`reference/` → `input/` → `wip/` → `approved/`**. WIP is the complete experimental package; Approved is the complete canonical package. Neither stage is limited to pixels: include `.aseprite`/`.png`, `.tres` resources and `.tscn` scenes when the asset needs them. Not called "final" deliberately — an approved asset can still be superseded by a new approved version later.
 
 ### Where reference material lives
 
@@ -430,7 +430,7 @@ Each family's `input/` folder (e.g. `assets/environments/input/`, `assets/ui/inp
 
 ### Where experimentation lives
 
-Each asset family's `wip/` folder (e.g. `assets/environments/tutorial_room/wip/`, tracked in git) is the active editing **and composition** stage: palette-remapped sheets, editable masters, candidate atlases, composite mockups and room-specific experiments. For room work, Godot may reference WIP textures while composition is being evaluated. WIP is not canon and must not be treated as shipped content. Once the room is accepted, promote the used raw assets and masters to `approved/`, update the corresponding `composite/` resources, and reimport/test. Split into type subfolders (`overworld/`, `battle/`, `portrait/`, etc.) only when a family genuinely has more than one type in flight simultaneously — not a hard requirement, unlike `approved/` below. `assets/palette/` (the master palette source and its exported `.png`) is an exception to the whole lifecycle — it's a production resource used directly by Godot with no meaningful draft state, so it lives at the top level of its family with no `wip/`/`reference/`/`input/`/`approved/` subfolder.
+Each asset family's `wip/` folder (e.g. `assets/environments/tutorial_room_mango/wip/`, tracked in git) is the active editing stage: palette-remapped sheets, editable masters, candidate atlases, room-specific experiments, Godot resources and test scenes. WIP is not canon and must not be treated as shipped content. Once the room is accepted, promote the coherent package to `approved/` and reimport/test. Split into type subfolders (`overworld/`, `battle/`, `portrait/`, etc.) only when a family genuinely has more than one type in flight simultaneously. `assets/palette/` is an exception because it is a shared production resource with no meaningful draft state.
 
 ### Where approved (Godot-loaded) content lives
 
@@ -438,11 +438,24 @@ Each family's `approved/` folder is the current authoritative version, promoted 
 
 So the full map: per-family personal reference material lives in `assets/<family>/reference/`, third-party source or fresh unreviewed output not yet being drawn from lives in `assets/<family>/input/` (or `assets/<family>/<subarea>/reference/` for archived-but-provenance-relevant source that's already been used), actively-hand-edited masters live in `assets/<family>/.../wip/`, and only exported, approved, tested output lives in `assets/<family>/.../approved/`. Third-party source that's actually wired into a scene lives *inside* that specific room/instance's `approved/thirdparty/` (e.g. `assets/environments/tutorial_room/approved/thirdparty/bitglow_pixelinterior_lrk_v1_1/`) — not a family-level bucket, since being wired in means it's tied to one specific scene, same as any other approved content; `thirdparty/` there is just a sub-label for license-provenance clarity, not a separate lifecycle tier.
 
-For families broad enough to contain multiple distinct instances (`environments/` can hold many rooms/regions; `characters/` currently can't, since each character folder already *is* the specific instance), there are two levels this lifecycle attaches at: family-level `reference/`/`input/`/`wip/` for material not yet tied to any particular instance, and that instance's own full `reference/`/`input/`/`wip/`/`approved/`/`composite/` set once it is. A downloaded tileset pack nobody's assigned to a room yet sits at `assets/environments/input/`; the moment it's actually drawn from for a specific room, it moves down into that room's own `input/`/`wip/`, and once wired into that room's shipped scene, into that room's `approved/`.
+For families broad enough to contain multiple distinct instances (`environments/` can hold many rooms/regions), shared unassigned material may sit at the category-level `input/`. Once assigned to a meaningful asset family, that family owns the full `reference/`/`input/`/`wip/`/`approved/` lifecycle. A downloaded tileset pack nobody has assigned to a room yet stays raw in `input/`; room-specific working art and Godot wiring live together in that room's `wip/`; an accepted package moves together into `approved/`.
 
 ### Where the Godot-side assembly of an approved asset lives
 
-`reference/`/`input/`/`wip/`/`approved/` are a pure content library — raw PNGs, audio, and similar files only. None of them hold the Godot resources that assemble that content into something the engine actually uses as a unit: a `TileSet` built from a tilesheet PNG, a `SpriteFrames` built from an animation sheet, a `Theme` built from UI panels. Those composition resources live in that family's own `composite/` folder instead (e.g. `assets/environments/tutorial_room/composite/tutorial_room_tileset.tres`) — not a separate top-level tree, and not called `resources/`, since Godot's own engine vocabulary already overloads "Resource" for nearly everything, including plain textures. So once a PNG has been exported into `approved/`, the next step for anything that needs Godot-side assembly (not every asset does — a plain sprite `Texture2D` is referenced directly) is to build or update the matching `.tres` under that family's `composite/`, then wire scenes to that `.tres`, not directly to the raw asset.
+The lifecycle folders are complete asset packages, not a pure pixels-only
+library. `.png`/`.aseprite` contain pixels; `.tres` is a saved Godot Resource
+interpreting or configuring those pixels (for example `SpriteFrames`,
+`TileSet`, `Theme` or item data); `.tscn` is an assembled Scene that exists or
+can be instantiated. During experimentation these files live together in
+`wip/`; once canonical they live together in `approved/`. For example:
+
+```text
+mango_overworld.png → mango_overworld_frames.tres → mango_overworld.tscn
+home_interior_tiles.png → home_interior_tileset.tres → room_name.tscn
+```
+
+Do not create a scene for a static decorative tile or tiny variant merely to
+satisfy the pattern.
 
 ---
 
@@ -533,7 +546,7 @@ Do not raise the tile grid or character frames merely because PixelLab can gener
 
 ### Tilesets are atlas sheets, not a pile of manually chopped PNGs
 
-Keep a compatible tileset as one source PNG. In Aseprite, turn on a **16×16 grid**; in Godot, create a TileSet Atlas source from the approved sheet, set the atlas tile size to **16×16**, define the usable cells and their collision/navigation metadata, then paint the room with a TileMap. The resulting TileSet resource belongs in the room's composite folder.
+Keep a compatible tileset as one source PNG. In Aseprite, turn on a **16×16 grid**; in Godot, create a TileSet Atlas source from the sheet, set the atlas tile size to **16×16**, define the usable cells and their collision/navigation metadata, then paint the room with a TileMap. The resulting TileSet resource belongs in the room's WIP or Approved package alongside the atlas it interprets.
 
 Individual exported PNGs are only needed when an asset is genuinely standalone (for example, a Sprite2D prop, an animated object, or a hand-managed reusable component). Aseprite slices can batch-export such regions where useful, but manual chopping is not the default workflow.
 
@@ -557,7 +570,7 @@ props default to strict orthographic high top-down presentation; oblique,
 isometric, perspective, side-view, and visible-front-face results are invalid
 unless explicitly requested. PixelLab's padded canvas is not permission to
 scale the asset up: content must fit the canonical bounds in
-`tools/pixellab_tutorial_room_spec.json`.
+`assets/environments/tutorial_room_mango/environment_manifest.json`.
 
 A generated result enters input; it moves to wip the moment human cleanup
 starts; only the tested export belongs in approved.

@@ -30,7 +30,7 @@ silhouette, collision footprint, and visual fit against the Gemini composites.
 The following replacement batch used the canonical native bounds and explicit
 orthographic high top-down prompts. It is downloaded under
 `wip/pixellab/topdown/`. Only the flat, non-oblique subset is now wired through
-`scenes/rooms/tutorial_room_mango_pixellab_props.tscn`; failed furniture remains
+the Tutorial Mango room's WIP package; failed furniture remains
 hidden until a replacement passes visual review. Correct canvas dimensions
 alone are not sufficient.
 

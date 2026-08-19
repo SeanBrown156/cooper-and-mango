@@ -38,6 +38,13 @@ variables. Codex must trust the workspace before loading `.codex/config.toml`.
 
 ## PixelLab
 
+Repo-specific PixelLab workflows are split by production need under
+`skills/cm-pixellab-*`. Use the narrowest matching skill: characters,
+animation, portraits, environments, or props. These skills encode the
+Cooper & Mango constraints that are easy to lose in a generic prompt, such as
+four-direction overworld movement, 24×16/32×32/48×48 role bounds, orthographic
+16×16 environments, and complete WIP/Approved handoff packages.
+
 PixelLab is the generative asset and variation system. It can create or edit:
 
 - four- and eight-direction characters, including quadrupeds;
@@ -56,7 +63,8 @@ candidate until reviewed, cleaned and promoted through the art pipeline.
 
 ### Tutorial Room PixelLab hard constraints
 
-For `tutorial_room_mango`, use `tools/pixellab_tutorial_room_spec.json` before
+For `tutorial_room_mango`, use
+`assets/environments/tutorial_room_mango/environment_manifest.json` before
 every generation request. The default is native 16×16-grid sizing, transparent
 background, and strict orthographic high top-down view. Oblique, isometric,
 side-view, perspective, and visible-front-face outputs are invalid unless the
@@ -135,14 +143,16 @@ The normal asset flow is:
 input → relevant-sheet selection → palette remap → wip
 → Aseprite named slices + metadata where needed
 → Godot atlas/region composition → runtime screenshot/test
-→ approved assets + composite resources
+→ approved complete asset package (art + resources + scenes)
 ```
 
 Raw generated and third-party candidates stay in `input/`. Palette-remapped
 room materials and active composition live in `wip/`. During active room work,
 Godot may reference WIP textures. Promotion happens only after the room is
 accepted. Authoritative accepted assets live in `approved/`, while Godot
-composition resources live in the family's `composite/` folder.
+Godot resources and scenes live alongside the art in the owning family's WIP or
+Approved package. A `.tres` is a saved Godot Resource; a `.tscn` is an assembled
+Scene. There is no separate `composite/` lifecycle stage.
 
 Human curation establishes semantic object bounds once in Aseprite. Exported
 slice metadata is the coordinate authority for Godot regions, future crops,
