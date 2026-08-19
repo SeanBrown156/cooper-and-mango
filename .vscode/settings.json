@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/*.import": true,
+    "**/.godot": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "**/*.import": true,
+    "**/.godot": true,
+    "**/.DS_Store": true
+  }
+}
