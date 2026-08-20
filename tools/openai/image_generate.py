@@ -17,7 +17,12 @@ def main() -> int:
     parser.add_argument("--model", default="gpt-image-2")
     parser.add_argument("--size", default="1024x1024")
     parser.add_argument("--quality", default="medium", choices=("low", "medium", "high", "auto"))
-    parser.add_argument("--background", default="opaque", choices=("transparent", "opaque", "auto"))
+    parser.add_argument(
+        "--background",
+        default="opaque",
+        choices=("opaque",),
+        help="OpenAI image background mode; sprite generations must remain opaque (white is specified in the prompt).",
+    )
     parser.add_argument("--image", action="append", type=Path, help="Reference image; switches to edit mode")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
@@ -55,7 +60,20 @@ def main() -> int:
     args.out.write_bytes(base64.b64decode(result.data[0].b64_json))
     metadata = args.out.with_suffix(args.out.suffix + ".json")
     metadata.write_text(json.dumps({"provider": "openai", "mode": mode, "model": args.model, "prompt": prompt, "size": args.size, "quality": args.quality, "background": args.background, "output": str(args.out)}, indent=2) + "\n")
-    print(f"Wrote {args.out} and {metadata}")
+    prompt_sidecar = args.out.with_suffix(args.out.suffix + ".prompt.md")
+    prompt_sidecar.write_text(
+        "# Generation prompt\n\n"
+        f"- Provider: OpenAI\n"
+        f"- Model: `{args.model}`\n"
+        f"- Mode: `{mode}`\n"
+        f"- Size: `{args.size}`\n"
+        f"- Quality: `{args.quality}`\n"
+        f"- Background: `{args.background}`\n"
+        f"- Metadata: [{metadata.name}]({metadata.name})\n\n"
+        "## Prompt\n\n"
+        f"{prompt.rstrip()}\n"
+    )
+    print(f"Wrote {args.out}, {metadata}, and {prompt_sidecar}")
     return 0
 
 

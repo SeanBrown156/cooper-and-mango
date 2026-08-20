@@ -75,11 +75,11 @@ handoffs, not one monolithic asset skill.
 | Stage | Skill/pathway | Input | Output |
 |---|---|---|---|
 | Identity | `$cm-character-visual-brief` | Game Bible, references, user direction | `CHARACTER_VISUAL_BRIEF.md` |
-| Master synthesis | `$cm-openai-character-reference-input` or equivalent Gemini path | Complete reference set and brief | Clean master sheet plus metadata |
+| Master synthesis (default for generic sprite-sheet requests) | `$cm-openai-master-sprite-sheet` or equivalent Gemini path | Complete reference set and brief | Clean master sheet plus metadata |
 | Review labeling | Internal deterministic label tool | Clean master | Separate numbered review copy and cell map |
 | Selection | `$cm-slice-master-sprite-sheet` | Clean master plus review IDs | Selected clean cells in role `02_input/` |
 | Resolution gate | `$cm-prepare-role-resolution` | Selected cell | Transparent governed-size candidate |
-| Static refinement | `$cm-pixellab-characters`, `$cm-pixellab-portraits`, OpenAI role skills, Aseprite or manual redraw | Prepared selected candidate | Refined static WIP candidate |
+| Static refinement | `$cm-pixellab-characters`, `$cm-pixellab-portraits`, explicitly requested OpenAI role skill, Aseprite or manual redraw | Prepared selected candidate | Refined static WIP candidate |
 | Animation | `$cm-pixellab-animation`, `$cm-openai-animation-sheet`, `$cm-openai-video-to-sprite`, `$cm-higgsfield-autosprite`, `$cm-python-simple-pixel-animation` or Aseprite | Selected prepared anchor | Candidate frames/sheet |
 | Frame validation | `$cm-normalize-animation-frames` | Candidate animation | Consistent frames, baseline, pivot and bounds |
 | Palette cleanup | `$cm-aseprite-recolour` | WIP art only | Palette-conforming WIP art |
@@ -105,9 +105,12 @@ canvas. If the pose cannot survive the target ratio, regenerate or redraw it.
 
 ## 5. Master-sheet workflow
 
-Use a master sheet when multiple roles or expressions must share one character
-model. The generation request should use all relevant references and make the
-logical regions explicit: portrait, battle and overworld.
+Use `$cm-openai-master-sprite-sheet` as the default for a normal or generic
+character sprite-sheet request. It uses the OpenAI API to generate one master
+sheet when multiple roles or expressions must share one character model, with
+the logical regions explicit: portrait, battle and overworld. Generate a
+separate overworld, portrait, or battle sheet only when that role-specific
+workflow is explicitly requested.
 
 The production sequence is:
 
@@ -145,7 +148,7 @@ Environment production uses the same lifecycle but a different composition
 logic:
 
 1. Read the environment-local manifest and references.
-2. Use `$cm-openai-environment-reference-input` or Gemini for provisional
+2. Use `$cm-openai-environment-sprite` or Gemini for provisional
    pixel-art ideation when a reference transformation is useful.
 3. Use licensed packs from input only with provenance recorded.
 4. Use PixelLab or Aseprite to restyle, extend, crop or manually curate.

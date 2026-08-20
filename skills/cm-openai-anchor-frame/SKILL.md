@@ -15,8 +15,10 @@ anchor that other skills can reference.
    `CHARACTER_VISUAL_BRIEF.md` directly.
 2. Assemble labelled inspiration, likeness, composition, palette, and approved
    references. Do not treat generic generated art as canon.
-3. Prompt one clear static pose with transparent background where supported,
-   restrained pixel clusters, and explicit target use.
+3. Prompt one clear static pose on a solid opaque pure-white background.
+   Transparency, checkerboards, black backgrounds, coloured backgrounds,
+   gradients, and background scenery are not allowed. Keep restrained pixel
+   clusters and state the explicit target use.
 4. Generate at a controllable working resolution using
    `tools/openai/image_generate.py`.
 5. For a character role, pass the selected result through

@@ -15,8 +15,10 @@ Treat video as a motion source, never as runtime art.
    animate every generated cell.
 2. Prepare a reference image matching the provider’s video resolution.
 3. Describe one action, direction, camera lock, timing beats, and identity
-   invariants. For walks/runs, explicitly request alternating limb contact and
-   a loopable return to the starting pose.
+   invariants. Request a solid opaque pure-white background throughout the
+   clip; prohibit transparency, checkerboards, black or coloured backgrounds,
+   and background scenery. For walks/runs, explicitly request alternating limb
+   contact and a loopable return to the starting pose.
 4. Create/poll/download with `tools/openai/video_generate.py`.
 5. Extract frames using `tools/shared/video_extract_frames.py`.
 6. Run `$cm-normalize-animation-frames` to choose, deduplicate, crop, place, and

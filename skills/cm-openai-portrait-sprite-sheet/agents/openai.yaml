@@ -1,4 +1,4 @@
 interface:
   display_name: "OpenAI Portrait Sprite Sheet"
   short_description: "Generate portrait expression input sheets"
-  default_prompt: "Use $cm-openai-portrait-sprite-sheet to generate a consistent portrait expression sheet from these character references."
+  default_prompt: "Use $cm-openai-portrait-sprite-sheet only for an explicitly requested portrait expression sheet from these character references."

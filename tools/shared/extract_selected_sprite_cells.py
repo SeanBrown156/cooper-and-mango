@@ -18,6 +18,10 @@ def main() -> int:
     parser.add_argument("--out-root", type=Path, required=True)
     parser.add_argument("--character", required=True)
     parser.add_argument("--variant", required=True)
+    parser.add_argument(
+        "--destination-role",
+        help="Override the review cell role for the canonical output folder and filename",
+    )
     args = parser.parse_args()
 
     review = json.loads(args.review_map.read_text())
@@ -35,9 +39,10 @@ def main() -> int:
             item = cells[label]
             x0, y0, x1, y1 = item["box"]
             role = str(item["role"])
-            output_dir = args.out_root / role / "02_input"
+            destination_role = args.destination_role or role
+            output_dir = args.out_root / destination_role / "02_input"
             output_dir.mkdir(parents=True, exist_ok=True)
-            output = output_dir / f"{args.character}_{role}_{label}_from_master_{args.variant}.png"
+            output = output_dir / f"{args.character}_{destination_role}_{label}_from_master_{args.variant}.png"
             if output.exists():
                 raise SystemExit(f"Refusing to overwrite existing output: {output}")
             source.crop((x0, y0, x1, y1)).save(output)
@@ -46,6 +51,7 @@ def main() -> int:
                 "review_map": str(args.review_map),
                 "character": args.character,
                 "role": role,
+                "destination_role": destination_role,
                 "cell_id": label,
                 "variant": args.variant,
                 "crop_box": item["box"],

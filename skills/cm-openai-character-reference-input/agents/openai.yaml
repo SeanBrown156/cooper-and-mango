@@ -1,4 +1,0 @@
-interface:
-  display_name: "OpenAI Character Reference Input"
-  short_description: "Turn character references into pixel inputs"
-  default_prompt: "Use $cm-openai-character-reference-input to transform this character reference folder into portrait, battle, and overworld input sheets."

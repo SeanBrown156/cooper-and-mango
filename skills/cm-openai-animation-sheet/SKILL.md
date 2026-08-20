@@ -14,14 +14,16 @@ drift.
 
 1. Read the owning package contract and select the canonical anchor directly.
 2. Validate the anchor before generation: confirm its role dimensions, visible
-   bounds, transparency, pivot, baseline, palette direction, and identity
+   bounds, opaque white background, pivot, baseline, palette direction, and identity
    markings. The anchor is the identity reference, not merely an arbitrary
    first frame.
-3. Create a larger transparent working canvas with one cell per intended frame.
+3. Create a larger opaque pure-white working canvas with one cell per intended frame.
    Place the actual target-size pixel anchor into one cell and leave the other
-   cells blank. Do not enlarge the anchor independently. If the API needs a
+   cells pure white. Do not enlarge the anchor independently. If the API needs a
    larger working image, scale the complete blank grid with nearest-neighbour
-   after placement so every cell and pixel keeps the same proportions. Use:
+   after placement so every cell and pixel keeps the same proportions. The
+   generated sheet must remain opaque white, never transparent, black, or any
+   other background colour. Use:
 
    ```sh
    python3 tools/shared/animation_canvas.py anchor.png animation_canvas.png \

@@ -1,4 +1,0 @@
-interface:
-  display_name: "OpenAI Environment Reference Input"
-  short_description: "Turn environment references into pixel studies"
-  default_prompt: "Use $cm-openai-environment-reference-input to turn this environment reference folder into a pixel-art input study."

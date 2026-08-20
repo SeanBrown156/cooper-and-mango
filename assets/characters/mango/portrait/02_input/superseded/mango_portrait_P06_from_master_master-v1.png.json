@@ -1,0 +1,16 @@
+{
+  "source_master": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1.png",
+  "review_map": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1_review.png.json",
+  "character": "mango",
+  "role": "portrait",
+  "cell_id": "P06",
+  "variant": "master-v1",
+  "crop_box": [
+    549,
+    0,
+    658,
+    145
+  ],
+  "output": "assets/characters/mango/portrait/02_input/mango_portrait_P06_from_master_master-v1.png",
+  "status": "selected_provisional_input"
+}

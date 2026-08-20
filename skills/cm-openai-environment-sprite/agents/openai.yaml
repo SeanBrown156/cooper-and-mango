@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM OpenAI Environment Sprite"
+  short_description: "Generate an environment pixel-art sprite"
+  default_prompt: "Use $cm-openai-environment-sprite to turn this environment reference folder into a pixel-art environment sprite study."

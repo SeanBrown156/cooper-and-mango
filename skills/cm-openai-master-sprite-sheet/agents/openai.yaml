@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM OpenAI Master Sprite Sheet"
+  short_description: "Generate the default character master sheet"
+  default_prompt: "Use $cm-openai-master-sprite-sheet to generate one OpenAI master sprite sheet containing portrait, battle, and overworld regions for later slicing."

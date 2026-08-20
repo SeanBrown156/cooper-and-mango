@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Place an actual-size anchor into a blank animation grid."""
+"""Place an actual-size anchor into an opaque white animation grid."""
 
 from __future__ import annotations
 
@@ -34,7 +34,9 @@ def main() -> int:
         raise SystemExit("Anchor is larger than its target frame cell; crop or fix the role contract first")
     if args.scale < 1:
         raise SystemExit("scale must be a positive integer")
-    canvas = Image.new("RGBA", (args.columns * args.cell_width, args.rows * args.cell_height), (0, 0, 0, 0))
+    # OpenAI sprite generation uses an opaque pure-white background. Keep the
+    # working canvas aligned with that contract instead of emitting alpha.
+    canvas = Image.new("RGBA", (args.columns * args.cell_width, args.rows * args.cell_height), (255, 255, 255, 255))
     x = args.anchor_column * args.cell_width + (args.cell_width - anchor.width) // 2
     y = args.anchor_row * args.cell_height + (args.cell_height - anchor.height)
     canvas.alpha_composite(anchor, (x, y))
