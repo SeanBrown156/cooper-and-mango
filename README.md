@@ -1,4 +1,4 @@
-# Mango and Cooper
+# Cooper & Mango
 
 A full-scope 2D RPG starring our real pets, Mango (cat) and Cooper (dog). Their humans vanish one night; the animals gain speech and magical powers, household technology awakens as monsters, and the truth — a new baby — isn't revealed until the end. It's a story about love, grief, courage, and a family changing rather than disappearing.
 
