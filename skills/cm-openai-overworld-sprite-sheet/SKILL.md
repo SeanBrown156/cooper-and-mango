@@ -35,7 +35,8 @@ master canvas first.
 7. Save the provisional result under `assets/characters/<character>/overworld/02_input/`.
    Never overwrite an existing candidate; use a versioned name.
 8. Send selected static overworld candidates through
-   `$cm-prepare-role-resolution` for the governed **20×16** target before
+   `$cm-prepare-role-resolution` for the governed directional targets (**16×20
+   north/south, 20×16 east/west**) before
    PixelLab refinement. If a provider cannot preserve that target, route to
    manual redraw or the OpenAI path; do not silently substitute another size.
    Do not normalize, recolour, or promote to WIP here.

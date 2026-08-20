@@ -14,7 +14,7 @@ not exist. Do not animate every cell from a master sheet.
 
 - Overworld animation is strictly `north`, `south`, `east`, `west`; no
   diagonals or eight-direction movement. Preserve role bounds: overworld
-  20×16, battle 32×32, portrait 40×40. Frames share baseline, pivot and
+  16×20 for north/south and 20×16 for east/west, battle 32×32, portrait 40×40. Frames share baseline, pivot and
   visible bounds; PixelLab must not invent markings or limbs per frame.
 - Inspect the character with `get_character` and identify the character ID and
   available templates.

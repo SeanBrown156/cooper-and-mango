@@ -42,7 +42,8 @@ Repo-specific PixelLab workflows are split by production need under
 `skills/cm-pixellab-*`. Use the narrowest matching skill: characters,
 animation, portraits, environments, or props. These skills encode the
 Cooper & Mango constraints that are easy to lose in a generic prompt, such as
-four-direction overworld movement, 20×16/32×32/40×40 role bounds, orthographic
+four-direction overworld movement, directional 16×20 north/south and 20×16
+east/west bounds, plus 32×32/40×40 role bounds, orthographic
 16×16 environments, and complete WIP/Approved handoff packages.
 
 PixelLab is the generative asset and variation system. It can create or edit:

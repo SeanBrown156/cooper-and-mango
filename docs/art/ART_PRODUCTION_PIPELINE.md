@@ -94,7 +94,7 @@ send unselected cells downstream.
 
 | Role | Native size | Pose grammar | Required gate |
 |---|---:|---|---|
-| Overworld | 20×16 | Quadruped, north/south/east/west | Transparent target-size preparation and four-direction landmark review |
+| Overworld | 16×20 north/south; 20×16 east/west | Quadruped, north/south/east/west | Transparent target-size preparation and four-direction landmark review |
 | Battle | 32×32 | Upright/bipedal, with deliberate action poses | Transparent target-size preparation and baseline/pivot review |
 | Portrait | 40×40 | Upright/bipedal, expression/likeness first | Transparent target-size preparation and crop/likeness review |
 

@@ -29,7 +29,7 @@
 
 ## Role-specific visual grammar
 
-- Overworld: 20×16, quadruped/on all fours, hoodie draped over the back, silhouette first.
+- Overworld: north/south **16×20**, east/west **20×16**; quadruped/on all fours, hoodie draped over the back, silhouette first.
 - Battle: 32×32, upright/bipedal mage pose, chubby and fluffy, 3/4 combat stance.
 - Portrait: 40×40, expressive upright likeness with face, fluff, markings and hoodie detail.
 

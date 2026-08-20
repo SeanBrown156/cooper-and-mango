@@ -9,7 +9,7 @@ This is the resolution gate between selected master cells and refinement.
 
 ## Governed targets
 
-- Overworld: **20×16**, quadruped, four orthogonal directions.
+- Overworld: **16×20 for north/south and 20×16 for east/west**, quadruped, four orthogonal directions.
 - Battle: **32×32**, upright/bipedal presentation where required.
 - Portrait: **40×40**, expressive portrait/bust.
 

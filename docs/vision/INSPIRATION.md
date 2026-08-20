@@ -1,6 +1,6 @@
 # Inspiration
 
-Reference material for art direction, tone, and structure — separate from [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) (which holds the *locked decisions*, e.g. the 20×16/32×32/40×40 sprite scales, palette rules). This doc is the raw inspiration feeding those decisions, not a source of truth itself. Update it as new references come up in conversation; don't let it go stale.
+Reference material for art direction, tone, and structure — separate from [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) (which holds the *locked decisions*, e.g. the 16×20 north/south, 20×16 east/west, 32×32 and 40×40 sprite scales, palette rules). This doc is the raw inspiration feeding those decisions, not a source of truth itself. Update it as new references come up in conversation; don't let it go stale.
 
 ## Visual / Sprite-Style Reference Board
 
@@ -10,7 +10,7 @@ What each entry is there for:
 
 | Game | Why it's referenced |
 |---|---|
-| **Final Fantasy VI** | The core target: SNES chibi overworld sprites + dialogue portrait busts. Closest match to the locked 20×16 overworld scale and general JRPG mood. |
+| **Final Fantasy VI** | The core target: SNES chibi overworld sprites + dialogue portrait busts. Closest match to the locked directional overworld scale and general JRPG mood. |
 | **Chrono Trigger** | Same SNES chibi-overworld lineage as FF6, more expressive small sprites — reference for packing personality into a tiny frame count. |
 | **Cat Quest / Cat Quest II** | Literal cat-and-dog dual-protagonist fantasy world. Reference for keeping species-specific silhouettes readable at small scale. |
 | **Ace Attorney** | Character profile/portrait art used in dialogue — reference for the separate, higher-detail portrait asset category (see [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md)'s Character Reference Process). |

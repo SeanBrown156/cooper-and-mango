@@ -29,7 +29,7 @@ modern Godot tooling.
 |---|---:|---|
 | Logical presentation | **480×270** | Current Godot logical canvas; integer presentation scaling |
 | Environment tile | **16×16** | World-building and TileMap grid |
-| Overworld hero | **20×16** | Quadruped, four cardinal directions, symbolic silhouette |
+| Overworld hero | **16×20 north/south; 20×16 east/west** | Quadruped, four cardinal directions, symbolic silhouette |
 | Battle player character | **32×32** | Upright/bipedal theatrical combat presentation |
 | Small battle enemy | **32×32** | Only for deliberately small enemies |
 | Regular battle enemy | **48×48** | Standard enemy target |
@@ -48,7 +48,8 @@ large drawing into overworld, battle and portrait assets.
 
 ### Overworld
 
-- 20×16, quadruped/on all fours.
+- North/south frames are **16×20**; east/west frames are **20×16**.
+- Quadruped/on all fours.
 - Four directions: north, south, east and west.
 - Silhouette, feet contact, tail and signature accessory matter more than face detail.
 - The character must read at native 1× scale.

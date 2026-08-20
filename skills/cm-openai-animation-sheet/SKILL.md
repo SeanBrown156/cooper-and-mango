@@ -31,7 +31,8 @@ drift.
    ```
 
    The scaled canvas is only a generation template. The game target remains the
-   manifest’s exact frame size, such as 20×16 or 32×32.
+   manifest’s exact directional frame size, such as 16×20 for north/south,
+   20×16 for east/west, or 32×32 for battle.
 4. Edit the template with `tools/openai/image_generate.py --image animation_canvas.png`;
    describe the action as ordered beats and state the unchanged identity
    invariants.
