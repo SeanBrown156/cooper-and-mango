@@ -1,0 +1,18 @@
+{
+  "source_master": "assets/characters/cooper/input/02_input/cooper_master_reference_pixel_sheet_v2.png",
+  "character": "cooper",
+  "role": "overworld",
+  "variant": "v2",
+  "source_dimensions": [
+    1536,
+    1024
+  ],
+  "crop_box": [
+    700,
+    590,
+    1536,
+    1024
+  ],
+  "output": "assets/characters/cooper/overworld/02_input/cooper_overworld_from_master_v2.png",
+  "status": "provisional_input_slice"
+}

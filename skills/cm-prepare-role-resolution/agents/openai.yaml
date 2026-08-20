@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Role Resolution"
+  short_description: "Enforce role frame dimensions"
+  default_prompt: "Use $cm-prepare-role-resolution to prepare this selected sprite at the governed role resolution."

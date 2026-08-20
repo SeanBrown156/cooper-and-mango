@@ -6,13 +6,12 @@
 
 [mcp_servers.pixellab]
 # Codex CLI uses stdio, so bridge PixelLab's remote HTTP MCP through
-# mcp-remote. The shell expands PIXELLAB_API_TOKEN at launch time; the
-# secret is never stored in this file. PIXELLAB_API_TOKEN must be exported
-# before starting Codex.
+# mcp-remote. Load project-local credentials at launch time; secrets are
+# never stored in this file.
 command = "/bin/sh"
 args = [
   "-c",
-  "exec /bin/zsh -lc 'source ~/.zshrc; exec npx -y mcp-remote@latest https://api.pixellab.ai/mcp --header \"Authorization: Bearer $PIXELLAB_API_TOKEN\"'"
+  "exec /bin/zsh -lc 'source ~/.zshrc; [ -f .env.local ] && set -a && source ./.env.local && set +a; exec npx -y mcp-remote@latest https://api.pixellab.ai/mcp --header \"Authorization: Bearer $PIXELLAB_API_TOKEN\"'"
 ]
 
 [mcp_servers.aseprite]
@@ -23,8 +22,3 @@ args = ["-y", "@iborymagic/aseprite-mcp"]
 
 [mcp_servers.aseprite.env]
 ASEPRITE_PATH = "/Applications/Aseprite.app/Contents/MacOS/aseprite"
-
-[mcp_servers.spritecook]
-# SpriteCook's hosted MCP server. Codex handles authentication through its
-# native OAuth flow on first protected use.
-url = "https://mcp.spritecook.ai/mcp/openai"

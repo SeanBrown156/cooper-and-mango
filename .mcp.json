@@ -17,10 +17,6 @@
       "env": {
         "ASEPRITE_PATH": "/Applications/Aseprite.app/Contents/MacOS/aseprite"
       }
-    },
-    "spritecook": {
-      "type": "http",
-      "url": "https://mcp.spritecook.ai/mcp/claude"
     }
   }
 }

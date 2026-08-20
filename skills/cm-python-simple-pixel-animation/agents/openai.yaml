@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM Simple Pixel Animation"
+  short_description: "Create deterministic integer-pixel animation loops"
+  default_prompt: "Create a simple integer-pixel idle or prop animation from this canonical frame."

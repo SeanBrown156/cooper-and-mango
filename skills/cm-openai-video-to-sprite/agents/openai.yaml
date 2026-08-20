@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM Video to Spritesheet"
+  short_description: "Turn generated motion video into game animation frames"
+  default_prompt: "Create or process a motion source, extract useful frames, normalize them, and export a game-ready spritesheet."

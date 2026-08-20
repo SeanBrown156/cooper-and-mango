@@ -5,16 +5,20 @@ description: Create or extend Cooper & Mango playable-character, NPC, and battle
 
 # CM PixelLab Characters
 
-Use for a new or revised character sprite, not animation-only, portrait-only,
-environment, or prop requests.
+Use for a new or revised character sprite after the user has selected numbered
+cells from a master review sheet. Do not send an entire unreviewed sheet or all
+cells to PixelLab.
 
 ## Cooper & Mango contract
 
 - The game is a 2D orthographic top-down RPG. Overworld characters walk only
   north, south, east and west. Never request eight-direction movement or
   diagonals for an overworld actor.
-- Role frames are overworld **24×16**, battle **32×32**, and portrait **48×48**.
+- Role frames are overworld **20×16**, battle **32×32**, and portrait **40×40**.
   Larger PixelLab canvases are provisional input for Aseprite cropping/redraw.
+- Prepare the selected source at the role's declared target size before this
+  handoff where PixelLab accepts it. Use high reference influence so PixelLab
+  refines the selected likeness rather than inventing a replacement.
 - Mango and Cooper are real-pet likenesses. Use the relevant photos and any
   approved canonical sprite as references; describe markings and silhouette.
 - Overworld is quadruped/low top-down. Battle art is an upright/bipedal
@@ -33,12 +37,16 @@ environment, or prop requests.
 
 ## Handoff
 
-Put raw outputs in the owning family's `input/`. Once cleanup, cropping,
+Put selected source cells and PixelLab raw outputs in the owning family's
+`input/`/`02_input/` staging area. Once cleanup, cropping,
 palette work or Godot wiring begins, keep the complete package in `wip/`:
 `.aseprite`, `.png`, metadata, `.tres`, and `.tscn` where they exist. Only
 human-reviewed, tested packages move to `approved/`; PixelLab never promotes
-itself. Record job ID, prompt, references, size and direction contract.
+itself. Record master cell ID, source path, job ID, reference influence, prompt,
+references, size and direction contract.
 
-Read `docs/art/ART_BIBLE.md`, `docs/art/ART_PRODUCTION_PIPELINE.md`, and the
-owning family's specification before generating. Stop if the request changes
+Read `docs/vision/GAME_BIBLE.md`, the owning
+`assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md`,
+`docs/art/ART_BIBLE.md`, `docs/art/ART_PRODUCTION_PIPELINE.md`, and the owning
+family's specification before generating. Stop if the request changes
 role dimensions, adds diagonal overworld directions, or discards likeness.

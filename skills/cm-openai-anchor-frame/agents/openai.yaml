@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM OpenAI Anchor Frame"
+  short_description: "Create a canonical reference frame for an asset family"
+  default_prompt: "Create or refine the canonical anchor frame for this asset using the local manifest and reference packet."

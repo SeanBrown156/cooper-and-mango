@@ -1,0 +1,18 @@
+{
+  "source_master": "assets/characters/cooper/input/02_input/cooper_master_reference_pixel_sheet_v4.png",
+  "character": "cooper",
+  "role": "battle",
+  "variant": "v4",
+  "source_dimensions": [
+    1536,
+    1024
+  ],
+  "crop_box": [
+    693,
+    0,
+    1536,
+    575
+  ],
+  "output": "assets/characters/cooper/battle/02_input/cooper_battle_from_master_v4.png",
+  "status": "provisional_input_slice"
+}

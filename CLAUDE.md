@@ -50,6 +50,14 @@ lifecycle stage.
 - PixelLab task skills: `skills/cm-pixellab-characters/`,
   `skills/cm-pixellab-animation/`, `skills/cm-pixellab-portraits/`,
   `skills/cm-pixellab-environments/`, and `skills/cm-pixellab-props/`
+- Complementary image workflows: `skills/cm-openai-character-reference-input/`,
+  `skills/cm-character-visual-brief/`,
+  `skills/cm-openai-portrait-sprite-sheet/`, `skills/cm-openai-battle-sprite-sheet/`,
+  `skills/cm-openai-overworld-sprite-sheet/`,
+  `skills/cm-slice-master-sprite-sheet/`,
+  `skills/cm-prepare-role-resolution/`,
+  `skills/cm-openai-environment-reference-input/`, and
+  `skills/cm-higgsfield-autosprite/`
 - Runtime content: `data/`
 - Godot project: `scenes/`, `scripts/`, `project.godot`
 

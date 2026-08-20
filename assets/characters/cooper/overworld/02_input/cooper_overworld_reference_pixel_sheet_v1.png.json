@@ -1,0 +1,10 @@
+{
+  "provider": "openai",
+  "mode": "edit",
+  "model": "gpt-image-2",
+  "prompt": "Create a provisional pixel-art OVERWORLD SPRITE INPUT SHEET for the real dog Cooper shown in the supplied reference images. This is an actual source sheet for later RPG cleanup, not a presentation board or polished illustration. Preserve his black, grey, and warm cream shaggy Cavoodle coat, floppy ears, cream muzzle and paws, curled fluffy tail, and defining chunky green Japanese-Shiba-style collar. Make a strict clean 4 by 4 grid of 16 separate logical overworld sprite cells on a plain consistent background. Rows must be: north-facing movement (back view), south-facing movement (front view), east-facing movement (right side), west-facing movement (left side). Within each row show four distinct animation phases: contact, passing, opposite contact, and idle/bob. Cooper is a quadruped small overworld character, low top-down orthographic but readable, not bipedal and not a side-scrolling battle pose. Keep a consistent footprint and baseline in every cell, with the collar readable at this scale and the silhouette recognisably Cooper. Pixel art must use hard-edged discrete square pixel clusters, limited warm late-SNES palette, no antialiasing, no blur, no photorealism, no painterly gradients, no perspective, no isometric view, no horizon, no text, no labels, no UI, no decorative collage layout. The output must visibly read as pixel art at native inspection scale and be useful as a provisional overworld sprite sheet.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "opaque",
+  "output": "assets/characters/cooper/overworld/02_input/cooper_overworld_reference_pixel_sheet_v1.png"
+}

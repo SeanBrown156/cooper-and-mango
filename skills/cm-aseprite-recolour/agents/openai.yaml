@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM Aseprite Recolour"
+  short_description: "Recolour WIP sprites into the Cooper & Mango master palette"
+  default_prompt: "Recolour this WIP sprite using the embedded Cooper & Mango palette, preserving transparency and pixel clusters."

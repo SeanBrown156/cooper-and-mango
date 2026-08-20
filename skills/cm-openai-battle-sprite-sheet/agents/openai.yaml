@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenAI Battle Sprite Sheet"
+  short_description: "Generate bipedal battle input sheets"
+  default_prompt: "Use $cm-openai-battle-sprite-sheet to generate a consistent battle sprite sheet with standing and seated character poses."

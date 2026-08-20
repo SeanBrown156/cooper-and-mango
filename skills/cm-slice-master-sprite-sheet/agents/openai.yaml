@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slice Master Sprite Sheet"
+  short_description: "Split master sheets into role inputs"
+  default_prompt: "Use $cm-slice-master-sprite-sheet to slice this master canvas into portrait, battle, and overworld input sheets."

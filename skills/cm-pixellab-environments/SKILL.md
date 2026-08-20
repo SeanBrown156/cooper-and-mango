@@ -16,6 +16,8 @@ extensions. Use `$cm-pixellab-props` for a standalone object with a silhouette.
 - Default guidance is selective outline, flat shading, low detail, transparent
   object backgrounds, and no antialiasing/blur/glow. Use approved/WIP style
   references and explicit orientation/footprints.
+- Use black or near-black outlines for foreground interactables. Use faded,
+  lower-contrast outlines for passive/background scenery so it recedes.
 - Use `create_topdown_tileset` for connected terrain; provide lower/upper
   descriptions and poll with `get_topdown_tileset`. Chain
   `lower_base_tile_id` for compatible terrain families.

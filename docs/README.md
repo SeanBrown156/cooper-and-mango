@@ -31,6 +31,10 @@ the documents below contain the actual decisions.
 - [Art Production Pipeline](art/ART_PRODUCTION_PIPELINE.md) — how references, third-party assets, PixelLab output, Aseprite masters and Godot composition move through the lifecycle.
 - [Asset Licenses](art/ASSET_LICENSES.md) — provenance and permissions for external assets.
 
+Character-specific visual briefs live with their owning assets at
+`assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md` and are maintained
+with `$cm-character-visual-brief`.
+
 ## Design and content
 
 - [Content Schema](design/CONTENT_SCHEMA.md) — structured content records, IDs, relationships and publishing shape.

@@ -5,7 +5,7 @@ Status: specification and generation ledger complete; new generation not yet run
 The detailed source analysis, orientation rules, pixel dimensions, and acceptance
 criteria now live in [`ENVIRONMENT_SPEC.md`](ENVIRONMENT_SPEC.md). The complete
 machine-readable tile and sprite ledger is
-[`../../../tools/pixellab_tutorial_room_spec.json`](../../../tools/pixellab_tutorial_room_spec.json).
+[`environment_manifest.json`](environment_manifest.json).
 
 ## Locked decisions
 

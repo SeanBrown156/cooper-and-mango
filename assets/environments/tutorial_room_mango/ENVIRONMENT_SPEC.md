@@ -5,7 +5,7 @@ Godot validation.
 
 This document translates the room references into production constraints. The
 machine-readable ledger and PixelLab request manifest is
-[`../../../tools/pixellab_tutorial_room_spec.json`](../../../tools/pixellab_tutorial_room_spec.json).
+[`environment_manifest.json`](environment_manifest.json).
 
 ## 1. Source authority
 
@@ -22,6 +22,17 @@ Use the sources in this order:
 If a photograph and a Gemini composite disagree, keep the Gemini layout and use the
 photograph to make the object more specific. Photo-only furniture is optional room
 dressing, not a required composition anchor.
+
+## 1a. Manifest and Godot ownership
+
+`environment_manifest.json` is the environment-local inventory and production
+contract. It records references, asset IDs, generation inputs and provenance,
+technical bounds, variants, review state, and generation order.
+
+Godot `.tscn` and `.tres` resources remain authoritative for runtime composition:
+placement, layering, sorting, collision, and scene behaviour. The manifest must
+describe the assets Godot can compose, but it must not become a second hand-authored
+scene graph.
 
 ## 2. Native room contract
 

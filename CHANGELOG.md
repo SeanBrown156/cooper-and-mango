@@ -12,3 +12,7 @@
 - Documented ownership and documentation change control in `docs/engineering/OWNERSHIP_AND_CHANGE_CONTROL.md`.
 - Documented the overlapping roles of PixelLab, SpriteCook and Aseprite in the
   asset-production workflow.
+- Consolidated AI-assisted generation guidance into the Art Production Pipeline;
+  removed the redundant standalone AI Asset Lab document.
+- Added character-root visual briefs and the `cm-character-visual-brief` skill;
+  clarified Art Bible, Pipeline and Game Bible ownership boundaries.

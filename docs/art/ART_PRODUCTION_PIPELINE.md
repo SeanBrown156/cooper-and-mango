@@ -1,588 +1,220 @@
 # Cooper & Mango Art Production Pipeline
 
-> Project-specific workflow for turning references, sketches, AI drafts and premade assets into consistent, game-ready pixel art.
->
-> This document complements `docs/art/ART_BIBLE.md`. The Art Bible defines **what the game should look like**; this file defines **how we produce and scale the art without losing that look**.
+> Operational source of truth for turning references, generated candidates,
+> hand edits and premade assets into complete Godot-ready art packages.
 
-## Core loop
+The [Art Bible](ART_BIBLE.md) defines visual direction. Character identity
+lives in each character's `CHARACTER_VISUAL_BRIEF.md`. This document defines
+the production sequence, skill handoffs, lifecycle, review gates and Godot
+handoff. Technical MCP setup belongs in [`docs/engineering/MCP.md`](../engineering/MCP.md).
 
-The art pipeline is **iterative, not linear**:
+## 1. Core lifecycle
 
-> Gather input → choose relevant assets → palette-remap into WIP → compose and test in Godot → promote the working set to approved.
-
-AI is not a single upstream step. PixelLab can appear both at the beginning and later in production once a strong canonical asset exists.
-
----
-
-## 1. Ideation and reference layer
-
-Use this layer to decide what an asset should feel like before worrying about production-perfect pixels.
-
-### Procreate
-
-Use for:
-- loose sketches;
-- creature and character design;
-- poses;
-- environment ideas;
-- monster concepts;
-- rough animation thumbnails;
-- visual problem solving with Apple Pencil.
-
-### FigJam
-
-Use as the main **visual reference board** for Cooper & Mango.
-
-Store and organise:
-- reference games;
-- manga and illustration references;
-- UI examples;
-- palette references;
-- sprite comparisons;
-- screenshots;
-- environmental inspiration;
-- visual notes and callouts.
-
-FigJam is the quick, digestible art-direction surface for Sean and for Claude when reasoning about references.
-
-### Gemini / ChatGPT
-
-Use for:
-- rapid visual ideation;
-- concept exploration;
-- composition ideas;
-- style experiments;
-- critique and comparison;
-- testing different visual directions quickly.
-
-Gemini-generated sprite sheets are **approximations**, not production truth. They are useful for silhouette, colour planning, costume ideas, pose direction and mood, but they often drift from exact pixel dimensions, palette constraints and sprite consistency.
-
-### Real photos
-
-Real photos remain the likeness and physical-reference truth for:
-- Mango;
-- Cooper;
-- real household objects;
-- rooms and furniture;
-- locations;
-- textures and distinctive props.
-
----
-
-## 2. PixelLab has two jobs
-
-PixelLab is unusual because it belongs in both **ideation** and **production multiplication**.
-
-### Early-stage PixelLab
-
-Use it to:
-- draft pixel-art concepts closer to the correct medium and dimensions than generic image generation;
-- test silhouettes;
-- produce early character/prop/environment candidates;
-- work inside the project palette where possible;
-- explore pixel-specific versions of ideas from Procreate, Gemini, photos or FigJam.
-
-These outputs may still need substantial cleanup, redraws or simplification.
-
-### Late-stage PixelLab
-
-Once a canonical asset exists, use PixelLab to multiply it:
-- south-facing character → north/east/west candidates;
-- idle → pose variants;
-- canonical frame → animation candidates;
-- approved prop → related variants;
-- approved tile → additional tile variations;
-- approved environment style → compatible extensions;
-- inpainting / local corrections where useful.
-
-A common Cooper & Mango loop is:
-
-1. PixelLab drafts an initial candidate.
-2. Aseprite or Pixquare cleans, redraws or substantially improves it.
-3. That improved asset becomes the canonical reference.
-4. PixelLab uses the canonical reference to produce directions, poses, animations or variants.
-5. Aseprite/Pixquare correct drift.
-6. The corrected result becomes a stronger input for the next PixelLab pass.
-7. Repeat until the full asset family is coherent.
-
-Do **not** treat PixelLab as either “only concept art” or “one-click final art.” Its value increases as the project accumulates canonical references and constraints.
-
----
-
-## 3. Canonical production tools
-
-### Aseprite — desktop production master
-
-Use Aseprite for:
-- canonical `.aseprite` files;
-- palette control;
-- precise pixel cleanup;
-- full redraws;
-- animation and cels;
-- onion skinning;
-- frame timing and animation tags;
-- sprite-sheet export;
-- indexed-palette work;
-- batch or CLI export where useful.
-
-### Pixquare — iPad / Apple Pencil production companion
-
-Use Pixquare for:
-- direct pixel drawing with Apple Pencil;
-- silhouettes;
-- cleanup and repainting;
-- animation work;
-- palette-driven editing;
-- mobile/couch/train/bed production sessions;
-- `.aseprite` round-tripping.
-
-Aseprite and Pixquare are not competing sources of truth. They are desktop and Pencil interfaces onto the same pixel-art production discipline.
-
----
-
-## 4. What counts as truth
-
-Different sources have different authority:
-
-- **Real photos** = likeness / physical truth.
-- **FigJam references** = visual-direction truth.
-- **Gemini / generic AI concepts** = approximation and ideation.
-- **Locked project palette** = colour truth.
-- **`docs/art/ART_BIBLE.md`** = style and technical truth.
-- **Approved canonical `.aseprite` / Pixquare source** = production truth.
-
-A clean AI image is not automatically canon. A hand-drawn image is not automatically canon either. Canon is the approved master asset that downstream generation and implementation reference.
-
----
-
-## 5. Character production method
-
-For major characters such as Mango and Cooper:
-
-1. Gather photos, sketches and FigJam references.
-2. Explore with Procreate, Gemini and/or PixelLab.
-3. Produce one strong canonical key view in Aseprite/Pixquare.
-4. Make sure it obeys the Art Bible and locked palette.
-5. Use that view as the reference for PixelLab multiplication.
-6. Generate the required directions/poses/animation candidates.
-7. Review the entire set together.
-8. Correct silhouette, anatomy, costume, markings, palette drift, tail/ear thickness, feet placement and perspective.
-9. Promote the corrected set as the new canonical family.
-10. Test it in Godot early.
-
-For four-direction movement, get the **south/front-facing sprite genuinely right first**, then use it as the strongest reference for north/east/west generation.
-
-Animation consistency matters more than smoothness. A beautiful animation where the character changes design frame-to-frame is a failed animation.
-
----
-
-## 6. Canonical asset packets
-
-Each important character or asset family should gradually accumulate a small reference packet containing:
-
-- canonical master file;
-- approved palette subset;
-- approved key view;
-- battle reference where relevant;
-- portrait reference where relevant;
-- likeness / marking notes;
-- costume or prop notes;
-- animation invariants;
-- PixelLab generation recipe/settings where reproducibility matters.
-
-Claude and PixelLab should increasingly work from these packets rather than vague prose memory.
-
----
-
-# Environment, tiles and props
-
-Environment production should be **less precious than hero-character production** while still obeying the same palette and pixel grammar.
-
-The goal is not to hand-author every generic chair, grass tile, rock and bowl from scratch.
-
-## 7. Three asset tiers
-
-### Tier A — identity assets
-
-Give these the full bespoke treatment:
-- Mango;
-- Cooper;
-- party members;
-- major bosses;
-- signature awakened-object enemies;
-- iconic locations;
-- narratively important props.
-
-These may involve heavy hand-drawing, PixelLab iteration, bespoke AI generation and multiple cleanup passes.
-
-### Tier B — distinctive world assets
-
-These matter because they make the world feel like **Cooper & Mango**, but they can begin from references or existing art:
-- the real sofa;
-- cat tree;
-- food bowls;
-- Cooper's bed;
-- household furniture;
-- Mi-chan / the robot vacuum;
-- recognisable architecture and regional objects.
-
-Typical flow:
-
-> Photo / sketch / reference → PixelLab or premade base → palette remap → Aseprite/Pixquare restyle → approve → PixelLab extend if useful → Godot test.
-
-### Tier C — commodity environment assets
-
-Do not waste bespoke production time where the player only needs a convincing world:
-- grass;
-- dirt;
-- generic floors;
-- plain walls;
-- rocks;
-- fences;
-- pots;
-- crates;
-- barrels;
-- bushes;
-- common tables/chairs;
-- generic decorative objects.
-
-For these, licensed premade 16px-friendly asset packs are encouraged.
-
----
-
-## 8. Premade-asset pipeline
-
-For commodity tiles and props:
-
-1. Find a good **licensed** base asset or coherent tileset family.
-2. Record the licence/source in `docs/art/ASSET_LICENSES.md`.
-3. Preserve the useful structure and silhouette.
-4. Identify which sheets are actually relevant to the room.
-5. Palette-remap the relevant sheets into the locked Cooper & Mango palette.
-6. Move the remapped sheets and editable masters into that room's `wip/`.
-7. Compose the room in Godot using TileSet atlases for terrain and Sprite2D regions/scenes for furniture and props.
-8. Test scale, layering, collisions, readability and the relationship between room and characters.
-9. Iterate in `wip/` until the room composition is working.
-10. Promote the accepted sheets, masters and their Godot resources/scenes together into the complete `approved/` package.
-
-This is not merely “change the hue.” Distinguish:
-
-- **Recolour** — swap one colour for another.
-- **Palette remap** — map the entire asset into our master palette.
-- **Restyle** — alter clusters, outlines, shading and detail so the asset obeys our game’s pixel grammar.
-
-Palette remapping is the baseline. Restyle only as much as necessary.
-
-### Third-party sheet curation workflow
-
-For downloaded sprite sheets, use this as the standard workflow:
-
-1. Download the licensed source into the relevant `input/` folder.
-2. Choose only the sheets relevant to the room or asset family.
-3. Palette-remap those sheets into the Cooper & Mango palette.
-4. Move the remapped sheet and editable Aseprite master into the relevant
-   `wip/` folder.
-5. In Aseprite, manually mark and name meaningful slices: sofas, tables,
-   trees, bookcases, rugs, animated props and other reusable objects. A slice
-   may cover one 16×16 cell or a larger multi-cell object.
-6. Export the slice metadata so bounds, names and pivots become machine-readable.
-7. Use the original WIP sheet in Godot: define atlas cells for grid-native
-   tiles, and use exact slice rectangles for furniture or coherent props.
-8. Compose and test the room in Godot, including scale, layering, collision,
-   interaction and character readability.
-9. When the composition is accepted, promote the used sheets, masters and
-   metadata to `approved/`, and promote/update the matching Godot resources in
-   `approved/` alongside the accepted art.
-
-This small manual curation pass is intentional. It establishes the artistic
-meaning and exact bounds once, allowing later automation to remain accurate
-without asking an AI to infer object edges from a visual screenshot.
-
-Keep the original sheet intact. Only export a separate PNG when an object
-needs to be animated, independently reused, independently edited or given a
-distinct scene-level behaviour.
-
----
-
-## 9. PixelLab as environment extender
-
-Once one environment family is canonical, PixelLab can accelerate variation rather than invent everything from nothing.
-
-Examples:
-- approved grass tiles → flower/weed/worn variants;
-- approved wall family → cracked/damaged/decorated variants;
-- approved pot → multiple compatible pot variants;
-- approved floor → scuffed/stained/aged versions;
-- approved furniture → regional or story-specific variations;
-- approved tiles → additional compatible environmental details.
-
-Preferred loop:
-
-> good base structure → palette remap → WIP room composition → Godot test → cleanup/adjustment → approval.
-
-For tile assets, connectivity and seam behaviour matter more than whether a single tile looks beautiful in isolation.
-
----
-
-## 10. Avoid environment Frankenstein
-
-Do not accumulate ten unrelated asset packs simply because each contains one useful item.
-
-Even with a shared palette, different packs may have incompatible:
-- outline weight;
-- dithering;
-- cluster size;
-- light direction;
-- perspective;
-- shading depth;
-- detail density.
-
-Prefer **one dominant base family** for a region or environment, then extend and remix it.
-
----
-
-## 11. Environment base kits
-
-Each major region should eventually have a small canonical environment kit containing:
-
-- tile grid rules;
-- approved palette subset;
-- light direction;
-- outline treatment;
-- floor examples;
-- wall examples;
-- foliage/terrain examples where relevant;
-- common prop examples;
-- approved base tileset;
-- PixelLab extension references/settings where useful.
-
-This is the environment equivalent of a canonical character packet.
-
----
-
-## 12. Godot is the reality check
-
-Godot is not merely the final step after every asset has been individually
-approved. For environment work, Godot is the composition workbench. Relevant,
-palette-remapped sheets belong in the room's `wip/` while we decide whether
-they actually work in context. They become `approved/` only after the room
-composition is accepted.
-
-Keep most static content on its original sheet:
-
-- use a 16×16 TileSet atlas for floors, walls and other grid-native tiles;
-- select only the atlas cells the room needs;
-- keep a 32×32 desk, tree or furniture piece as a two-by-two arrangement or
-  larger atlas tile rather than shrinking it;
-- use a Sprite2D with `region_enabled` for a coherent multi-cell furniture
-  region when it should remain one visual object;
-- use a separate PNG or `.aseprite` only for animated, interactive or
-  independently reusable props;
-- keep collisions and interaction logic in Godot scenes, not in crops.
-
-The TileSet `.tres` and other Godot-side resources belong in the room's WIP
-package while the room is being composed. During active composition they may
-reference WIP textures. When the room is accepted, promote the referenced
-textures, masters and resources/scenes together into `approved/`.
-
-Art is not complete until it works in the running game.
-
-Test early for:
-- native-scale readability;
-- character/background contrast;
-- tile seams;
-- collisions and feet anchors;
-- visual scale;
-- animation weight;
-- palette harmony;
-- UI coexistence;
-- whether bespoke and remixed assets genuinely feel like one game.
-
-A sprite or tile that looks great alone but fails in the room is not finished.
-
----
-
-## 13. Asset hygiene
-
-Keep separate locations for:
-- reference material;
-- raw AI generations;
-- third-party source assets;
-- working source files;
-- canonical masters;
-- exported game-ready assets.
-
-Avoid `final-final-v7.png` chaos. One obvious canonical master per asset family should always exist.
-
-Use predictable naming and keep raw AI generations out of game-ready asset folders.
-
-### The lifecycle, end to end
-
-Every meaningful independently managed asset family (`assets/characters/mango/overworld/`, `assets/environments/tutorial_room_mango/`, etc.) moves content through **`reference/` → `input/` → `wip/` → `approved/`**. WIP is the complete experimental package; Approved is the complete canonical package. Neither stage is limited to pixels: include `.aseprite`/`.png`, `.tres` resources and `.tscn` scenes when the asset needs them. Not called "final" deliberately — an approved asset can still be superseded by a new approved version later.
-
-### Where reference material lives
-
-Each family's `reference/` folder (e.g. `assets/characters/mango/reference/`, `assets/characters/cooper/reference/`, `assets/characters/rocky/reference/`) holds photos, other games' images, and other look-only reference points — **not usable as something to work on directly**: real reference photos and sketches of Mango, Cooper, and Rocky, never edited directly or loaded by Godot. Excluded from Godot's editor scan via an empty `.gdignore`, and untracked in git except for the folder structure itself (`.gdignore`/`.gitkeep`) — actual reference files stay local until a storage/LFS policy is decided. Subdivided by *source* (`photos/`, `sketches/`, `locked/` — locked design-direction stills), not by which sprite scale-tier it might inform — a photo isn't yet committed to becoming overworld, battle, or portrait art. Deliberately called `locked/`, not `approved/` — that word means something different one level up (the family's own Godot-loaded lifecycle tier), and reusing it here for a different concept was exactly the kind of same-word-different-meaning collision this whole model exists to kill.
-
-### Where input material lives
-
-Each family's `input/` folder (e.g. `assets/environments/input/`, `assets/ui/input/`) holds **actual game sprites/art that ARE usable as a starting point**, just not reviewed or cleaned up yet: off-the-shelf vendor/found asset packs meant to be cut, remixed, or composited into final art (most third-party packs land here once downloaded but before being drawn from), *and* initial AI generations ready for cleanup — a raw PixelLab batch, a raw Gemini or ChatGPT sprite-sheet export, anything freshly generated that hasn't been reviewed or started on yet, regardless of which tool produced it. Same treatment as `reference/`: excluded from Godot's editor scan via `.gdignore`, untracked in git except folder structure. The distinction from `reference/` is deliberate — `reference/` is look-only, never becomes the art directly, while `input/` is meant to be composited into it or cleaned up into it. The distinction from `wip/` is also deliberate — the moment a human actually starts hand-cleaning or redrawing something from `input/`, it moves to `wip/`; `input/` is "available," `wip/` is "someone's actively touching this right now." A pack that's been fully composited into a finished asset and is now kept only for provenance graduates back to `reference/` instead (e.g. `assets/environments/tutorial_room/reference/rgsdev_cc0_topdown_template/`, whose content is already baked into the finished Tutorial Room tileset).
-
-### Where experimentation lives
-
-Each asset family's `wip/` folder (e.g. `assets/environments/tutorial_room_mango/wip/`, tracked in git) is the active editing stage: palette-remapped sheets, editable masters, candidate atlases, room-specific experiments, Godot resources and test scenes. WIP is not canon and must not be treated as shipped content. Once the room is accepted, promote the coherent package to `approved/` and reimport/test. Split into type subfolders (`overworld/`, `battle/`, `portrait/`, etc.) only when a family genuinely has more than one type in flight simultaneously. `assets/palette/` is an exception because it is a shared production resource with no meaningful draft state.
-
-### Where approved (Godot-loaded) content lives
-
-Each family's `approved/` folder is the current authoritative version, promoted from `wip/` once locked in — e.g. `assets/characters/mango/approved/overworld/`, `assets/environments/tutorial_room/approved/`. Unlike `wip/`, the type split is **always** present here, even when a family only has one type today — this is the tier Godot actually loads, so it must never be ambiguous which content is which type. For characters that means `overworld/`, `battle/`, `portrait/` (the Art Bible's scale hierarchy); for other families it means whatever that family's content actually is (e.g. a room's props/tileset).
-
-So the full map: per-family personal reference material lives in `assets/<family>/reference/`, third-party source or fresh unreviewed output not yet being drawn from lives in `assets/<family>/input/` (or `assets/<family>/<subarea>/reference/` for archived-but-provenance-relevant source that's already been used), actively-hand-edited masters live in `assets/<family>/.../wip/`, and only exported, approved, tested output lives in `assets/<family>/.../approved/`. Third-party source that's actually wired into a scene lives *inside* that specific room/instance's `approved/thirdparty/` (e.g. `assets/environments/tutorial_room/approved/thirdparty/bitglow_pixelinterior_lrk_v1_1/`) — not a family-level bucket, since being wired in means it's tied to one specific scene, same as any other approved content; `thirdparty/` there is just a sub-label for license-provenance clarity, not a separate lifecycle tier.
-
-For families broad enough to contain multiple distinct instances (`environments/` can hold many rooms/regions), shared unassigned material may sit at the category-level `input/`. Once assigned to a meaningful asset family, that family owns the full `reference/`/`input/`/`wip/`/`approved/` lifecycle. A downloaded tileset pack nobody has assigned to a room yet stays raw in `input/`; room-specific working art and Godot wiring live together in that room's `wip/`; an accepted package moves together into `approved/`.
-
-### Where the Godot-side assembly of an approved asset lives
-
-The lifecycle folders are complete asset packages, not a pure pixels-only
-library. `.png`/`.aseprite` contain pixels; `.tres` is a saved Godot Resource
-interpreting or configuring those pixels (for example `SpriteFrames`,
-`TileSet`, `Theme` or item data); `.tscn` is an assembled Scene that exists or
-can be instantiated. During experimentation these files live together in
-`wip/`; once canonical they live together in `approved/`. For example:
+The conceptual lifecycle is:
 
 ```text
-mango_overworld.png → mango_overworld_frames.tres → mango_overworld.tscn
-home_interior_tiles.png → home_interior_tileset.tres → room_name.tscn
+reference → input → wip → approved
 ```
 
-Do not create a scene for a static decorative tile or tiny variant merely to
-satisfy the pattern.
+Where numbered folders exist, they normally map to:
 
----
+```text
+01_reference → 02_input → 03_wip → 04_approved
+```
 
-## 14. Acceptance criteria
+`shared/` is an organizational layer for cross-role material; it is not an
+additional lifecycle stage. Raw inputs are not runtime content. WIP is the
+complete actively curated package. Approved is the complete human-reviewed,
+Godot-tested package.
 
-An approved asset should be:
-- on-palette;
-- readable at native scale;
-- consistent with the Art Bible;
-- consistent with its canonical family;
-- free of accidental/noisy pixels;
-- correctly aligned and exported;
-- appropriately licensed/provenanced;
-- tested in Godot.
+Every package includes the relevant art and, where applicable, `.aseprite`,
+metadata, `.tres` resources and `.tscn` scenes. Do not promote a PNG without
+the resources and scenes required to use it correctly.
 
-For generated directions or animations, also check:
-- head/body dimensions;
-- costume and markings;
-- tail/ear thickness;
-- prop size;
-- perspective;
-- palette drift;
-- frame-to-frame identity consistency.
+Typical character package shape:
 
----
+```text
+assets/characters/<character>/
+  CHARACTER_VISUAL_BRIEF.md
+  shared/01_reference/
+  shared/02_input/
+  <role>/01_reference/
+  <role>/02_input/
+  <role>/03_wip/
+  <role>/04_approved/
+```
 
-## 15. Tool roles for Cooper & Mango
+`<role>` is normally `overworld`, `battle` or `portrait`. Not every character
+has every role yet, and existing packages may still use an unnumbered folder;
+the lifecycle meaning remains the same.
 
-### Ideate / reference
-- Procreate
-- FigJam
-- Gemini / ChatGPT
-- photos
-- game / manga / UI references
+## 2. Authority and intake
 
-### Draft and multiply
-- PixelLab and SpriteCook
-- Gemini for looser concept exploration
+Before work begins, read:
 
-### Canonicalise, redraw and clean
-- Aseprite
-- Pixquare
+1. `docs/vision/GAME_BIBLE.md` for narrative and personality canon;
+2. `docs/art/ART_BIBLE.md` for global visual constraints;
+3. `assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md` for identity;
+4. the owning environment or character manifest;
+5. the relevant references, current anchors and previous review state.
 
-### Implement and test
-- Godot
+Use real photos for likeness and physical truth. Use visual references for
+direction, not copying. Use generated material as provisional input until a
+human reviews it.
 
-### Orchestrate and remember
-- Claude Code
-- GitHub
+When user direction changes a character's identity, expression, prop or pose,
+record it through `$cm-character-visual-brief`. Keep current direction distinct
+from canonical Game Bible facts and record unresolved conflicts as open
+questions.
 
-### Tool choice in practice
+## 3. Skill-driven character workflow
 
-PixelLab and SpriteCook are overlapping generation tools; either may be the
-right choice for characters, props, tilesets, textures or animation. As a
-rough preference, PixelLab is often a good fit for likeness-driven or
-directional character work, while SpriteCook is often convenient for cohesive
-asset families, editing or animating an existing image, and Godot-ready
-handoff. These are not strict assignments: compare the result against the art
-direction and keep whichever candidate is stronger. Use Aseprite or Pixquare
-for pixel-level cleanup, palette control, frame timing and final
-canonicalisation.
+This is the default character path. Skills are narrow operations with explicit
+handoffs, not one monolithic asset skill.
 
-Where available, SpriteCook's engine export can reduce setup work; it does not
-change our locked 24×16 overworld, 32×32 battle, 48×48 portrait or 16×16
-environment decisions.
-Generated exports still enter `input/` or `wip/` and require human review,
-canonical asset packets and a running Godot validation pass before promotion.
+| Stage | Skill/pathway | Input | Output |
+|---|---|---|---|
+| Identity | `$cm-character-visual-brief` | Game Bible, references, user direction | `CHARACTER_VISUAL_BRIEF.md` |
+| Master synthesis | `$cm-openai-character-reference-input` or equivalent Gemini path | Complete reference set and brief | Clean master sheet plus metadata |
+| Review labeling | Internal deterministic label tool | Clean master | Separate numbered review copy and cell map |
+| Selection | `$cm-slice-master-sprite-sheet` | Clean master plus review IDs | Selected clean cells in role `02_input/` |
+| Resolution gate | `$cm-prepare-role-resolution` | Selected cell | Transparent governed-size candidate |
+| Static refinement | `$cm-pixellab-characters`, `$cm-pixellab-portraits`, OpenAI role skills, Aseprite or manual redraw | Prepared selected candidate | Refined static WIP candidate |
+| Animation | `$cm-pixellab-animation`, `$cm-openai-animation-sheet`, `$cm-openai-video-to-sprite`, `$cm-higgsfield-autosprite`, `$cm-python-simple-pixel-animation` or Aseprite | Selected prepared anchor | Candidate frames/sheet |
+| Frame validation | `$cm-normalize-animation-frames` | Candidate animation | Consistent frames, baseline, pivot and bounds |
+| Palette cleanup | `$cm-aseprite-recolour` | WIP art only | Palette-conforming WIP art |
+| Runtime validation | Godot | Complete WIP package | Scene/resource/runtime review |
+| Promotion | Human approval | Reviewed, tested package | `04_approved/` package |
 
-## Guiding rule
+The numbered review copy is never source art. Cell coordinates come from its
+map, but extraction always crops the original clean master. Do not process or
+send unselected cells downstream.
 
-> **Handcraft the things players remember. Industrialise the things they merely need to believe are there.**
+## 4. Governed role contracts
 
-Use AI to multiply clear intent rather than replace art direction. As Cooper & Mango accumulates canonical characters, palette rules, environment kits and approved asset families, the AI-assisted parts of the pipeline should become faster and more reliable rather than more random.
+| Role | Native size | Pose grammar | Required gate |
+|---|---:|---|---|
+| Overworld | 20×16 | Quadruped, north/south/east/west | Transparent target-size preparation and four-direction landmark review |
+| Battle | 32×32 | Upright/bipedal, with deliberate action poses | Transparent target-size preparation and baseline/pivot review |
+| Portrait | 40×40 | Upright/bipedal, expression/likeness first | Transparent target-size preparation and crop/likeness review |
 
----
+The resolution gate removes white/black or near-uniform backgrounds from
+selected candidates, preserves aspect ratio, uses nearest-neighbour fitting and
+flags native-scale review. It must not stretch the character to fill the
+canvas. If the pose cannot survive the target ratio, regenerate or redraw it.
 
-## 16. Locked presentation and environment-tile practice
+## 5. Master-sheet workflow
 
-### Keep these three concerns separate
+Use a master sheet when multiple roles or expressions must share one character
+model. The generation request should use all relevant references and make the
+logical regions explicit: portrait, battle and overworld.
 
-| Concern | Locked decision | What it changes |
+The production sequence is:
+
+1. Generate and preserve one clean master.
+2. Create a separate deterministic numbered review copy.
+3. Have the user select IDs such as `P03`, `B07` and `O12`.
+4. Extract those IDs from the clean master into role input folders.
+5. Keep the master, review map, selected-cell metadata and provider provenance
+   together in the shared manifest.
+6. Prepare only selected cells at governed role resolution.
+
+Whole-region crops are optional context. They do not replace cell selection.
+
+## 6. Choosing complementary pathways
+
+Provider choice depends on the problem; no provider is a permanent fallback or
+automatic next step.
+
+| Problem | Useful path | Gate that still applies |
 |---|---|---|
-| Logical presentation | **480×270** | Camera composition and how much of a room is visible |
-| World grid / TileMap cell | **16×16** | Placement, collision, reusable environment vocabulary |
-| Character asset tiers | **24×16 overworld; 32×32 battle; 48×48 portrait** | The deliberate amount of detail in each character role |
+| Cross-role consistency and ideation | OpenAI Image or Gemini master | Number, review and extract selected cells |
+| Static role refinement | PixelLab, OpenAI Image, Aseprite/manual | Governed resolution and high-reference review |
+| Walk/run or complex motion | PixelLab, OpenAI video or Higgs AutoSprite | Extract, normalize, inspect loop and landmarks |
+| Simple breathing/bob/sway | Python integer-pixel animation or Aseprite | Preserve anchor, dimensions and baseline |
+| Palette and cluster cleanup | Aseprite/Pixquare | Operate only in WIP; preserve source provenance |
+| Environment ideation | OpenAI environment study, Gemini, PixelLab | Treat as input reference; validate grid, perspective and seams |
 
-Do not raise the tile grid or character frames merely because PixelLab can generate on a larger canvas. Screen resolution is not sprite resolution. The 480×270 presentation gives useful camera space and a clean 4× 1080p scale; it does not make the art more complex.
+OpenAI, PixelLab, Higgs and Gemini outputs remain provisional. Generated video
+is source material; runtime uses extracted PNG frames or Godot SpriteFrames, not
+the provider video itself.
 
-### Tilesets are atlas sheets, not a pile of manually chopped PNGs
+## 7. Environment and prop workflow
 
-Keep a compatible tileset as one source PNG. In Aseprite, turn on a **16×16 grid**; in Godot, create a TileSet Atlas source from the sheet, set the atlas tile size to **16×16**, define the usable cells and their collision/navigation metadata, then paint the room with a TileMap. The resulting TileSet resource belongs in the room's WIP or Approved package alongside the atlas it interprets.
+Environment production uses the same lifecycle but a different composition
+logic:
 
-Individual exported PNGs are only needed when an asset is genuinely standalone (for example, a Sprite2D prop, an animated object, or a hand-managed reusable component). Aseprite slices can batch-export such regions where useful, but manual chopping is not the default workflow.
+1. Read the environment-local manifest and references.
+2. Use `$cm-openai-environment-reference-input` or Gemini for provisional
+   pixel-art ideation when a reference transformation is useful.
+3. Use licensed packs from input only with provenance recorded.
+4. Use PixelLab or Aseprite to restyle, extend, crop or manually curate.
+5. Preserve original compatible sheets where possible; use 16×16 TileSet
+   atlases for grid-native tiles.
+6. Use Sprite2D regions or scenes for coherent multi-cell furniture and props.
+7. Keep collision, interaction and sorting in Godot resources/scenes.
+8. Compose the room in WIP and test camera, walkability, seams, scale,
+   contrast, lighting and character readability.
+9. Promote the complete accepted room package together.
 
-A 32×32 or 48×32 piece of furniture is a **meta-tile** occupying several 16×16 world cells, not a reason to change the grid. Do not algorithmically downscale a good 32×32 object to 16×16 just to make it one cell.
+Tutorial Room defaults are strict orthographic high top-down, 16×16 grid and
+480×270 camera. Its environment manifest is mandatory for room-specific
+PixelLab work. Do not treat a generated complete tileset as production-ready.
 
-### PixelLab's role in environment work
+## 8. Canonicalization and recolour
 
-Use PixelLab to generate:
-- a small, coherent top-down terrain family or transition set;
-- style-matched individual props and variants;
-- environmental extensions from an approved room screenshot or kit;
-- multiplication passes after an approved art/palette anchor exists.
+Distinguish:
 
-Do not treat a giant generated “complete apartment tileset” as production-ready. It must still be checked for repeated-edge seams, compatible palette use, grid alignment, recognisable domestic forms, collision meaning and reuse value.
+- **Recolour:** replace selected colours.
+- **Palette remap:** map the asset into the master palette.
+- **Restyle:** change clusters, outlines, shading and detail to obey the Art Bible.
+- **Redraw:** reconstruct the role asset when scaling or generation cannot preserve identity.
 
-For a generated environment request, name the production constraints: the
-asset's exact native visible bounds, hard edges, transparent background where
-appropriate, **16×16 tile grid**, master-palette subset, and whether the output
-is a single prop, a 2×2 meta-tile, or a terrain/transition set. Tutorial Room
-props default to strict orthographic high top-down presentation; oblique,
-isometric, perspective, side-view, and visible-front-face results are invalid
-unless explicitly requested. PixelLab's padded canvas is not permission to
-scale the asset up: content must fit the canonical bounds in
-`assets/environments/tutorial_room_mango/environment_manifest.json`.
+Use `$cm-aseprite-recolour` only on material already in `wip/`. Never recolour
+directly in reference, input or approved. Preserve the original and record the
+palette, source and output in the manifest.
 
-A generated result enters input; it moves to wip the moment human cleanup
-starts; only the tested export belongs in approved.
+## 9. Godot validation and promotion
 
-### PixelLab's role in characters
+Godot is the composition workbench and reality check, not merely the last
+import step. Validate:
 
-Ask PixelLab for the intended **role frame**, not a vague large character image:
-- overworld: **24×16**, quadruped, transparent background;
-- battle: **32×32**, upright/bipedal;
-- portrait: **48×48**, upright/bipedal;
-- animation: explicit frame size, direction count and shared baseline.
+- native 1× readability;
+- black foreground versus faded background outline class;
+- character/background contrast;
+- feet, pivot and baseline placement;
+- tile seams and atlas connectivity;
+- collisions, sorting and interaction;
+- animation weight and loop continuity;
+- UI coexistence and camera framing;
+- palette harmony and visual family consistency.
 
-If PixelLab is more reliable at a larger generation canvas, treat that output as a draft/reference and deliberately redraw/crop it into the locked production frame in Aseprite or Pixquare. Never resize a detailed large sprite down and call it a finished 24×16 overworld asset.
+Promotion requires a complete package: accepted art, editable source where
+appropriate, metadata, manifests, Godot resources/scenes and a successful
+running-game review. An isolated good-looking PNG is not approved production art.
 
-The loop remains: **reference and approved anchors → PixelLab or SpriteCook candidate/multiplication → Aseprite/Pixquare canonicalisation → Godot validation → new approved anchor**. Pick between PixelLab and SpriteCook based on the prompt, references, output quality and handoff convenience.
+## 10. Manifest and provenance requirements
+
+For generated or transformed material, record:
+
+- character/environment and role;
+- source references and brief version/state;
+- provider/model/tool;
+- prompt or generation description;
+- job ID where applicable;
+- master version and selected cell IDs;
+- input/output paths;
+- dimensions and normalization state;
+- palette/recolour state;
+- review status and approval decision;
+- known failures or open questions.
+
+Historical outputs may remain for provenance, but active manifests must point to
+current paths and current role contracts.
+
+## 11. Related authority
+
+- Visual direction: [`ART_BIBLE.md`](ART_BIBLE.md).
+- Character identity: `assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md`.
+- Narrative canon: [`docs/vision/GAME_BIBLE.md`](../vision/GAME_BIBLE.md).
+- MCP/tool setup: [`docs/engineering/MCP.md`](../engineering/MCP.md).

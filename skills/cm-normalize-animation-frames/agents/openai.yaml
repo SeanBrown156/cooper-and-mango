@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM Animation Normalizer"
+  short_description: "Normalize generated frames, pivots, bounds, and sprite sheets"
+  default_prompt: "Validate and normalize these animation frames for the project role contract, preserving the body pivot and effect bounds."
