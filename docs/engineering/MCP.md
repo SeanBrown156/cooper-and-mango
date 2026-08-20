@@ -64,14 +64,31 @@ candidate until reviewed, cleaned and promoted through the art pipeline.
 
 ### Tutorial Room PixelLab hard constraints
 
-For `tutorial_room_mango`, use
-`assets/environments/tutorial_room_mango/environment_manifest.json` before
-every generation request. The default is native 16×16-grid sizing, transparent
+For `tutorial_room_mango`, discovery resolves the owning
+`assets/environments/tutorial_room_mango/environment_manifest.json`; use that
+local manifest before every generation request. Future environments follow the
+same direct-package convention. Do not create or consult a root-level manifest
+copy. The default is native 16×16-grid sizing, transparent
 background, and strict orthographic high top-down view. Oblique, isometric,
 side-view, perspective, and visible-front-face outputs are invalid unless the
 request explicitly overrides the room contract. PixelLab canvas size is not
 the same as visible asset bounds: when the API requires a 32px minimum canvas,
 keep transparent padding and fit the actual content to the specified bounds.
+
+### Environment manifest boundary
+
+An environment-local manifest is the generation and asset ledger: references,
+provider jobs, asset IDs, technical bounds, variants, prompts, provenance,
+review state, and generation order. Tooling discovers these manifests from
+`assets/environments/*/environment_manifest.json` and validates their package
+identity; it must not assemble a second hand-authored report.
+
+Godot remains authoritative for runtime composition: `.tscn` and `.tres`
+resources own node structure, atlas/region placement, draw order and sorting,
+collision, interaction, navigation, camera wiring, and scene behaviour. A
+manifest may describe intended bounds or placement inputs, but changing it does
+not change a Godot scene. Validate the assembled result in Godot before
+promotion.
 
 ## SpriteCook
 

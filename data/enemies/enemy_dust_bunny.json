@@ -1,0 +1,21 @@
+{
+  "id": "enemy_dust_bunny",
+  "name": "Dust Bunny",
+  "description": "A loose knot of household dust that twitches awake when the room begins to change.",
+  "content_status": "approved",
+  "enemy_type": "awakened_object",
+  "base_stats": {
+    "max_hp": 18,
+    "attack": 4,
+    "defence": 2,
+    "speed": 3
+  },
+  "abilities": [],
+  "drop_table": [
+    {
+      "item_id": "item_cat_kibble",
+      "quantity": 1,
+      "chance": 0.25
+    }
+  ]
+}

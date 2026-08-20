@@ -1,0 +1,17 @@
+{
+  "id": "actor_cooper",
+  "name": "Cooper",
+  "description": "An earnest, anxious Cavoodle who acts with courage while still afraid.",
+  "content_status": "approved",
+  "role": "playable",
+  "species": "dog",
+  "abilities": [
+    "skill_brave_bark"
+  ],
+  "base_stats": {
+    "max_hp": 32,
+    "attack": 6,
+    "defence": 6,
+    "speed": 4
+  }
+}

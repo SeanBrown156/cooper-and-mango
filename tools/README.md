@@ -8,8 +8,8 @@ adapters used by those skills: API clients, image processors, and validators.
 - `openai/` — OpenAI Image and Sora API clients. These submit paid/limited API
   jobs only when explicitly run.
 - `aseprite/` — Aseprite CLI operations for WIP-only palette work.
-- `pixellab/` — PixelLab-specific manifests and validators for environment
-  generation.
+- `pixellab/` — discovery and validation for package-local PixelLab
+  environment manifests and generation contracts.
 - `shared/` — Provider-neutral canvas construction, frame normalization,
   procedural pixel motion, video frame extraction, and asset validation.
 

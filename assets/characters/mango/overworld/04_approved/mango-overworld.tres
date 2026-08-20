@@ -1,0 +1,106 @@
+[gd_resource type="SpriteFrames" load_steps=24 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/mango/overworld/04_approved/mango-overworld-north.png" id="1_north"]
+[ext_resource type="Texture2D" path="res://assets/characters/mango/overworld/04_approved/mango-overworld-south.png" id="2_south"]
+[ext_resource type="Texture2D" path="res://assets/characters/mango/overworld/04_approved/mango-overworld-east.png" id="3_east"]
+[ext_resource type="Texture2D" path="res://assets/characters/mango/overworld/04_approved/mango-overworld-west.png" id="4_west"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_north_0"]
+atlas = ExtResource("1_north")
+region = Rect2(0, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_north_1"]
+atlas = ExtResource("1_north")
+region = Rect2(18, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_north_2"]
+atlas = ExtResource("1_north")
+region = Rect2(36, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_0"]
+atlas = ExtResource("2_south")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_1"]
+atlas = ExtResource("2_south")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_2"]
+atlas = ExtResource("2_south")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_3"]
+atlas = ExtResource("2_south")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_4"]
+atlas = ExtResource("2_south")
+region = Rect2(64, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_5"]
+atlas = ExtResource("2_south")
+region = Rect2(80, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_6"]
+atlas = ExtResource("2_south")
+region = Rect2(96, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_7"]
+atlas = ExtResource("2_south")
+region = Rect2(112, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_8"]
+atlas = ExtResource("2_south")
+region = Rect2(128, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_south_9"]
+atlas = ExtResource("2_south")
+region = Rect2(144, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_east_0"]
+atlas = ExtResource("3_east")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_east_1"]
+atlas = ExtResource("3_east")
+region = Rect2(20, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_east_2"]
+atlas = ExtResource("3_east")
+region = Rect2(40, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_west_0"]
+atlas = ExtResource("4_west")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_west_1"]
+atlas = ExtResource("4_west")
+region = Rect2(20, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_west_2"]
+atlas = ExtResource("4_west")
+region = Rect2(40, 0, 20, 16)
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("AtlasTexture_north_0")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_north_1")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_north_2")}],
+"loop": true,
+"name": &"walk_north",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("AtlasTexture_south_0")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_1")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_2")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_3")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_4")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_5")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_6")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_7")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_8")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_south_9")}],
+"loop": true,
+"name": &"walk_south",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("AtlasTexture_east_0")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_east_1")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_east_2")}],
+"loop": true,
+"name": &"walk_east",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("AtlasTexture_west_0")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_west_1")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_west_2")}],
+"loop": true,
+"name": &"walk_west",
+"speed": 10.0
+}]
+

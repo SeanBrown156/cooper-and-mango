@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Cooper & Mango"
 config/description="A 2D RPG starring our real pets, Mango and Cooper."
+run/main_scene="res://scenes/mango_overworld_walk_test.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

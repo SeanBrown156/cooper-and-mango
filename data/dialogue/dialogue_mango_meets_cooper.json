@@ -1,0 +1,37 @@
+{
+  "id": "dialogue_mango_meets_cooper",
+  "name": "Mango Meets Cooper",
+  "description": "A short first conversation after the pets leave their rooms and discover that they can speak.",
+  "content_status": "approved",
+  "nodes": [
+    {
+      "id": "start",
+      "speaker_id": "actor_mango",
+      "text": "You can talk?",
+      "next_id": "cooper_answers"
+    },
+    {
+      "id": "cooper_answers",
+      "speaker_id": "actor_cooper",
+      "text": "I think so. I am Cooper. Are you hurt?",
+      "next_id": "mango_replies"
+    },
+    {
+      "id": "mango_replies",
+      "speaker_id": "actor_mango",
+      "text": "Mango. I am fine. Something is very wrong with this house.",
+      "next_id": "cooper_joins"
+    },
+    {
+      "id": "cooper_joins",
+      "speaker_id": "actor_cooper",
+      "text": "Then we should stay together. I will try to be brave.",
+      "consequences": [
+        {
+          "type": "add_party_member",
+          "actor_id": "actor_cooper"
+        }
+      ]
+    }
+  ]
+}

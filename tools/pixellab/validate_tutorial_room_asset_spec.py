@@ -4,15 +4,9 @@
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-SPEC_PATH = (
-    ROOT
-    / "assets"
-    / "environments"
-    / "tutorial_room_mango"
-    / "environment_manifest.json"
-)
+from discover_environment_manifests import ROOT, resolve_manifest
 
+SPEC_PATH = resolve_manifest("tutorial_room_mango")
 spec = json.loads(SPEC_PATH.read_text())
 contract = spec["technical_contract"]
 tile = contract["native_tile_size_px"]

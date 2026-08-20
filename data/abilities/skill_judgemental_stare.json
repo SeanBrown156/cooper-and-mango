@@ -1,0 +1,17 @@
+{
+  "id": "skill_judgemental_stare",
+  "name": "Judgemental Stare",
+  "user_id": "actor_mango",
+  "description": "Mango fixes the enemy with a look that makes it question every decision it has made.",
+  "content_status": "approved",
+  "target": "one_enemy",
+  "cost": 4,
+  "effects": [
+    {
+      "type": "modify_stat",
+      "stat": "attack",
+      "amount": -3,
+      "turns": 3
+    }
+  ]
+}

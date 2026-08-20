@@ -27,7 +27,10 @@ dressing, not a required composition anchor.
 
 `environment_manifest.json` is the environment-local inventory and production
 contract. It records references, asset IDs, generation inputs and provenance,
-technical bounds, variants, review state, and generation order.
+technical bounds, variants, review state, and generation order. The file must
+remain directly inside this package; central tooling discovers it by the fixed
+filename and package directory, so there is no second central manifest path to
+maintain.
 
 Godot `.tscn` and `.tres` resources remain authoritative for runtime composition:
 placement, layering, sorting, collision, and scene behaviour. The manifest must

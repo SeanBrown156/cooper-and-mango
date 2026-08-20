@@ -22,4 +22,4 @@ to the project’s 16px grid, check palette and silhouette against the Gemini
 composites and reference photos, then add collision/sorting metadata.
 
 The corresponding PixelLab IDs and generation provenance are in
-`../../PIXELLAB_JOBS.md`.
+`../../../../PIXELLAB_JOBS.md`.

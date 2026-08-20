@@ -1,0 +1,17 @@
+{
+  "id": "actor_mango",
+  "name": "Mango",
+  "description": "An aloof orange tabby cat in a purple hoodie who is magically powerful and warm underneath.",
+  "content_status": "approved",
+  "role": "playable",
+  "species": "cat",
+  "abilities": [
+    "skill_judgemental_stare"
+  ],
+  "base_stats": {
+    "max_hp": 28,
+    "attack": 7,
+    "defence": 4,
+    "speed": 6
+  }
+}
