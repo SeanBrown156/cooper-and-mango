@@ -16,16 +16,29 @@ Platform target: **PC via Steam**, keyboard + controller. Mobile/Switch are open
 
 ## Tool stack
 
-- **Godot 4** — engine
-- **PixelLab** — reference-driven pixel art (MCP-connected in both Claude Code and Codex)
-- **Aseprite** — sprite cleanup, palette control, animation timing
-- **Ableton** — music composition, alongside AI-assisted drafting and possible composer collaborators
-- **Claude Code / Codex** — GDScript, content schema, tests, repetitive asset integration
-- **GitHub** — source of truth for code, content, and docs
+### Creative direction and reference
+
+- **FigJam** — inspiration, mood boards, visual references, game examples, palette exploration and art-direction discussions
+- **Procreate** — loose sketches, character ideas, poses, environment concepts and visual problem-solving
+- **Real photos** — likeness and physical reference for Mango, Cooper, the home, furniture and distinctive objects
+- **Gemini / ChatGPT** — rapid concept exploration, composition ideas, critique and comparison
+
+### Pixel-art production
+
+- **PixelLab** — reference-driven pixel-art generation, environment kits, tilesets, props, character candidates, variants and animation candidates
+- **Pixquare** — iPad and Apple Pencil drawing, cleanup, repainting and animation; supports Aseprite round-tripping
+- **Aseprite** — desktop production master for precise pixel cleanup, palette control, animation timing, sprite sheets and editable masters
+
+### Game production and project memory
+
+- **Godot 4** — engine, scene composition and runtime validation
+- **GitHub** — source of truth for code, content, assets and documentation
+- **Claude Code / Codex** — GDScript, content schema, tests and repetitive asset integration
+- **Ableton** — music composition and audio production
 - **Supabase** — optional future content-authoring layer once the schema is proven (see `docs/design/CONTENT_SCHEMA.md`)
+
+The detailed workflow and asset lifecycle are documented in [`docs/art/ART_PRODUCTION_PIPELINE.md`](docs/art/ART_PRODUCTION_PIPELINE.md) and [`_studio/README.md`](_studio/README.md).
 
 ## Documentation
 
-Start with [`docs/README.md`](docs/README.md), the canonical documentation
-map. It points to the source-of-truth document for each area and explains who
-owns each kind of decision.
+Start with [`docs/README.md`](docs/README.md), the canonical documentation map. It points to the source-of-truth document for each area and explains who owns each kind of decision.
