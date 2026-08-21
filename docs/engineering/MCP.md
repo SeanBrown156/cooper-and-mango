@@ -39,7 +39,7 @@ variables. Codex must trust the workspace before loading `.codex/config.toml`.
 ## PixelLab
 
 Repo-specific PixelLab workflows are split by production need under
-`skills/cm-pixellab-*`. Use the narrowest matching skill: characters,
+`.agents/skills/cm-pixellab-*`. Use the narrowest matching skill: characters,
 animation, portraits, environments, or props. These skills encode the
 Cooper & Mango constraints that are easy to lose in a generic prompt, such as
 four-direction overworld movement, directional 16×20 north/south and 20×16

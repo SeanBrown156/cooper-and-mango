@@ -47,17 +47,17 @@ lifecycle stage.
 - Build stages and validation: [`docs/production/`](docs/production/)
 - Audio: [`docs/audio/AUDIO_BIBLE.md`](docs/audio/AUDIO_BIBLE.md)
 - MCP/tooling: [`docs/engineering/MCP.md`](docs/engineering/MCP.md)
-- PixelLab task skills: `skills/cm-pixellab-characters/`,
-  `skills/cm-pixellab-animation/`, `skills/cm-pixellab-portraits/`,
-  `skills/cm-pixellab-environments/`, and `skills/cm-pixellab-props/`
-- Complementary image workflows: `skills/cm-openai-master-sprite-sheet/`,
-  `skills/cm-character-visual-brief/`,
-  `skills/cm-openai-portrait-sprite-sheet/`, `skills/cm-openai-battle-sprite-sheet/`,
-  `skills/cm-openai-overworld-sprite-sheet/`,
-  `skills/cm-slice-master-sprite-sheet/`,
-  `skills/cm-prepare-role-resolution/`,
-  `skills/cm-openai-environment-sprite/`, and
-  `skills/cm-higgsfield-autosprite/`
+- PixelLab task skills: `.agents/skills/cm-pixellab-characters/`,
+  `.agents/skills/cm-pixellab-animation/`, `.agents/skills/cm-pixellab-portraits/`,
+  `.agents/skills/cm-pixellab-environments/`, and `.agents/skills/cm-pixellab-props/`
+- Complementary image workflows: `.agents/skills/cm-openai-master-sprite-sheet/`,
+  `.agents/skills/cm-character-visual-brief/`,
+  `.agents/skills/cm-openai-portrait-sprite-sheet/`, `.agents/skills/cm-openai-battle-sprite-sheet/`,
+  `.agents/skills/cm-openai-overworld-sprite-sheet/`,
+  `.agents/skills/cm-slice-master-sprite-sheet/`,
+  `.agents/skills/cm-prepare-role-resolution/`,
+  `.agents/skills/cm-openai-environment-sprite/`, and
+  `.agents/skills/cm-higgsfield-autosprite/`
 - Runtime content: `data/`
 - Godot project: `scenes/`, `scripts/`, `project.godot`
 
