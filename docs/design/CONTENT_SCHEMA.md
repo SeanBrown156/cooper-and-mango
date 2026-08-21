@@ -73,6 +73,83 @@ The source note recommends Supabase as an eventual **editable master catalogue**
 - Exports are versioned snapshots (`content-0.1.0`, schema version, source commit, checksum/manifest) committed to GitHub alongside the build
 - Snapshots must be deterministic — same approved state in, same files out
 
+## Authored Data and Runtime Code
+
+Content records describe authored meaning; Godot code interprets those records.
+Scripts should not be generated separately for every conversation or object
+interaction, and JSON should not become an arbitrary programming language.
+
+The boundary is:
+
+- **Authored data** defines dialogue lines, choices, stable IDs, conditions,
+  consequences, encounter composition, asset references, and presentation
+  metadata.
+- **Runtime code** loads and indexes records, checks conditions, renders UI,
+  applies consequences, manages save state, and emits gameplay events.
+- **Runtime state** records what happened in the current playthrough. It must
+  remain separate from the reusable authored definition.
+
+This supports a classic JRPG-style workflow: designers author reusable content
+records while a small set of engine systems provides the verbs that make those
+records playable. New bespoke scripts should be added only when a genuinely new
+runtime capability is required.
+
+### Dialogue, interactions, and consequences
+
+Dialogue belongs in `data/dialogue/`, alongside actors, abilities, items, and
+encounters. A scene interaction should reference a dialogue or event ID rather
+than contain its conversation text in GDScript.
+
+The intended flow is:
+
+```text
+player presses interact
+  -> interaction_resolved
+  -> start dialogue/event by stable ID
+  -> evaluate prerequisites and show dialogue nodes
+  -> apply authored consequences
+  -> emit state/event changes
+  -> return control to the player
+```
+
+For example, the spider-plant interaction may start
+`dialogue_plant_awakening`; when it completes, a consequence sets
+`flag_plant_awakened`, unlocks the door, and returns control to the player.
+The same consequence vocabulary should be reusable by dialogue, items, quests,
+encounters, and traversal gates.
+
+An interaction record or scene configuration should be small and declarative:
+
+```json
+{
+  "id": "interaction_spider_plant",
+  "trigger_type": "interact",
+  "dialogue_id": "dialogue_plant_awakening",
+  "prerequisites": [],
+  "replay_policy": "once",
+  "consequences": [
+    { "type": "set_flag", "flag": "flag_plant_awakened" },
+    { "type": "unlock", "target_id": "exit_tutorial_room" }
+  ]
+}
+```
+
+The engine systems implied by this boundary are intentionally small:
+
+1. `ContentRepository` loads approved local records and indexes them by ID.
+2. `WorldState` reads and writes persistent flags and other save-scoped state.
+3. `DialogueRunner` walks nodes, evaluates conditions, handles choices, and
+   hands consequences to the effect system.
+4. `ConsequenceRunner` applies controlled verbs such as `set_flag`, `unlock`,
+   `add_party_member`, `start_battle`, and `give_item`.
+5. Interactable components provide the trigger and presentation hook but do not
+   own the story text or duplicate progression logic.
+
+The current linear dialogue records are a valid Stage 1 starting point. The
+runtime should prove one complete path first — interaction → dialogue → flag or
+party consequence → world response — before adding a general-purpose cutscene
+language or a remote authoring database.
+
 ## Immediate Next Step
 
-Populate the smallest possible real dataset needed for the Stage 1 vertical slice (see [`../production/PRODUCTION_ROADMAP.md`](../production/PRODUCTION_ROADMAP.md)): Mango, Cooper, one item (cat kibble), one ability each, one enemy (Dust Bunny or the Vacuum Cleaner), one encounter, one short dialogue sequence. Prove the schema with this before expanding it.
+Populate the smallest possible real dataset needed for the Stage 1 vertical slice (see [`../production/PRODUCTION_ROADMAP.md`](../production/PRODUCTION_ROADMAP.md)): Mango, Cooper, one item (cat kibble), one ability each, one enemy (Dust Bunny or the Vacuum Cleaner), one encounter, and one short dialogue sequence. Then prove one data-driven interaction end to end: an interactable starts a dialogue, the dialogue applies a consequence, and the room responds to the resulting world-state change.
