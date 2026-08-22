@@ -1,0 +1,13 @@
+{
+  "source": "assets/characters/mango/battle/02_input/previews/mango_battle_B01_32x32_preview.png",
+  "output": "assets/characters/mango/battle/02_input/previews/mango_battle_B01_32x32_pixellab_pixflux.png",
+  "provider": "PixelLab",
+  "tool": "create_image_pixflux",
+  "job_id": "d73a7ebd-001d-47f2-ae33-c51bef7a4739",
+  "mode": "image_to_image",
+  "init_image_strength": 420,
+  "dimensions": [32, 32],
+  "background": "transparent",
+  "cost": "1 PixelLab generation",
+  "status": "raw_pixellab_candidate"
+}

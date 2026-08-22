@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM PixelLab Props"
+  short_description: "Create reusable props and objects"
+  default_prompt: "Use $cm-pixellab-props to create a Cooper & Mango world prop."

@@ -1,0 +1,15 @@
+{
+  "source": "assets/characters/mango/overworld/02_input/mango_overworld_N27_from_master_v1.png",
+  "output": "assets/characters/mango/overworld/02_input/mango_overworld_N27_from_master_v1_transparent_reference.png",
+  "cell_id": "N27",
+  "role": "overworld",
+  "direction": "south/front anchor",
+  "outfit_state": "no hoodie",
+  "dimensions": [
+    44,
+    61
+  ],
+  "background": "transparent",
+  "preprocessing": "temporary 2px white safety margin for edge-connected background removal",
+  "status": "pixellab_turnaround_reference"
+}

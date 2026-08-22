@@ -1,0 +1,17 @@
+{
+  "source_master": "assets/characters/cooper/shared/02_input/cooper_master_reference_pixel_sheet_v4.png",
+  "review_map": "assets/characters/cooper/shared/02_input/meta/cooper_master_reference_pixel_sheet_v4_review.png.json",
+  "character": "cooper",
+  "role": "overworld",
+  "destination_role": "overworld",
+  "cell_id": "O07",
+  "variant": "v4",
+  "crop_box": [
+    1114,
+    687,
+    1325,
+    800
+  ],
+  "output": "assets/characters/cooper/overworld/02_input/south/cooper_overworld_O07_from_master_v4.png",
+  "status": "selected_provisional_input"
+}

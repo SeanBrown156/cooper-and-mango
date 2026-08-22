@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM PixelLab Environments"
+  short_description: "Create top-down rooms and tilesets"
+  default_prompt: "Use $cm-pixellab-environments to create a Cooper & Mango top-down environment asset."

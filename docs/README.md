@@ -31,15 +31,22 @@ the documents below contain the actual decisions.
 - [Art Production Pipeline](art/ART_PRODUCTION_PIPELINE.md) — how references, third-party assets, PixelLab output, Aseprite masters and Godot composition move through the lifecycle.
 - [Asset Licenses](art/ASSET_LICENSES.md) — provenance and permissions for external assets.
 
+Character-specific visual briefs live with their owning assets at
+`assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md` and are maintained
+with `$cm-character-visual-brief`.
+
 ## Design and content
 
 - [Technical Game Design](design/TECHNICAL_GAME_DESIGN.md) — reusable runtime contracts for player movement, interaction, dialogue, encounters, states and scene responsibility.
 - [Content Schema](design/CONTENT_SCHEMA.md) — structured content records, IDs, relationships and publishing shape.
+- [Content Schema Plan](design/CONTENT_SCHEMA_PLAN.md) — exploratory schema map, JRPG content domains, authoring/runtime boundaries and open decisions.
+- [Core Mechanics Library](design/MECHANICS_LIBRARY.md) — shared contracts for movement, interaction, battle actions, Zoom Meter, and traversal abilities.
 
 ## Production
 
 - [Production Roadmap](production/PRODUCTION_ROADMAP.md) — stages, sequencing and scope.
 - [Vertical Slice](production/VERTICAL_SLICE.md) — the current playable validation target and definition of done.
+- [Project Management Convention](production/PROJECT_MANAGEMENT.md) — how GitHub Projects, Milestones, Issues and Labels divide the work.
 - [Tutorial Room Build Card](production/slices/TUTORIAL_ROOM_BUILD.md) — current executable work order and Godot acceptance checks for Mango's first playable postcard.
 
 ## Audio

@@ -1,0 +1,354 @@
+{
+  "source": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1.png",
+  "output": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1_portrait_verified_review.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mapping_basis": "explicit whitespace-bounded portrait crops; not an equal grid",
+  "portrait_count": 26,
+  "invalid_legacy_ids": [
+    "P27",
+    "P28"
+  ],
+  "cells": [
+    {
+      "label": "P01",
+      "role": "portrait",
+      "order": 1,
+      "box": [
+        0,
+        0,
+        130,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P02",
+      "role": "portrait",
+      "order": 2,
+      "box": [
+        130,
+        0,
+        248,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P03",
+      "role": "portrait",
+      "order": 3,
+      "box": [
+        248,
+        0,
+        364,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P04",
+      "role": "portrait",
+      "order": 4,
+      "box": [
+        364,
+        0,
+        481,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P05",
+      "role": "portrait",
+      "order": 5,
+      "box": [
+        481,
+        0,
+        595,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P06",
+      "role": "portrait",
+      "order": 6,
+      "box": [
+        595,
+        0,
+        708,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P07",
+      "role": "portrait",
+      "order": 7,
+      "box": [
+        708,
+        0,
+        832,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P08",
+      "role": "portrait",
+      "order": 8,
+      "box": [
+        832,
+        0,
+        959,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P09",
+      "role": "portrait",
+      "order": 9,
+      "box": [
+        959,
+        0,
+        1078,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P10",
+      "role": "portrait",
+      "order": 10,
+      "box": [
+        1078,
+        0,
+        1195,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P11",
+      "role": "portrait",
+      "order": 11,
+      "box": [
+        1195,
+        0,
+        1308,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P12",
+      "role": "portrait",
+      "order": 12,
+      "box": [
+        1308,
+        0,
+        1414,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P13",
+      "role": "portrait",
+      "order": 13,
+      "box": [
+        1414,
+        0,
+        1536,
+        145
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P14",
+      "role": "portrait",
+      "order": 14,
+      "box": [
+        0,
+        145,
+        127,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P15",
+      "role": "portrait",
+      "order": 15,
+      "box": [
+        127,
+        145,
+        242,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P16",
+      "role": "portrait",
+      "order": 16,
+      "box": [
+        242,
+        145,
+        360,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P17",
+      "role": "portrait",
+      "order": 17,
+      "box": [
+        360,
+        145,
+        477,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P18",
+      "role": "portrait",
+      "order": 18,
+      "box": [
+        477,
+        145,
+        591,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P19",
+      "role": "portrait",
+      "order": 19,
+      "box": [
+        591,
+        145,
+        705,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P20",
+      "role": "portrait",
+      "order": 20,
+      "box": [
+        705,
+        145,
+        822,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P21",
+      "role": "portrait",
+      "order": 21,
+      "box": [
+        822,
+        145,
+        944,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P22",
+      "role": "portrait",
+      "order": 22,
+      "box": [
+        944,
+        145,
+        1066,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P23",
+      "role": "portrait",
+      "order": 23,
+      "box": [
+        1066,
+        145,
+        1184,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P24",
+      "role": "portrait",
+      "order": 24,
+      "box": [
+        1184,
+        145,
+        1299,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P25",
+      "role": "portrait",
+      "order": 25,
+      "box": [
+        1299,
+        145,
+        1412,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    },
+    {
+      "label": "P26",
+      "role": "portrait",
+      "order": 26,
+      "box": [
+        1412,
+        145,
+        1536,
+        290
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; whitespace-bounded crop"
+    }
+  ]
+}

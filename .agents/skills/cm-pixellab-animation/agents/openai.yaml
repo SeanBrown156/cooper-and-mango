@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM PixelLab Animation"
+  short_description: "Create constrained character animations"
+  default_prompt: "Use $cm-pixellab-animation to create a Cooper & Mango walk or idle animation."

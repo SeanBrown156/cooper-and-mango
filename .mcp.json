@@ -7,16 +7,6 @@
         "Authorization": "Bearer ${PIXELLAB_API_TOKEN}"
       }
     },
-    "godot-mcp": {
-      "type": "stdio",
-      "command": "node",
-      "args": [
-        "/Users/sean/.local/share/godot-mcp/server/build/index.js"
-      ],
-      "env": {
-        "GODOT_MCP_PORT": "6505"
-      }
-    },
     "aseprite": {
       "type": "stdio",
       "command": "npx",

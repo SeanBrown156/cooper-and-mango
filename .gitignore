@@ -11,6 +11,14 @@ export_presets.cfg
 .vscode/
 *.swp
 
+# Local credentials
+.env.local
+.env.*.local
+
+# Python tooling caches
+__pycache__/
+*.py[cod]
+
 # Reference material (personal photos/sketches — likeness truth, never edited
 # directly) and input (vendor/found source assets meant to be cut, remixed,
 # or composited into final art — or fresh, not-yet-reviewed generated output —

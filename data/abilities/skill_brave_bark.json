@@ -1,0 +1,17 @@
+{
+  "id": "skill_brave_bark",
+  "name": "Brave Bark",
+  "user_id": "actor_cooper",
+  "description": "Cooper barks through his nerves, steadying himself and making the enemy hesitate.",
+  "content_status": "approved",
+  "target": "one_enemy",
+  "cost": 3,
+  "effects": [
+    {
+      "type": "modify_stat",
+      "stat": "defence",
+      "amount": 2,
+      "turns": 2
+    }
+  ]
+}

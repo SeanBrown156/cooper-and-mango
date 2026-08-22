@@ -1,0 +1,354 @@
+{
+  "source": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1.png",
+  "output": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1_portrait_verified_clean_review.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mapping_basis": "explicit silhouette-bounded portrait crops with safety margin; not an equal grid",
+  "portrait_count": 26,
+  "invalid_legacy_ids": [
+    "P27",
+    "P28"
+  ],
+  "cells": [
+    {
+      "label": "P01",
+      "role": "portrait",
+      "order": 1,
+      "box": [
+        13,
+        14,
+        128,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P02",
+      "role": "portrait",
+      "order": 2,
+      "box": [
+        133,
+        14,
+        246,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P03",
+      "role": "portrait",
+      "order": 3,
+      "box": [
+        251,
+        15,
+        363,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P04",
+      "role": "portrait",
+      "order": 4,
+      "box": [
+        365,
+        12,
+        481,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P05",
+      "role": "portrait",
+      "order": 5,
+      "box": [
+        482,
+        13,
+        595,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P06",
+      "role": "portrait",
+      "order": 6,
+      "box": [
+        595,
+        15,
+        706,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P07",
+      "role": "portrait",
+      "order": 7,
+      "box": [
+        711,
+        13,
+        824,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P08",
+      "role": "portrait",
+      "order": 8,
+      "box": [
+        825,
+        8,
+        957,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P09",
+      "role": "portrait",
+      "order": 9,
+      "box": [
+        962,
+        16,
+        1075,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P10",
+      "role": "portrait",
+      "order": 10,
+      "box": [
+        1081,
+        15,
+        1192,
+        138
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P11",
+      "role": "portrait",
+      "order": 11,
+      "box": [
+        1190,
+        12,
+        1311,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P12",
+      "role": "portrait",
+      "order": 12,
+      "box": [
+        1305,
+        16,
+        1417,
+        136
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P13",
+      "role": "portrait",
+      "order": 13,
+      "box": [
+        1412,
+        15,
+        1526,
+        138
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P14",
+      "role": "portrait",
+      "order": 14,
+      "box": [
+        10,
+        146,
+        124,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P15",
+      "role": "portrait",
+      "order": 15,
+      "box": [
+        128,
+        144,
+        239,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P16",
+      "role": "portrait",
+      "order": 16,
+      "box": [
+        245,
+        144,
+        357,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P17",
+      "role": "portrait",
+      "order": 17,
+      "box": [
+        364,
+        145,
+        478,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P18",
+      "role": "portrait",
+      "order": 18,
+      "box": [
+        477,
+        146,
+        591,
+        273
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P19",
+      "role": "portrait",
+      "order": 19,
+      "box": [
+        591,
+        147,
+        705,
+        273
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P20",
+      "role": "portrait",
+      "order": 20,
+      "box": [
+        705,
+        145,
+        819,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P21",
+      "role": "portrait",
+      "order": 21,
+      "box": [
+        825,
+        146,
+        938,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P22",
+      "role": "portrait",
+      "order": 22,
+      "box": [
+        950,
+        146,
+        1062,
+        272
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P23",
+      "role": "portrait",
+      "order": 23,
+      "box": [
+        1070,
+        147,
+        1180,
+        273
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P24",
+      "role": "portrait",
+      "order": 24,
+      "box": [
+        1188,
+        147,
+        1299,
+        273
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P25",
+      "role": "portrait",
+      "order": 25,
+      "box": [
+        1299,
+        148,
+        1414,
+        274
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    },
+    {
+      "label": "P26",
+      "role": "portrait",
+      "order": 26,
+      "box": [
+        1411,
+        147,
+        1525,
+        274
+      ],
+      "verified": true,
+      "mapping_note": "13 visible portraits per row; silhouette crop with safety margin; effects excluded"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenAI Overworld Sprite Sheet"
+  short_description: "Generate quadruped directional overworld input sheets"
+  default_prompt: "Use $cm-openai-overworld-sprite-sheet only for an explicitly requested four-direction overworld sprite sheet."

@@ -1,0 +1,154 @@
+{
+  "source": "assets/characters/cooper/portrait/02_input/cooper_portrait_reference_pixel_sheet_v1.png",
+  "output": "assets/characters/cooper/portrait/02_input/cooper_portrait_reference_pixel_sheet_v1_review.png",
+  "dimensions": [
+    1024,
+    1024
+  ],
+  "cells": [
+    {
+      "label": "P01",
+      "role": "portrait",
+      "row": 1,
+      "column": 1,
+      "box": [
+        0,
+        0,
+        256,
+        341
+      ]
+    },
+    {
+      "label": "P02",
+      "role": "portrait",
+      "row": 1,
+      "column": 2,
+      "box": [
+        256,
+        0,
+        512,
+        341
+      ]
+    },
+    {
+      "label": "P03",
+      "role": "portrait",
+      "row": 1,
+      "column": 3,
+      "box": [
+        512,
+        0,
+        768,
+        341
+      ]
+    },
+    {
+      "label": "P04",
+      "role": "portrait",
+      "row": 1,
+      "column": 4,
+      "box": [
+        768,
+        0,
+        1024,
+        341
+      ]
+    },
+    {
+      "label": "P05",
+      "role": "portrait",
+      "row": 2,
+      "column": 1,
+      "box": [
+        0,
+        341,
+        256,
+        683
+      ]
+    },
+    {
+      "label": "P06",
+      "role": "portrait",
+      "row": 2,
+      "column": 2,
+      "box": [
+        256,
+        341,
+        512,
+        683
+      ]
+    },
+    {
+      "label": "P07",
+      "role": "portrait",
+      "row": 2,
+      "column": 3,
+      "box": [
+        512,
+        341,
+        768,
+        683
+      ]
+    },
+    {
+      "label": "P08",
+      "role": "portrait",
+      "row": 2,
+      "column": 4,
+      "box": [
+        768,
+        341,
+        1024,
+        683
+      ]
+    },
+    {
+      "label": "P09",
+      "role": "portrait",
+      "row": 3,
+      "column": 1,
+      "box": [
+        0,
+        683,
+        256,
+        1024
+      ]
+    },
+    {
+      "label": "P10",
+      "role": "portrait",
+      "row": 3,
+      "column": 2,
+      "box": [
+        256,
+        683,
+        512,
+        1024
+      ]
+    },
+    {
+      "label": "P11",
+      "role": "portrait",
+      "row": 3,
+      "column": 3,
+      "box": [
+        512,
+        683,
+        768,
+        1024
+      ]
+    },
+    {
+      "label": "P12",
+      "role": "portrait",
+      "row": 3,
+      "column": 4,
+      "box": [
+        768,
+        683,
+        1024,
+        1024
+      ]
+    }
+  ]
+}

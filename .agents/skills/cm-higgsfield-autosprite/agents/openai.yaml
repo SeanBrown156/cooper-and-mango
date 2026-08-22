@@ -1,0 +1,4 @@
+interface:
+  display_name: "Higgs AutoSprite"
+  short_description: "Generate reference-guided sprite sheets"
+  default_prompt: "Use $cm-higgsfield-autosprite to turn this character anchor into a reviewed sprite-sheet candidate."

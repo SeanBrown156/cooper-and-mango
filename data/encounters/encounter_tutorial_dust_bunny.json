@@ -1,0 +1,19 @@
+{
+  "id": "encounter_tutorial_dust_bunny",
+  "name": "Tutorial Room Dust Bunny",
+  "description": "A first, small battle against the household dust that stirred during the magical awakening.",
+  "content_status": "approved",
+  "enemies": [
+    {
+      "enemy_id": "enemy_dust_bunny",
+      "count": 1
+    }
+  ],
+  "party": [
+    "actor_mango",
+    "actor_cooper"
+  ],
+  "rewards": {
+    "experience": 8
+  }
+}

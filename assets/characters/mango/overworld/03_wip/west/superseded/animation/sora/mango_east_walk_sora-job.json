@@ -1,0 +1,36 @@
+{
+  "create": {
+    "completed_at": null,
+    "created_at": 1787210767,
+    "edited_from_video_id": null,
+    "error": null,
+    "expires_at": null,
+    "extended_from_video_id": null,
+    "id": "video_6a86ac0f325881919b2b92488c2244fa0dd8800f741f52ec",
+    "model": "sora-2",
+    "object": "video",
+    "progress": 0,
+    "prompt": "Primary request: Use case: animation motion reference for a tiny game sprite. Primary request: animate the referenced orange cat walking naturally from left to right in a clean side profile. Subject: the same small orange quadruped cat silhouette and palette as the input reference, with orange fur only; no hoodie, no shirt, no clothing, no accessories. Action: a clear four-beat walk cycle with alternating front and rear legs, visible paw lift and plant, slight natural body weight shift, steady head and tail, then continue walking left to right. Camera: locked-off side-on camera, full body always visible, no zoom, no cuts, no rotation, plain light background. Style/format: clean stylized pixel-art motion reference, preserve the simple chunky silhouette and colors from the reference, no realistic anatomy changes. Timing/beats: show at least two complete walk cycles; make the leg movement obvious and readable. Constraints: remain a four-legged cat for the entire clip, side view facing right, keep all four paws attached to the body, no standing upright, no hopping, no human gait, no extra limbs. Avoid: orange clothing, hoodie, costume, text, camera movement, duplicate cats, morphing, flicker, jitter, floating paws.",
+    "remixed_from_video_id": null,
+    "seconds": "4",
+    "size": "1280x720",
+    "status": "queued"
+  },
+  "final": {
+    "completed_at": 1787210829,
+    "created_at": 1787210767,
+    "edited_from_video_id": null,
+    "error": null,
+    "expires_at": 1787383629,
+    "extended_from_video_id": null,
+    "id": "video_6a86ac0f325881919b2b92488c2244fa0dd8800f741f52ec",
+    "model": "sora-2",
+    "object": "video",
+    "progress": 100,
+    "prompt": "Primary request: Use case: animation motion reference for a tiny game sprite. Primary request: animate the referenced orange cat walking naturally from left to right in a clean side profile. Subject: the same small orange quadruped cat silhouette and palette as the input reference, with orange fur only; no hoodie, no shirt, no clothing, no accessories. Action: a clear four-beat walk cycle with alternating front and rear legs, visible paw lift and plant, slight natural body weight shift, steady head and tail, then continue walking left to right. Camera: locked-off side-on camera, full body always visible, no zoom, no cuts, no rotation, plain light background. Style/format: clean stylized pixel-art motion reference, preserve the simple chunky silhouette and colors from the reference, no realistic anatomy changes. Timing/beats: show at least two complete walk cycles; make the leg movement obvious and readable. Constraints: remain a four-legged cat for the entire clip, side view facing right, keep all four paws attached to the body, no standing upright, no hopping, no human gait, no extra limbs. Avoid: orange clothing, hoodie, costume, text, camera movement, duplicate cats, morphing, flicker, jitter, floating paws.",
+    "remixed_from_video_id": null,
+    "seconds": "4",
+    "size": "1280x720",
+    "status": "completed"
+  }
+}

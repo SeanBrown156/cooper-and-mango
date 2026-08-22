@@ -1,0 +1,16 @@
+{
+  "source_master": "assets/characters/mango/shared/02_input/mango_master_reference_pixel_sheet_v1.png",
+  "review_map": "assets/characters/mango/shared/02_input/meta/mango_master_reference_pixel_sheet_v1_review.png.json",
+  "character": "mango",
+  "role": "battle",
+  "cell_id": "B05",
+  "variant": "master-v1",
+  "crop_box": [
+    439,
+    290,
+    549,
+    447
+  ],
+  "output": "assets/characters/mango/battle/02_input/mango_battle_B05_from_master_master-v1.png",
+  "status": "selected_provisional_input"
+}

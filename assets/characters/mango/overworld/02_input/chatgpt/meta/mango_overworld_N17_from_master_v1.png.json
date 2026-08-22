@@ -1,0 +1,18 @@
+{
+  "source_master": "assets/characters/mango/overworld/02_input/mango_overworld_reference_pixel_sheet_v1.png",
+  "review_map": "assets/characters/mango/overworld/02_input/mango_overworld_reference_pixel_sheet_v1_review_verified.json",
+  "character": "mango",
+  "role": "none",
+  "destination_role": "overworld",
+  "cell_id": "N17",
+  "variant": "v1",
+  "crop_box": [
+    88,
+    734,
+    133,
+    796
+  ],
+  "output": "assets/characters/mango/overworld/02_input/mango_overworld_N17_from_master_v1.png",
+  "status": "selected_provisional_input",
+  "geometry": "verified_content_bounds"
+}

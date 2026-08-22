@@ -1,0 +1,526 @@
+{
+  "source": "assets/characters/mango/shared/02_input/mango-sprite-sheet-chatgpt-raw-v2.png",
+  "output": "assets/characters/mango/shared/02_input/mango-sprite-sheet-chatgpt-raw-v2_review.png",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "cells": [
+    {
+      "label": "O01",
+      "role": "overworld",
+      "row": 1,
+      "column": 1,
+      "box": [
+        0,
+        55,
+        104,
+        175
+      ]
+    },
+    {
+      "label": "O02",
+      "role": "overworld",
+      "row": 1,
+      "column": 2,
+      "box": [
+        104,
+        55,
+        209,
+        175
+      ]
+    },
+    {
+      "label": "O03",
+      "role": "overworld",
+      "row": 1,
+      "column": 3,
+      "box": [
+        209,
+        55,
+        314,
+        175
+      ]
+    },
+    {
+      "label": "O04",
+      "role": "overworld",
+      "row": 1,
+      "column": 4,
+      "box": [
+        314,
+        55,
+        418,
+        175
+      ]
+    },
+    {
+      "label": "O05",
+      "role": "overworld",
+      "row": 1,
+      "column": 5,
+      "box": [
+        418,
+        55,
+        522,
+        175
+      ]
+    },
+    {
+      "label": "O06",
+      "role": "overworld",
+      "row": 1,
+      "column": 6,
+      "box": [
+        522,
+        55,
+        627,
+        175
+      ]
+    },
+    {
+      "label": "O07",
+      "role": "overworld",
+      "row": 1,
+      "column": 7,
+      "box": [
+        627,
+        55,
+        732,
+        175
+      ]
+    },
+    {
+      "label": "O08",
+      "role": "overworld",
+      "row": 1,
+      "column": 8,
+      "box": [
+        732,
+        55,
+        836,
+        175
+      ]
+    },
+    {
+      "label": "O09",
+      "role": "overworld",
+      "row": 1,
+      "column": 9,
+      "box": [
+        836,
+        55,
+        940,
+        175
+      ]
+    },
+    {
+      "label": "O10",
+      "role": "overworld",
+      "row": 1,
+      "column": 10,
+      "box": [
+        940,
+        55,
+        1045,
+        175
+      ]
+    },
+    {
+      "label": "O11",
+      "role": "overworld",
+      "row": 1,
+      "column": 11,
+      "box": [
+        1045,
+        55,
+        1150,
+        175
+      ]
+    },
+    {
+      "label": "O12",
+      "role": "overworld",
+      "row": 1,
+      "column": 12,
+      "box": [
+        1150,
+        55,
+        1254,
+        175
+      ]
+    },
+    {
+      "label": "O13",
+      "role": "overworld",
+      "row": 1,
+      "column": 13,
+      "box": [
+        1254,
+        55,
+        1358,
+        175
+      ]
+    },
+    {
+      "label": "O14",
+      "role": "overworld",
+      "row": 1,
+      "column": 14,
+      "box": [
+        1358,
+        55,
+        1463,
+        175
+      ]
+    },
+    {
+      "label": "O15",
+      "role": "overworld",
+      "row": 1,
+      "column": 15,
+      "box": [
+        1463,
+        55,
+        1568,
+        175
+      ]
+    },
+    {
+      "label": "O16",
+      "role": "overworld",
+      "row": 1,
+      "column": 16,
+      "box": [
+        1568,
+        55,
+        1672,
+        175
+      ]
+    },
+    {
+      "label": "O17",
+      "role": "overworld",
+      "row": 2,
+      "column": 1,
+      "box": [
+        0,
+        175,
+        104,
+        295
+      ]
+    },
+    {
+      "label": "O18",
+      "role": "overworld",
+      "row": 2,
+      "column": 2,
+      "box": [
+        104,
+        175,
+        209,
+        295
+      ]
+    },
+    {
+      "label": "O19",
+      "role": "overworld",
+      "row": 2,
+      "column": 3,
+      "box": [
+        209,
+        175,
+        314,
+        295
+      ]
+    },
+    {
+      "label": "O20",
+      "role": "overworld",
+      "row": 2,
+      "column": 4,
+      "box": [
+        314,
+        175,
+        418,
+        295
+      ]
+    },
+    {
+      "label": "O21",
+      "role": "overworld",
+      "row": 2,
+      "column": 5,
+      "box": [
+        418,
+        175,
+        522,
+        295
+      ]
+    },
+    {
+      "label": "O22",
+      "role": "overworld",
+      "row": 2,
+      "column": 6,
+      "box": [
+        522,
+        175,
+        627,
+        295
+      ]
+    },
+    {
+      "label": "O23",
+      "role": "overworld",
+      "row": 2,
+      "column": 7,
+      "box": [
+        627,
+        175,
+        732,
+        295
+      ]
+    },
+    {
+      "label": "O24",
+      "role": "overworld",
+      "row": 2,
+      "column": 8,
+      "box": [
+        732,
+        175,
+        836,
+        295
+      ]
+    },
+    {
+      "label": "O25",
+      "role": "overworld",
+      "row": 2,
+      "column": 9,
+      "box": [
+        836,
+        175,
+        940,
+        295
+      ]
+    },
+    {
+      "label": "O26",
+      "role": "overworld",
+      "row": 2,
+      "column": 10,
+      "box": [
+        940,
+        175,
+        1045,
+        295
+      ]
+    },
+    {
+      "label": "O27",
+      "role": "overworld",
+      "row": 2,
+      "column": 11,
+      "box": [
+        1045,
+        175,
+        1150,
+        295
+      ]
+    },
+    {
+      "label": "O28",
+      "role": "overworld",
+      "row": 2,
+      "column": 12,
+      "box": [
+        1150,
+        175,
+        1254,
+        295
+      ]
+    },
+    {
+      "label": "O29",
+      "role": "overworld",
+      "row": 2,
+      "column": 13,
+      "box": [
+        1254,
+        175,
+        1358,
+        295
+      ]
+    },
+    {
+      "label": "O30",
+      "role": "overworld",
+      "row": 2,
+      "column": 14,
+      "box": [
+        1358,
+        175,
+        1463,
+        295
+      ]
+    },
+    {
+      "label": "O31",
+      "role": "overworld",
+      "row": 2,
+      "column": 15,
+      "box": [
+        1463,
+        175,
+        1568,
+        295
+      ]
+    },
+    {
+      "label": "O32",
+      "role": "overworld",
+      "row": 2,
+      "column": 16,
+      "box": [
+        1568,
+        175,
+        1672,
+        295
+      ]
+    },
+    {
+      "label": "B01",
+      "role": "battle",
+      "row": 1,
+      "column": 1,
+      "box": [
+        0,
+        310,
+        209,
+        510
+      ]
+    },
+    {
+      "label": "B02",
+      "role": "battle",
+      "row": 1,
+      "column": 2,
+      "box": [
+        209,
+        310,
+        418,
+        510
+      ]
+    },
+    {
+      "label": "B03",
+      "role": "battle",
+      "row": 1,
+      "column": 3,
+      "box": [
+        418,
+        310,
+        627,
+        510
+      ]
+    },
+    {
+      "label": "B04",
+      "role": "battle",
+      "row": 1,
+      "column": 4,
+      "box": [
+        627,
+        310,
+        836,
+        510
+      ]
+    },
+    {
+      "label": "B05",
+      "role": "battle",
+      "row": 1,
+      "column": 5,
+      "box": [
+        836,
+        310,
+        1045,
+        510
+      ]
+    },
+    {
+      "label": "B06",
+      "role": "battle",
+      "row": 1,
+      "column": 6,
+      "box": [
+        1045,
+        310,
+        1254,
+        510
+      ]
+    },
+    {
+      "label": "B07",
+      "role": "battle",
+      "row": 1,
+      "column": 7,
+      "box": [
+        1254,
+        310,
+        1463,
+        510
+      ]
+    },
+    {
+      "label": "B08",
+      "role": "battle",
+      "row": 1,
+      "column": 8,
+      "box": [
+        1463,
+        310,
+        1672,
+        510
+      ]
+    },
+    {
+      "label": "P01",
+      "role": "portrait",
+      "row": 1,
+      "column": 1,
+      "box": [
+        0,
+        510,
+        460,
+        930
+      ]
+    },
+    {
+      "label": "P02",
+      "role": "portrait",
+      "row": 1,
+      "column": 2,
+      "box": [
+        460,
+        510,
+        920,
+        930
+      ]
+    },
+    {
+      "label": "P03",
+      "role": "portrait",
+      "row": 1,
+      "column": 3,
+      "box": [
+        920,
+        510,
+        1380,
+        930
+      ]
+    }
+  ]
+}

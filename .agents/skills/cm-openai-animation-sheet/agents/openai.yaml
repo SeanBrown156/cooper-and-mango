@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM OpenAI Animation Sheet"
+  short_description: "Generate action sheets from one canonical anchor"
+  default_prompt: "Create a complete action spritesheet from the canonical anchor using a padded frame-grid workflow."

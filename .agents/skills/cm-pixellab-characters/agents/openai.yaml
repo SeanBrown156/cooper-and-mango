@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM PixelLab Characters"
+  short_description: "Create Cooper & Mango character sprite candidates"
+  default_prompt: "Use $cm-pixellab-characters to create a Cooper & Mango character sprite candidate."

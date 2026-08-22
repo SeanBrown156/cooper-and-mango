@@ -26,21 +26,23 @@ For the active room, follow its build card before expanding scope:
 
 ## Asset and composition rules
 
-The asset lifecycle is `reference → input → wip → approved`, with Godot
-composition resources in a sibling `composite/` folder. The detailed rules,
-including family-vs-room placement, third-party provenance, and promotion,
-live in the Art Production Pipeline.
+The asset lifecycle is `reference → input → wip → approved`. WIP and Approved
+are complete packages: art plus any `.tres` resources and `.tscn` scenes that
+use it. The detailed rules, including family-vs-room placement, third-party
+provenance, and promotion, live in the Art Production Pipeline.
 
 - `reference/`: look-only references; never load or edit directly.
 - `input/`: unreviewed downloaded or generated material; do not use in the running game.
 - `wip/`: actively curated material. During active room composition, Godot may reference that room's WIP textures.
-- `approved/`: human-approved, Godot-authoritative content.
-- `composite/`: TileSets, SpriteFrames, scenes/resources, and other Godot-side assembly.
+- `approved/`: human-approved, Godot-authoritative complete packages.
+- `.tres`: a saved Godot Resource such as a TileSet, SpriteFrames, Theme, or data resource.
+- `.tscn`: an assembled, instantiable Godot Scene. Put it in the owning WIP or Approved package.
 - Keep static sheets intact where possible. Use Godot TileSet atlases for grid-native tiles and Sprite2D regions/scenes for coherent multi-cell furniture. Use separate assets for animated, interactive, or independently reusable props.
 
-Raw `input/` remains excluded from Godot. A room-specific WIP exception is
-allowed only while that room is being composed; promote accepted content to
-`approved/` and update its `composite/` resources once the room is accepted.
+Raw `input/` remains excluded from Godot. A room-specific WIP package may be
+loaded while that room is being composed; promote the coherent package to
+`approved/` only after it is accepted. There is no separate `composite/`
+lifecycle stage.
 
 ## Where to look
 
@@ -51,6 +53,17 @@ allowed only while that room is being composed; promote accepted content to
 - Build stages and active room work: [`docs/production/`](docs/production/)
 - Audio: [`docs/audio/AUDIO_BIBLE.md`](docs/audio/AUDIO_BIBLE.md)
 - MCP/tooling: [`docs/engineering/MCP.md`](docs/engineering/MCP.md)
+- PixelLab task skills: `.agents/skills/cm-pixellab-characters/`,
+  `.agents/skills/cm-pixellab-animation/`, `.agents/skills/cm-pixellab-portraits/`,
+  `.agents/skills/cm-pixellab-environments/`, and `.agents/skills/cm-pixellab-props/`
+- Complementary image workflows: `.agents/skills/cm-openai-master-sprite-sheet/`,
+  `.agents/skills/cm-character-visual-brief/`,
+  `.agents/skills/cm-openai-portrait-sprite-sheet/`, `.agents/skills/cm-openai-battle-sprite-sheet/`,
+  `.agents/skills/cm-openai-overworld-sprite-sheet/`,
+  `.agents/skills/cm-slice-master-sprite-sheet/`,
+  `.agents/skills/cm-prepare-role-resolution/`,
+  `.agents/skills/cm-openai-environment-sprite/`, and
+  `.agents/skills/cm-higgsfield-autosprite/`
 - Runtime content: `data/`
 - Godot project: `scenes/`, `scripts/`, `project.godot`
 

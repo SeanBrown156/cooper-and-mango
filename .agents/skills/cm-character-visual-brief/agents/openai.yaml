@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM Character Visual Brief"
+  short_description: "Maintain character identity briefs"
+  default_prompt: "Use $cm-character-visual-brief to update this character visual brief from canon, references, and my current direction."

@@ -1,0 +1,262 @@
+{
+  "source": "assets/characters/mango/shared/02_input/mango-sprite-sheet-gemini-raw-v5.png",
+  "output": "assets/characters/mango/shared/02_input/mango-sprite-sheet-gemini-raw-v5_review.png",
+  "dimensions": [
+    1376,
+    768
+  ],
+  "cells": [
+    {
+      "label": "P01",
+      "role": "portrait",
+      "row": 1,
+      "column": 1,
+      "box": [
+        45,
+        45,
+        302,
+        300
+      ]
+    },
+    {
+      "label": "P02",
+      "role": "portrait",
+      "row": 1,
+      "column": 2,
+      "box": [
+        302,
+        45,
+        559,
+        300
+      ]
+    },
+    {
+      "label": "P03",
+      "role": "portrait",
+      "row": 1,
+      "column": 3,
+      "box": [
+        559,
+        45,
+        816,
+        300
+      ]
+    },
+    {
+      "label": "P04",
+      "role": "portrait",
+      "row": 1,
+      "column": 4,
+      "box": [
+        816,
+        45,
+        1073,
+        300
+      ]
+    },
+    {
+      "label": "P05",
+      "role": "portrait",
+      "row": 1,
+      "column": 5,
+      "box": [
+        1073,
+        45,
+        1330,
+        300
+      ]
+    },
+    {
+      "label": "B01",
+      "role": "battle",
+      "row": 1,
+      "column": 1,
+      "box": [
+        45,
+        350,
+        206,
+        528
+      ]
+    },
+    {
+      "label": "B02",
+      "role": "battle",
+      "row": 1,
+      "column": 2,
+      "box": [
+        206,
+        350,
+        366,
+        528
+      ]
+    },
+    {
+      "label": "B03",
+      "role": "battle",
+      "row": 1,
+      "column": 3,
+      "box": [
+        366,
+        350,
+        527,
+        528
+      ]
+    },
+    {
+      "label": "B04",
+      "role": "battle",
+      "row": 1,
+      "column": 4,
+      "box": [
+        527,
+        350,
+        688,
+        528
+      ]
+    },
+    {
+      "label": "B05",
+      "role": "battle",
+      "row": 1,
+      "column": 5,
+      "box": [
+        688,
+        350,
+        848,
+        528
+      ]
+    },
+    {
+      "label": "B06",
+      "role": "battle",
+      "row": 1,
+      "column": 6,
+      "box": [
+        848,
+        350,
+        1009,
+        528
+      ]
+    },
+    {
+      "label": "B07",
+      "role": "battle",
+      "row": 1,
+      "column": 7,
+      "box": [
+        1009,
+        350,
+        1169,
+        528
+      ]
+    },
+    {
+      "label": "B08",
+      "role": "battle",
+      "row": 1,
+      "column": 8,
+      "box": [
+        1169,
+        350,
+        1330,
+        528
+      ]
+    },
+    {
+      "label": "B09",
+      "role": "battle",
+      "row": 2,
+      "column": 1,
+      "box": [
+        45,
+        528,
+        206,
+        705
+      ]
+    },
+    {
+      "label": "B10",
+      "role": "battle",
+      "row": 2,
+      "column": 2,
+      "box": [
+        206,
+        528,
+        366,
+        705
+      ]
+    },
+    {
+      "label": "B11",
+      "role": "battle",
+      "row": 2,
+      "column": 3,
+      "box": [
+        366,
+        528,
+        527,
+        705
+      ]
+    },
+    {
+      "label": "B12",
+      "role": "battle",
+      "row": 2,
+      "column": 4,
+      "box": [
+        527,
+        528,
+        688,
+        705
+      ]
+    },
+    {
+      "label": "B13",
+      "role": "battle",
+      "row": 2,
+      "column": 5,
+      "box": [
+        688,
+        528,
+        848,
+        705
+      ]
+    },
+    {
+      "label": "B14",
+      "role": "battle",
+      "row": 2,
+      "column": 6,
+      "box": [
+        848,
+        528,
+        1009,
+        705
+      ]
+    },
+    {
+      "label": "B15",
+      "role": "battle",
+      "row": 2,
+      "column": 7,
+      "box": [
+        1009,
+        528,
+        1169,
+        705
+      ]
+    },
+    {
+      "label": "B16",
+      "role": "battle",
+      "row": 2,
+      "column": 8,
+      "box": [
+        1169,
+        528,
+        1330,
+        705
+      ]
+    }
+  ]
+}

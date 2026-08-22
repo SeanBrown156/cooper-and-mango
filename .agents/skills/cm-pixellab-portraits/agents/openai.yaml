@@ -1,0 +1,4 @@
+interface:
+  display_name: "CM PixelLab Portraits"
+  short_description: "Create consistent character portraits"
+  default_prompt: "Use $cm-pixellab-portraits to create a Cooper & Mango portrait candidate."

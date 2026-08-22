@@ -1,0 +1,10 @@
+{
+  "provider": "openai",
+  "mode": "edit",
+  "model": "gpt-image-2",
+  "prompt": "Generate a second ONE-CANVAS MASTER PIXEL-ART SPRITE SHEET for Cooper from all supplied dog references and both photos of the actual green puffy tubular loop. Use one shared character model across the entire canvas. The object is a soft stuffed tubular loop with dark green fabric and repeating white swirl motifs; show it as a chunky loop accessory or playful melee prop, never as a flat triangular bandana or ordinary collar. Layout one giant extraction source canvas in three regions: left 12-cell portrait expression grid; upper-right 12-cell battle grid; lower-right 4x4 overworld direction-and-walk grid. Portraits: neutral, shy, worried, helpless, shocked, sad, defiant, angry, resolute, relieved, proud, brave. Battle: prioritize upright bipedal two-leg silhouettes and seated-upright silhouettes, with guard, nervous guard, bite, gnaw, loop-lasso, loop-whip, toy blade, toy knuckle-duster, attack wind-up, attack follow-through, hit reaction, victory, and exhausted poses; quadrupedal poses may appear only as a minority. Overworld: quadruped low-top-down north/back, south/front, east/right, west/left, four distinct walk phases per direction. Preserve black-grey-warm-cream shaggy coat, floppy ears, cream muzzle and paws, curled tail, and green patterned tubular object consistently. Pixel-art source sheet only: hard square clusters, limited late-SNES palette, crisp edges, no antialiasing, blur, photorealism, painterly gradients, text, labels, UI, scenery, or decorative presentation framing. No unrelated characters.",
+  "size": "1536x1024",
+  "quality": "medium",
+  "background": "opaque",
+  "output": "assets/characters/cooper/shared/02_input/cooper_master_reference_pixel_sheet_v3.png"
+}

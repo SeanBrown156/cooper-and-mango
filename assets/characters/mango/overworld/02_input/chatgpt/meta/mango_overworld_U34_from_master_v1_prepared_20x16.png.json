@@ -1,0 +1,20 @@
+{
+  "source": "assets/characters/mango/overworld/02_input/mango_overworld_U34_from_master_v1.png",
+  "resolution_preprocessing": "temporary 2px white safety margin added before edge-connected background removal",
+  "output": "assets/characters/mango/overworld/02_input/mango_overworld_U34_from_master_v1_prepared_20x16.png",
+  "role": "overworld",
+  "target_dimensions": [
+    20,
+    16
+  ],
+  "source_dimensions": [
+    68,
+    55
+  ],
+  "resampling": "nearest-neighbour",
+  "fit": "contain",
+  "background_removal": "edge-connected flood fill",
+  "background_tolerance": 36,
+  "status": "resolution_prepared_input",
+  "review_required": "confirm landmarks and silhouette before PixelLab"
+}

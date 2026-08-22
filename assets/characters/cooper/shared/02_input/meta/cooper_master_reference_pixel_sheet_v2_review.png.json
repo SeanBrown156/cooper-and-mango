@@ -1,0 +1,490 @@
+{
+  "source": "assets/characters/cooper/shared/02_input/cooper_master_reference_pixel_sheet_v2.png",
+  "output": "assets/characters/cooper/shared/02_input/cooper_master_reference_pixel_sheet_v2_review.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "cells": [
+    {
+      "label": "P01",
+      "role": "portrait",
+      "row": 1,
+      "column": 1,
+      "box": [
+        0,
+        0,
+        228,
+        256
+      ]
+    },
+    {
+      "label": "P02",
+      "role": "portrait",
+      "row": 1,
+      "column": 2,
+      "box": [
+        228,
+        0,
+        457,
+        256
+      ]
+    },
+    {
+      "label": "P03",
+      "role": "portrait",
+      "row": 1,
+      "column": 3,
+      "box": [
+        457,
+        0,
+        685,
+        256
+      ]
+    },
+    {
+      "label": "P04",
+      "role": "portrait",
+      "row": 2,
+      "column": 1,
+      "box": [
+        0,
+        256,
+        228,
+        512
+      ]
+    },
+    {
+      "label": "P05",
+      "role": "portrait",
+      "row": 2,
+      "column": 2,
+      "box": [
+        228,
+        256,
+        457,
+        512
+      ]
+    },
+    {
+      "label": "P06",
+      "role": "portrait",
+      "row": 2,
+      "column": 3,
+      "box": [
+        457,
+        256,
+        685,
+        512
+      ]
+    },
+    {
+      "label": "P07",
+      "role": "portrait",
+      "row": 3,
+      "column": 1,
+      "box": [
+        0,
+        512,
+        228,
+        768
+      ]
+    },
+    {
+      "label": "P08",
+      "role": "portrait",
+      "row": 3,
+      "column": 2,
+      "box": [
+        228,
+        512,
+        457,
+        768
+      ]
+    },
+    {
+      "label": "P09",
+      "role": "portrait",
+      "row": 3,
+      "column": 3,
+      "box": [
+        457,
+        512,
+        685,
+        768
+      ]
+    },
+    {
+      "label": "P10",
+      "role": "portrait",
+      "row": 4,
+      "column": 1,
+      "box": [
+        0,
+        768,
+        228,
+        1024
+      ]
+    },
+    {
+      "label": "P11",
+      "role": "portrait",
+      "row": 4,
+      "column": 2,
+      "box": [
+        228,
+        768,
+        457,
+        1024
+      ]
+    },
+    {
+      "label": "P12",
+      "role": "portrait",
+      "row": 4,
+      "column": 3,
+      "box": [
+        457,
+        768,
+        685,
+        1024
+      ]
+    },
+    {
+      "label": "B01",
+      "role": "battle",
+      "row": 1,
+      "column": 1,
+      "box": [
+        700,
+        0,
+        909,
+        197
+      ]
+    },
+    {
+      "label": "B02",
+      "role": "battle",
+      "row": 1,
+      "column": 2,
+      "box": [
+        909,
+        0,
+        1118,
+        197
+      ]
+    },
+    {
+      "label": "B03",
+      "role": "battle",
+      "row": 1,
+      "column": 3,
+      "box": [
+        1118,
+        0,
+        1327,
+        197
+      ]
+    },
+    {
+      "label": "B04",
+      "role": "battle",
+      "row": 1,
+      "column": 4,
+      "box": [
+        1327,
+        0,
+        1536,
+        197
+      ]
+    },
+    {
+      "label": "B05",
+      "role": "battle",
+      "row": 2,
+      "column": 1,
+      "box": [
+        700,
+        197,
+        909,
+        393
+      ]
+    },
+    {
+      "label": "B06",
+      "role": "battle",
+      "row": 2,
+      "column": 2,
+      "box": [
+        909,
+        197,
+        1118,
+        393
+      ]
+    },
+    {
+      "label": "B07",
+      "role": "battle",
+      "row": 2,
+      "column": 3,
+      "box": [
+        1118,
+        197,
+        1327,
+        393
+      ]
+    },
+    {
+      "label": "B08",
+      "role": "battle",
+      "row": 2,
+      "column": 4,
+      "box": [
+        1327,
+        197,
+        1536,
+        393
+      ]
+    },
+    {
+      "label": "B09",
+      "role": "battle",
+      "row": 3,
+      "column": 1,
+      "box": [
+        700,
+        393,
+        909,
+        590
+      ]
+    },
+    {
+      "label": "B10",
+      "role": "battle",
+      "row": 3,
+      "column": 2,
+      "box": [
+        909,
+        393,
+        1118,
+        590
+      ]
+    },
+    {
+      "label": "B11",
+      "role": "battle",
+      "row": 3,
+      "column": 3,
+      "box": [
+        1118,
+        393,
+        1327,
+        590
+      ]
+    },
+    {
+      "label": "B12",
+      "role": "battle",
+      "row": 3,
+      "column": 4,
+      "box": [
+        1327,
+        393,
+        1536,
+        590
+      ]
+    },
+    {
+      "label": "O01",
+      "role": "overworld",
+      "row": 1,
+      "column": 1,
+      "box": [
+        700,
+        590,
+        909,
+        698
+      ]
+    },
+    {
+      "label": "O02",
+      "role": "overworld",
+      "row": 1,
+      "column": 2,
+      "box": [
+        909,
+        590,
+        1118,
+        698
+      ]
+    },
+    {
+      "label": "O03",
+      "role": "overworld",
+      "row": 1,
+      "column": 3,
+      "box": [
+        1118,
+        590,
+        1327,
+        698
+      ]
+    },
+    {
+      "label": "O04",
+      "role": "overworld",
+      "row": 1,
+      "column": 4,
+      "box": [
+        1327,
+        590,
+        1536,
+        698
+      ]
+    },
+    {
+      "label": "O05",
+      "role": "overworld",
+      "row": 2,
+      "column": 1,
+      "box": [
+        700,
+        698,
+        909,
+        807
+      ]
+    },
+    {
+      "label": "O06",
+      "role": "overworld",
+      "row": 2,
+      "column": 2,
+      "box": [
+        909,
+        698,
+        1118,
+        807
+      ]
+    },
+    {
+      "label": "O07",
+      "role": "overworld",
+      "row": 2,
+      "column": 3,
+      "box": [
+        1118,
+        698,
+        1327,
+        807
+      ]
+    },
+    {
+      "label": "O08",
+      "role": "overworld",
+      "row": 2,
+      "column": 4,
+      "box": [
+        1327,
+        698,
+        1536,
+        807
+      ]
+    },
+    {
+      "label": "O09",
+      "role": "overworld",
+      "row": 3,
+      "column": 1,
+      "box": [
+        700,
+        807,
+        909,
+        916
+      ]
+    },
+    {
+      "label": "O10",
+      "role": "overworld",
+      "row": 3,
+      "column": 2,
+      "box": [
+        909,
+        807,
+        1118,
+        916
+      ]
+    },
+    {
+      "label": "O11",
+      "role": "overworld",
+      "row": 3,
+      "column": 3,
+      "box": [
+        1118,
+        807,
+        1327,
+        916
+      ]
+    },
+    {
+      "label": "O12",
+      "role": "overworld",
+      "row": 3,
+      "column": 4,
+      "box": [
+        1327,
+        807,
+        1536,
+        916
+      ]
+    },
+    {
+      "label": "O13",
+      "role": "overworld",
+      "row": 4,
+      "column": 1,
+      "box": [
+        700,
+        916,
+        909,
+        1024
+      ]
+    },
+    {
+      "label": "O14",
+      "role": "overworld",
+      "row": 4,
+      "column": 2,
+      "box": [
+        909,
+        916,
+        1118,
+        1024
+      ]
+    },
+    {
+      "label": "O15",
+      "role": "overworld",
+      "row": 4,
+      "column": 3,
+      "box": [
+        1118,
+        916,
+        1327,
+        1024
+      ]
+    },
+    {
+      "label": "O16",
+      "role": "overworld",
+      "row": 4,
+      "column": 4,
+      "box": [
+        1327,
+        916,
+        1536,
+        1024
+      ]
+    }
+  ]
+}

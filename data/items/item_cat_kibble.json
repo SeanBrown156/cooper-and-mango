@@ -1,0 +1,17 @@
+{
+  "id": "item_cat_kibble",
+  "name": "Cat Kibble",
+  "description": "A familiar handful of kibble. It is not fancy, but Mango knows exactly what it is.",
+  "content_status": "approved",
+  "item_type": "consumable",
+  "usable_by": [
+    "cat"
+  ],
+  "effects": [
+    {
+      "type": "restore_hp",
+      "amount": 10
+    }
+  ],
+  "quantity": 1
+}

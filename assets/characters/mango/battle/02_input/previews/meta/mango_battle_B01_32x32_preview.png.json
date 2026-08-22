@@ -1,0 +1,19 @@
+{
+  "source": "assets/characters/mango/battle/02_input/mango_battle_B01_from_master_master-v2.png",
+  "output": "assets/characters/mango/battle/02_input/previews/mango_battle_B01_32x32_preview.png",
+  "role": "battle",
+  "target_dimensions": [
+    32,
+    32
+  ],
+  "source_dimensions": [
+    80,
+    144
+  ],
+  "resampling": "nearest-neighbour",
+  "fit": "contain",
+  "background_removal": "edge-connected flood fill",
+  "background_tolerance": 36,
+  "status": "resolution_prepared_input",
+  "review_required": "confirm landmarks and silhouette before PixelLab"
+}
