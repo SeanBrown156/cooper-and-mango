@@ -215,6 +215,22 @@ For generated or transformed material, record:
 Historical outputs may remain for provenance, but active manifests must point to
 current paths and current role contracts.
 
+### 10.1 Sidecar JSON placement
+
+Every generated or extracted image's provenance JSON (the per-image
+`<image>.png.json` produced by the generation/slicing tooling) lives in a
+`meta/` subfolder next to the image, not beside it directly:
+`<dir>/meta/<image>.png.json` rather than `<dir>/<image>.png.json`. This keeps
+image folders browsable as pure image listings. `.import` files (Godot-managed)
+and the images themselves stay where they are; only the `.json` sidecar moves.
+
+When a file is superseded (moved into `superseded/<label>/`), its
+`meta/<image>.png.json` must move with it, into
+`superseded/<label>/meta/<image>.png.json`. The image and its metadata never
+separate. Tooling that references another sidecar's path (e.g. a cell's
+`review_map` pointing at the review sheet's JSON) must reference the `meta/`
+location.
+
 ## 11. Related authority
 
 - Visual direction: [`ART_BIBLE.md`](ART_BIBLE.md).

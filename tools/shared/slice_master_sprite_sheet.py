@@ -66,7 +66,9 @@ def main() -> int:
                 "output": str(output),
                 "status": "provisional_input_slice",
             }
-            output.with_suffix(output.suffix + ".json").write_text(
+            meta_dir = output.parent / "meta"
+            meta_dir.mkdir(parents=True, exist_ok=True)
+            (meta_dir / (output.name + ".json")).write_text(
                 json.dumps(metadata, indent=2) + "\n"
             )
             print(f"Wrote {output}")

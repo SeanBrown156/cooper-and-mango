@@ -1,0 +1,17 @@
+{
+  "source_master": "assets/characters/cooper/shared/02_input/cooper_master_reference_pixel_sheet_v3.png",
+  "review_map": "assets/characters/cooper/shared/02_input/meta/cooper_master_reference_pixel_sheet_v3_review.png.json",
+  "character": "cooper",
+  "role": "portrait",
+  "destination_role": "portrait",
+  "cell_id": "P07",
+  "variant": "v3",
+  "crop_box": [
+    0,
+    512,
+    235,
+    768
+  ],
+  "output": "assets/characters/cooper/portrait/02_input/cooper_portrait_P07_from_master_v3.png",
+  "status": "selected_provisional_input"
+}

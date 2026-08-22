@@ -22,6 +22,10 @@ def main() -> int:
         "--destination-role",
         help="Override the review cell role for the canonical output folder and filename",
     )
+    parser.add_argument(
+        "--subfolder",
+        help="Optional subfolder under 02_input/ for the output (e.g. north, south, west)",
+    )
     args = parser.parse_args()
 
     review = json.loads(args.review_map.read_text())
@@ -41,6 +45,8 @@ def main() -> int:
             role = str(item["role"])
             destination_role = args.destination_role or role
             output_dir = args.out_root / destination_role / "02_input"
+            if args.subfolder:
+                output_dir = output_dir / args.subfolder
             output_dir.mkdir(parents=True, exist_ok=True)
             output = output_dir / f"{args.character}_{destination_role}_{label}_from_master_{args.variant}.png"
             if output.exists():
@@ -58,7 +64,9 @@ def main() -> int:
                 "output": str(output),
                 "status": "selected_provisional_input",
             }
-            output.with_suffix(output.suffix + ".json").write_text(json.dumps(metadata, indent=2) + "\n")
+            meta_dir = output.parent / "meta"
+            meta_dir.mkdir(parents=True, exist_ok=True)
+            (meta_dir / (output.name + ".json")).write_text(json.dumps(metadata, indent=2) + "\n")
             print(f"Wrote {output}")
     return 0
 

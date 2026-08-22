@@ -58,7 +58,9 @@ def main() -> int:
         mode = "generate"
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_bytes(base64.b64decode(result.data[0].b64_json))
-    metadata = args.out.with_suffix(args.out.suffix + ".json")
+    meta_dir = args.out.parent / "meta"
+    meta_dir.mkdir(parents=True, exist_ok=True)
+    metadata = meta_dir / (args.out.name + ".json")
     metadata.write_text(json.dumps({"provider": "openai", "mode": mode, "model": args.model, "prompt": prompt, "size": args.size, "quality": args.quality, "background": args.background, "output": str(args.out)}, indent=2) + "\n")
     prompt_sidecar = args.out.with_suffix(args.out.suffix + ".prompt.md")
     prompt_sidecar.write_text(
@@ -69,7 +71,7 @@ def main() -> int:
         f"- Size: `{args.size}`\n"
         f"- Quality: `{args.quality}`\n"
         f"- Background: `{args.background}`\n"
-        f"- Metadata: [{metadata.name}]({metadata.name})\n\n"
+        f"- Metadata: [meta/{metadata.name}](meta/{metadata.name})\n\n"
         "## Prompt\n\n"
         f"{prompt.rstrip()}\n"
     )

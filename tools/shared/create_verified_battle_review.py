@@ -60,12 +60,15 @@ def main() -> int:
         raise SystemExit(f"Refusing to overwrite existing review copy: {OUTPUT}")
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     review.save(OUTPUT)
-    OUTPUT.with_suffix(OUTPUT.suffix + ".json").write_text(json.dumps({
+    meta_dir = OUTPUT.parent / "meta"
+    meta_dir.mkdir(parents=True, exist_ok=True)
+    meta_path = meta_dir / (OUTPUT.name + ".json")
+    meta_path.write_text(json.dumps({
         "source": str(SOURCE), "output": str(OUTPUT), "dimensions": [width, height],
         "mapping_basis": "explicit visible battle-sprite bounds; not an equal grid",
         "cells": selected,
     }, indent=2) + "\n")
-    print(f"Wrote {OUTPUT} and {OUTPUT}.json")
+    print(f"Wrote {OUTPUT} and {meta_path}")
 
 
 if __name__ == "__main__":

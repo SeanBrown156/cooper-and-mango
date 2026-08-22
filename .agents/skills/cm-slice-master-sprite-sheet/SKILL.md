@@ -58,3 +58,30 @@ The canonical staging folder is always `02_input` (singular):
 Do not create new outputs in legacy `02_inputs/`, `02_portrait/`, or other
 role-specific naming variants. Existing legacy folders may be preserved for
 history, but they are not valid destinations for new slices.
+
+Sidecar JSON produced by `extract_selected_sprite_cells.py` (and every other
+generation/slicing script) lands in a `meta/` subfolder next to the image, not
+beside it directly — see `docs/art/ART_PRODUCTION_PIPELINE.md` §10.1. Do not
+write `.json` sidecars directly into `02_input/`.
+
+## Overworld direction subfolders
+
+Overworld cells are directional; a flat `02_input/` listing mixes north, south,
+and side-facing frames together. When extracting overworld cells, pass
+`--subfolder north`, `--subfolder south`, or `--subfolder west` to
+`extract_selected_sprite_cells.py` so output lands in
+`overworld/02_input/{north,south,west}/`. There is no `east/` output — east is
+produced at runtime by horizontally mirroring the west frames, since the art
+only ever renders one side-facing direction.
+
+When numbering a *new* master sheet's overworld region with
+`label_sprite_sheet_review.py`, name the region argument with a direction
+suffix (e.g. `overworld-north:x0,y0,x1,y1:columns:rows`) rather than a bare
+`overworld:...`. The script derives the cell-label prefix from each
+hyphen-separated word (`overworld-north` → `ON`, `overworld-south` → `OS`,
+`overworld-west` → `OW`, `overworld-east` → `OE`), so cells come out numbered
+`ON01`, `OS01`, `OW01`, etc. instead of an undifferentiated `O01`–`O16` run.
+This only applies to sheets numbered after this convention was adopted —
+existing review maps keep their original flat `O01`–`O16` labels; map those to
+directions manually by inspecting the sheet (as was done for Cooper's v2/v3/v4
+masters) rather than renumbering an already-approved review map.

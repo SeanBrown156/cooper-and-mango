@@ -95,8 +95,11 @@ def main() -> int:
         "status": "resolution_prepared_input",
         "review_required": "confirm landmarks and silhouette before PixelLab",
     }
-    args.out.with_suffix(args.out.suffix + ".json").write_text(json.dumps(metadata, indent=2) + "\n")
-    print(f"Wrote {args.out} and {args.out}.json")
+    meta_dir = args.out.parent / "meta"
+    meta_dir.mkdir(parents=True, exist_ok=True)
+    meta_path = meta_dir / (args.out.name + ".json")
+    meta_path.write_text(json.dumps(metadata, indent=2) + "\n")
+    print(f"Wrote {args.out} and {meta_path}")
     return 0
 
 

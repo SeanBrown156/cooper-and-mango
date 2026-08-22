@@ -60,7 +60,7 @@ def main() -> int:
             raise SystemExit(f"{name} region exceeds image size {width}x{height}")
         cell_width = (x1 - x0) / columns
         cell_height = (y1 - y0) / rows
-        prefix = name[:1].upper()
+        prefix = "".join(word[:1].upper() for word in name.split("-") if word)
         label_size = max(16, min(30, int(min(cell_width, cell_height) * 0.16)))
         font = font_for(label_size)
         for row in range(rows):
@@ -84,8 +84,11 @@ def main() -> int:
         raise SystemExit(f"Refusing to overwrite existing review copy: {args.out}")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     review.save(args.out)
-    args.out.with_suffix(args.out.suffix + ".json").write_text(json.dumps({"source": str(args.input), "output": str(args.out), "dimensions": [width, height], "cells": mapping}, indent=2) + "\n")
-    print(f"Wrote {args.out} and {args.out}.json")
+    meta_dir = args.out.parent / "meta"
+    meta_dir.mkdir(parents=True, exist_ok=True)
+    meta_path = meta_dir / (args.out.name + ".json")
+    meta_path.write_text(json.dumps({"source": str(args.input), "output": str(args.out), "dimensions": [width, height], "cells": mapping}, indent=2) + "\n")
+    print(f"Wrote {args.out} and {meta_path}")
     return 0
 
 
