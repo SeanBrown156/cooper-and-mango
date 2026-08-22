@@ -24,19 +24,37 @@ master canvas, or when a manually selected master already exists.
    `tools/shared/label_sprite_sheet_review.py` only after the verified crop map
    exists. The JSON map must contain the exact extraction `box` for each label;
    the numbered PNG is only a visual index and is never an extraction source.
-5. Stop after producing the numbered review copy and JSON map. The user owns
+   Note that this script always divides a region into an *equal* grid — it
+   does not itself detect or correct content bleeding across a cell boundary.
+5. Before extracting, run
+   `tools/shared/preview_sprite_cells.py --master <master> --review-map
+   <review.json> --select <IDs> --out <preview.png>` and actually look at the
+   output (e.g. with the Read tool). It tiles each candidate cell with a
+   margin of surrounding context and outlines the candidate box in red, so a
+   sprite bleeding into a neighbour is visibly still bleeding past the line,
+   while a cleanly bounded cell shows a gap of background between the box
+   edge and the next sprite. Pixel-difference heuristics (background-vs-
+   content, colour continuity across the seam) were tried and do not work
+   reliably on this project's dithered/noisy AI-generated art — both a clean
+   fill-the-frame sprite and an actual neighbour-bleed read the same way to
+   that kind of check. Only a visual look, via this tool, is reliable; do not
+   skip it and do not extract a cell that has not been previewed this way. If
+   a cell shows bleed, its box needs tightening (or the sheet needs a
+   verified, non-uniform crop map per step 3) before it is re-numbered and
+   re-previewed — do not extract a flagged cell as-is.
+6. Stop after producing the numbered review copy and JSON map. The user owns
    selection and manual slicing: never extract or write role-specific cells
    unless the user explicitly supplies selected IDs in the current instruction.
-   When explicit IDs are supplied, use
+   When explicit IDs are supplied, preview them (step 5), then use
    `tools/shared/extract_selected_sprite_cells.py` with the review JSON map and
    the selected IDs to write only accepted candidates into:
    `assets/characters/<character>/<role>/02_input/`.
-6. Use `tools/shared/slice_master_sprite_sheet.py` only when a whole role-region
+7. Use `tools/shared/slice_master_sprite_sheet.py` only when a whole role-region
    sheet is also useful for context or later manual extraction.
-7. Use versioned names tied to the master version and never overwrite an earlier
+8. Use versioned names tied to the master version and never overwrite an earlier
    candidate. Update the character-local manifest with selected IDs, crop boxes,
    source master, slice paths, dimensions, and review state.
-8. Treat extracted cells as provisional input. Do not resize, normalize,
+9. Treat extracted cells as provisional input. Do not resize, normalize,
    recolour, animate, or promote to WIP here; those are later role-specific
    steps.
 
