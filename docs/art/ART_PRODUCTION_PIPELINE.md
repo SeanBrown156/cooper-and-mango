@@ -231,7 +231,17 @@ separate. Tooling that references another sidecar's path (e.g. a cell's
 `review_map` pointing at the review sheet's JSON) must reference the `meta/`
 location.
 
-## 11. Related authority
+## 11. Guiding rule
+
+> Handcraft the things players remember. Industrialise the things they merely
+> need to believe are there.
+
+Use AI to multiply clear intent rather than replace art direction. As
+Cooper & Mango accumulates canonical characters, palette rules, environment
+kits and approved asset families, the AI-assisted parts of the pipeline
+should become faster and more reliable rather than more random.
+
+## 12. Related authority
 
 - Visual direction: [`ART_BIBLE.md`](ART_BIBLE.md).
 - Character identity: `assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md`.

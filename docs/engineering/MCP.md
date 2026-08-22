@@ -59,8 +59,10 @@ It can also edit whole images, inpaint masked regions, animate loose sprites,
 attach portraits, inspect jobs, check balance and download results.
 
 PixelLab operations are asynchronous and may consume subscription generations.
-Delete operations are destructive. Generated output is always an input
-candidate until reviewed, cleaned and promoted through the art pipeline.
+Delete operations are destructive. Generated output is a production candidate:
+for a well-briefed room kit, tileset or non-identity prop it may move directly
+into WIP, then to approved after Godot validation. Aseprite cleanup is used
+when needed, not required by default.
 
 ### Tutorial Room PixelLab hard constraints
 
@@ -150,7 +152,7 @@ The authority order is:
 
 1. real photos and likeness references for real animals;
 2. [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) for dimensions, perspective, palette and style;
-3. approved `.aseprite` files for production truth;
+3. approved game-ready assets plus recorded source/recipe for production truth;
 4. [`../art/ART_PRODUCTION_PIPELINE.md`](../art/ART_PRODUCTION_PIPELINE.md) for lifecycle and handoff;
 5. MCP schemas and server limits for technical capability;
 6. human review for promotion to approved content.
@@ -164,15 +166,20 @@ input → relevant-sheet selection → palette remap → wip
 → approved complete asset package (art + resources + scenes)
 ```
 
+Aseprite cleanup/slices/metadata are inserted only where they add value:
+identity art, animation repair, palette/silhouette correction, or a reusable
+object whose exact bounds need curation.
+
 Raw generated and third-party candidates stay in `input/`. Palette-remapped
 room materials and active composition live in `wip/`. During active room work,
 Godot may reference WIP textures. Promotion happens only after the room is
 accepted. Authoritative accepted assets live in `approved/`, while Godot
-Godot resources and scenes live alongside the art in the owning family's WIP or
+resources and scenes live alongside the art in the owning family's WIP or
 Approved package. A `.tres` is a saved Godot Resource; a `.tscn` is an assembled
 Scene. There is no separate `composite/` lifecycle stage.
 
-Human curation establishes semantic object bounds once in Aseprite. Exported
-slice metadata is the coordinate authority for Godot regions, future crops,
-animation extraction and reusable prop scenes. AI should consume those bounds
-rather than estimate them from screenshots.
+For a reusable or complex object, curated Aseprite slice metadata is the
+coordinate authority. For a simple 16×16 interactable or directly generated
+meta-tile, Godot's explicit region and interaction/collision definitions are
+sufficient. AI should consume the established bounds rather than estimate
+them from screenshots.

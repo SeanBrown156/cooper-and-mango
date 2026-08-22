@@ -88,6 +88,9 @@ art-facing constraints and record current direction/open questions.
 - The world grid is 16×16, but large scenery may occupy multiple cells.
 - The world is real domestic space perceived as enormous mythical geography by animals.
 - Preserve the identity of recognisable sofas, beds, bowls, cat trees, doors and appliances.
+- Small inspectable props (a sweater, bowl, toy or note) default to a single
+  16×16 cell; a sofa, cat tree or counter may be a larger multi-cell meta-tile
+  while still exposing one clear interaction point.
 
 ## 5. Pixel discipline
 
@@ -111,6 +114,9 @@ Foreground readability is a gameplay rule.
   `#000000`, but it must read visually as black at native scale.
 - Characters and important interactive objects should generally be warmer,
   brighter and/or more contrast-rich than the scenery immediately behind them.
+- An object becomes interactive through a Godot interaction component, not
+  just its outline — the outline is the player's fast visual cue, while the
+  component, collision and prompt are the runtime truth.
 
 ## 7. Consolidated palette
 
@@ -145,7 +151,32 @@ Use hue-shifted shadows rather than moving a colour directly toward black.
 The master palette supports two poles: bright warm Hero/World and dark
 high-contrast Threat/Boss. Both remain part of the same world palette.
 
-## 8. Animation standards
+### Time-of-day light grading
+
+The whole story takes place across one day (see `docs/vision/GAME_BIBLE.md`,
+"A Single Day"). Use these as scene-level colour-grade/overlay tints layered
+on top of the ramps above — they shift mood without requiring separate art
+per time of day.
+
+| Time of day | Tint | Use |
+|---|---|---|
+| Dawn | `#3A4A6B` cool blue-grey | Tutorial Room, Empty House opening |
+| Morning | `#FFF2C9` warm pale gold | Empty House resolving, The Park |
+| Midday | `#FEF9E8` neutral bright | The Industrial Zone |
+| Golden hour | `#FFB35C` warm amber | The Helipad/Airport, Cavoodle Forest arrival |
+| Dusk | `#7A4A6B` purple-pink twilight | Cavoodle Forest's haunted turn, meeting Charlie |
+| Night | `#1A1F3A` deep blue-black | Road Home, boss rush, Centre of Absence |
+
+## 8. Animal vision / colour note
+
+Dogs and cats perceive colour differently from humans, with much stronger
+blue/yellow discrimination than red/green discrimination. Use this as a
+thematic ingredient, not a restrictive simulation: occasional blue/yellow-biased
+regions or magic effects, an optional animal-vision/clue mechanic, jokes about
+human colour names, visual storytelling around what animals notice. Readability
+and the core bright-poppy art direction win over scientific literalism.
+
+## 9. Animation standards
 
 Animation should be economical and identity-preserving.
 
@@ -157,7 +188,7 @@ Animation should be economical and identity-preserving.
   body grammar across frames.
 - A smooth animation that changes the character's design is a failed animation.
 
-## 9. Visual acceptance checklist
+## 10. Visual acceptance checklist
 
 Before approval, confirm:
 
@@ -171,7 +202,7 @@ Before approval, confirm:
 - frame-to-frame identity consistency;
 - successful Godot composition and runtime test.
 
-## 10. Related authority
+## 11. Related authority
 
 - Character identity: `assets/characters/<character>/CHARACTER_VISUAL_BRIEF.md`.
 - Narrative canon: [`docs/vision/GAME_BIBLE.md`](../vision/GAME_BIBLE.md).
