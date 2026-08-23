@@ -1,0 +1,17 @@
+{
+  "source_master": "assets/characters/cooper/shared/02_input/cooper_master_reference_pixel_sheet_v2.png",
+  "review_map": "assets/characters/cooper/shared/02_input/meta/cooper_master_reference_pixel_sheet_v2_review.png.json",
+  "character": "cooper",
+  "role": "battle",
+  "destination_role": "battle",
+  "cell_id": "B10",
+  "variant": "v2",
+  "crop_box": [
+    909,
+    393,
+    1118,
+    590
+  ],
+  "output": "assets/characters/cooper/battle/02_input/cooper_battle_B10_from_master_v2.png",
+  "status": "selected_provisional_input"
+}

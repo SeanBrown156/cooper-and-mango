@@ -1,0 +1,10 @@
+{
+  "provider": "openai",
+  "mode": "edit",
+  "model": "gpt-image-2",
+  "prompt": "Create a provisional pixel-art PORTRAIT SPRITE INPUT SHEET for the real dog Cooper shown in the supplied reference images. This is for a 2D late-SNES/GBA-style RPG, not a presentation board and not a polished illustration. Preserve his black, grey, and warm cream shaggy Cavoodle coat, cream muzzle and paws, floppy ears, rounded expressive face, and the defining chunky green Japanese-Shiba-style collar. His personality is demure but brave and defiant: anxious, helpless-looking, yet refusing to give up. Make a clean grid of 12 separate logical portrait cells, each a bust or head-and-shoulders pixel-art sprite on a plain consistent background: neutral, gentle, worried, embarrassed, startled/shocked, sad, determined, defiant, angry, relieved, proud, and brave. Each cell must be a readable pixel-art character, with hard-edged discrete square pixel clusters, limited warm palette, no antialiasing, no blur, no photorealism, no painterly gradients, no text, no labels, no decorative UI, no decorative collage layout. Keep every cell consistently framed and sized so this is an actual provisional sprite-sheet input for later cleanup. The image may be 1024x1024 working resolution but must visibly read as pixel art at native inspection scale.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "opaque",
+  "output": "assets/characters/cooper/portrait/02_input/cooper_portrait_reference_pixel_sheet_v1.png"
+}
