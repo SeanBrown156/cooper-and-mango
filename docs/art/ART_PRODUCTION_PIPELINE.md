@@ -95,8 +95,15 @@ send unselected cells downstream.
 | Role | Native size | Pose grammar | Required gate |
 |---|---:|---|---|
 | Overworld | 16×20 north/south; 20×16 east/west | Quadruped, north/south/east/west | Transparent target-size preparation and four-direction landmark review |
-| Battle | 32×32 | Upright/bipedal, with deliberate action poses | Transparent target-size preparation and baseline/pivot review |
-| Portrait | 40×40 | Upright/bipedal, expression/likeness first | Transparent target-size preparation and crop/likeness review |
+| Battle | 32×32 | Upright/bipedal, deliberate action poses; begin from a 64×64 PixelLab candidate/master | Transparent target-size preparation and baseline/pivot review |
+| Portrait | 48×48 | Upright/bipedal, expression/likeness first | Transparent target-size preparation and crop/likeness review |
+
+The role dimensions above are runtime targets. Source sheets and authored
+working canvases may be larger or use a direction-specific bound when needed
+to preserve visual normalcy across north, south, east and west. Record the
+working dimensions and extract the runtime atlas regions from the reviewed
+source; do not resize a direction merely to satisfy a nominal box if that
+breaks apparent scale.
 
 The resolution gate removes white/black or near-uniform backgrounds from
 selected candidates, preserves aspect ratio, uses nearest-neighbour fitting and
@@ -144,21 +151,58 @@ the provider video itself.
 
 ## 7. Environment and prop workflow
 
-Environment production uses the same lifecycle but a different composition
-logic:
+Environments are composites, not asset owners. A room folder holds its
+manifest, references, composition-in-progress and the final assembled scene —
+not bespoke per-room tile or item lifecycle packages. The reusable art itself
+lives in two flat, room-agnostic libraries:
+
+```text
+assets/
+  tilesets/
+    shared/02_input/<pack_name>/     # raw tile-oriented pack downloads, provenance intact
+    <tileset_name>/01_reference/ 02_input/ 03_wip/ 04_approved/
+  props/
+    shared/02_input/<pack_name>/     # raw item/furniture-oriented pack downloads
+    <item_name>/01_reference/ 02_input/ 03_wip/ 04_approved/
+  environments/
+    <room_name>/
+      environment_manifest.json      # lists which tileset/item IDs compose the room, plus placement
+      01_reference/                  # room-specific mood/layout references only
+      wip/                           # composition-in-progress: layout scratch, colour/lighting studies
+      approved/                      # final assembled .tscn + room-level .tres
+```
+
+A tile or item package is built once under `assets/tilesets/<name>/` or
+`assets/props/<name>/` following the normal
+`01_reference → 02_input → 03_wip → 04_approved` lifecycle, then referenced by
+ID from any room manifest that needs it. Plants, lighting fixtures, seating and
+similar dressing are expected to recur across rooms; do not fork a duplicate
+copy into a room folder because it is "just for this room" — give it its own
+package and reference it. When a licensed pack mixes tiles and furniture,
+route each file to the category folder it actually belongs to on intake
+(`tilesets/shared/02_input/` vs `props/shared/02_input/`) rather than
+duplicating the raw download in both places.
+
+The production sequence for a room:
 
 1. Read the environment-local manifest and references.
-2. Use `$cm-openai-environment-sprite` or Gemini for provisional
-   pixel-art ideation when a reference transformation is useful.
-3. Use licensed packs from input only with provenance recorded.
-4. Use PixelLab or Aseprite to restyle, extend, crop or manually curate.
+2. Use `$cm-openai-environment-sprite` or Gemini for provisional pixel-art
+   ideation when a reference transformation is useful; save studies to the
+   room's own `wip/`, not a tile/item package.
+3. Use licensed packs from `tilesets/shared/02_input/` or
+   `props/shared/02_input/` only with provenance recorded.
+4. Build or extend individual tileset/item packages with PixelLab or
+   Aseprite; restyle, extend, crop or manually curate inside that package's
+   own `03_wip/`.
 5. Preserve original compatible sheets where possible; use 16×16 TileSet
    atlases for grid-native tiles.
 6. Use Sprite2D regions or scenes for coherent multi-cell furniture and props.
 7. Keep collision, interaction and sorting in Godot resources/scenes.
-8. Compose the room in WIP and test camera, walkability, seams, scale,
-   contrast, lighting and character readability.
-9. Promote the complete accepted room package together.
+8. Compose the room by referencing approved (or actively-tested WIP) tileset
+   and item packages from the environment manifest; test camera, walkability,
+   seams, scale, contrast, lighting and character readability.
+9. Promote the complete accepted room package (manifest + `.tscn`) together;
+   the tileset/item packages it references are promoted independently.
 
 Tutorial Room defaults are strict orthographic high top-down, 16×16 grid and
 480×270 camera. Its environment manifest is mandatory for room-specific

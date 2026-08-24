@@ -14,7 +14,7 @@ from PIL import Image
 TARGETS = {
     "overworld": (20, 16),
     "battle": (32, 32),
-    "portrait": (40, 40),
+    "portrait": (48, 48),
 }
 
 

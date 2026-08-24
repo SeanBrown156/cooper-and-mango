@@ -8,7 +8,7 @@
   "role_targets": {
     "overworld": [20, 16],
     "battle": [32, 32],
-    "portrait": [40, 40]
+    "portrait": [48, 48]
   },
   "source_reference_folders": [
     "assets/characters/cooper/portrait/01_reference",

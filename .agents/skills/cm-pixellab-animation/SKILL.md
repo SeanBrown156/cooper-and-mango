@@ -1,6 +1,6 @@
 ---
 name: cm-pixellab-animation
-description: Create and validate Cooper & Mango character idle and walk animations in PixelLab using four orthogonal directions, fixed role bounds, and complete WIP packages.
+description: Create and validate Cooper & Mango character idle and walk animations in PixelLab using four orthogonal directions, runtime role targets, direction-specific authored bounds where needed, and complete WIP packages.
 ---
 
 # CM PixelLab Animation
@@ -13,8 +13,11 @@ not exist. Do not animate every cell from a master sheet.
 ## Contract and workflow
 
 - Overworld animation is strictly `north`, `south`, `east`, `west`; no
-  diagonals or eight-direction movement. Preserve role bounds: overworld
-  16×20 for north/south and 20×16 for east/west, battle 32×32, portrait 40×40. Frames share baseline, pivot and
+  diagonals or eight-direction movement. Preserve runtime role targets:
+  overworld 16×20 for north/south and 20×16 for east/west, battle 32×32,
+  portrait 48×48. An authored working canvas may be larger or direction-specific
+  when visual scale requires it; extracted runtime frames must share baseline,
+  pivot and
   visible bounds; PixelLab must not invent markings or limbs per frame.
 - Inspect the character with `get_character` and identify the character ID and
   available templates.

@@ -24,8 +24,14 @@ scene.
   a loose PNG. Choose 4 frames for simple idle and 8 for more involved motion;
   poll with `get_image`/`get_object`.
 
-Raw downloads start in `input/`. Once cropped, cleaned or wired, keep the whole
-working package in the owning family's `wip/` including `.aseprite`, `.png`,
-metadata, resource `.tres` and behavior scene `.tscn`. Promote only after
-Godot collision, interaction, sorting, animation and native-scale checks pass.
-Record object/job IDs, references, canvas size, footprint and review outcome.
+Props are room-agnostic packages under `assets/props/<item_name>/`, not
+bespoke per-room folders — an item (a plant, a bed, a lamp) is built once and
+referenced by ID from any room's `environment_manifest.json` that places it.
+Raw licensed pack downloads live in `assets/props/shared/02_input/<pack_name>/`.
+
+Raw downloads start in `02_input/`. Once cropped, cleaned or wired, keep the
+whole working package in the item's own `03_wip/` including `.aseprite`,
+`.png`, metadata, resource `.tres` and behavior scene `.tscn`. Promote only
+after Godot collision, interaction, sorting, animation and native-scale checks
+pass. Record object/job IDs, references, canvas size, footprint and review
+outcome.

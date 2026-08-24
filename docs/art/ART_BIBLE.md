@@ -35,7 +35,7 @@ modern Godot tooling.
 | Regular battle enemy | **48×48** | Standard enemy target |
 | Large enemy / mini-boss | **64×64** | May carry more visual mass within battle layout |
 | Major boss | **64×64 to ~128×96** | Set-piece exception where required |
-| Dialogue portrait | **40×40** | Expressive upright/bipedal likeness |
+| Dialogue portrait | **48×48** | Expressive upright/bipedal likeness |
 | Major story portrait | **64×64** | Reserved for major close-up story beats |
 | Common prop | **16×16 / 16×32 / 32×32** | Align to the environment grid where sensible |
 
@@ -43,6 +43,13 @@ Presentation size is not asset size. The 480×270 camera can reveal a partial
 16×16 row at an edge; that is normal framing, not a reason to change the tile
 grid. Characters are redrawn for their roles; do not algorithmically scale one
 large drawing into overworld, battle and portrait assets.
+
+The listed role sizes are runtime/native presentation targets, not an absolute
+limit on an authored working canvas. A direction may need a larger source or
+visible working bound to match the apparent scale of its companion directions;
+extract the final runtime frames with the authored baseline, pivot and visual
+scale recorded for that asset. Do not force a direction into a smaller nominal
+box if doing so makes the character visibly inconsistent.
 
 ## 3. Role grammar
 
@@ -57,13 +64,15 @@ large drawing into overworld, battle and portrait assets.
 ### Battle
 
 - 32×32, upright/bipedal unless a specific action requires otherwise.
+- For PixelLab battle generation, begin from a 64×64 candidate/master, then
+  prepare the approved runtime asset at 32×32.
 - Use strong theatrical poses and readable anticipation/impact/recovery.
 - Signature props and attacks must remain legible without overwhelming the body.
 - Battle art is a redraw, not an enlarged overworld sprite.
 
 ### Portrait
 
-- 40×40, upright/bipedal likeness and expression layer.
+- 48×48, upright/bipedal likeness and expression layer.
 - Prioritize face, markings, ears, muzzle/fluff, costume and emotional clarity.
 - Portraits are separate drawings, not enlarged battle sprites.
 

@@ -14,8 +14,10 @@ cells to PixelLab.
 - The game is a 2D orthographic top-down RPG. Overworld characters walk only
   north, south, east and west. Never request eight-direction movement or
   diagonals for an overworld actor.
-- Role frames are overworld **16×20 north/south and 20×16 east/west**, battle **32×32**, and portrait **40×40**.
+- Role frames are overworld **16×20 north/south and 20×16 east/west**, battle **32×32**, and portrait **48×48**.
   Larger PixelLab canvases are provisional input for Aseprite cropping/redraw.
+  For battle sprites, begin from a 64×64 PixelLab candidate/master and prepare
+  the approved runtime asset at 32×32.
 - Prepare the selected source at the role's declared target size before this
   handoff where PixelLab accepts it. Use high reference influence so PixelLab
   refines the selected likeness rather than inventing a replacement.

@@ -24,7 +24,7 @@ anchor that other skills can reference.
 5. For a character role, pass the selected result through
    `$cm-prepare-role-resolution` rather than inventing a one-off resize. The
    governed targets are overworld 16×20 north/south or 20×16 east/west,
-   battle 32×32, and portrait 40×40.
+   battle 32×32, and portrait 48×48.
    Validate the target size and palette, and save raw/prepared outputs in the
    package `input/`/`02_input/` area.
 6. Record the anchor prompt, references, model, dimensions, and review state in

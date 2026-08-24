@@ -14,9 +14,9 @@ sheet. It is still not a final tileset, atlas, scene, or collision map.
 
 1. Identify `assets/environments/<environment_id>/` and read its local
    `environment_manifest.json` when present. Inspect all relevant references,
-   especially `general/01_reference/`, plus any package-level reference folder
-   and clearly labelled source material. Do not use unrelated references from
-   another environment.
+   especially the room's own `01_reference/`, plus any tileset/item packages
+   already referenced by the manifest and clearly labelled source material.
+   Do not use unrelated references from another environment.
 2. Extract the environment’s non-negotiable facts: spatial layout, room
    boundaries, materials, architecture, important objects, lighting direction,
    colour relationships, and the project’s camera contract. For Cooper & Mango,
@@ -40,9 +40,11 @@ sheet. It is still not a final tileset, atlas, scene, or collision map.
    photographs, preserve their meaningful layout and material cues while
    translating them into the game’s visual language rather than copying photo
    noise.
-5. Save the raw image and sidecar metadata under
-   `assets/environments/<environment_id>/general/02_input/`, using a versioned
-   name and never overwriting an existing study.
+5. Save the raw image and sidecar metadata under the room's own
+   `assets/environments/<environment_id>/wip/`, using a versioned name and
+   never overwriting an existing study. This is whole-room composition
+   ideation, not a tileset or item candidate — those get extracted afterward
+   into their own `assets/tilesets/<name>/` or `assets/props/<name>/` package.
 6. Inspect the study against the source references and environment manifest.
    Check camera, layout, visual hierarchy, tile-readability, and whether the
    result gives the team a useful build target. Record disagreements and
@@ -55,6 +57,6 @@ sheet. It is still not a final tileset, atlas, scene, or collision map.
 ## Output contract
 
 The result is one or more versioned pixel-art environment input candidates in
-`general/02_input/`. Record model, prompt, source references, output path,
+the room's `wip/`. Record model, prompt, source references, output path,
 camera assumptions, tile rhythm, and review state in the environment-local
 manifest.

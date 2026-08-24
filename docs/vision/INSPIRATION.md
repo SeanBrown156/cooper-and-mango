@@ -1,6 +1,6 @@
 # Inspiration
 
-Reference material for art direction, tone, and structure — separate from [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) (which holds the *locked decisions*, e.g. the 16×20 north/south, 20×16 east/west, 32×32 and 40×40 sprite scales, palette rules). This doc is the raw inspiration feeding those decisions, not a source of truth itself. Update it as new references come up in conversation; don't let it go stale.
+Reference material for art direction, tone, and structure — separate from [`../art/ART_BIBLE.md`](../art/ART_BIBLE.md) (which holds the *locked decisions*, e.g. the 16×20 north/south, 20×16 east/west, 32×32 battle and 48×48 portrait sprite scales, palette rules). This doc is the raw inspiration feeding those decisions, not a source of truth itself. Update it as new references come up in conversation; don't let it go stale.
 
 ## Visual / Sprite-Style Reference Board
 

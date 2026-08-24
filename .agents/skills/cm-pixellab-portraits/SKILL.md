@@ -1,6 +1,6 @@
 ---
 name: cm-pixellab-portraits
-description: Create consistent Cooper & Mango portrait candidates from character art and real-pet references while preserving the 40×40 role contract.
+description: Create consistent Cooper & Mango portrait candidates from character art and real-pet references while preserving the 48×48 role contract.
 ---
 
 # CM PixelLab Portraits
@@ -9,12 +9,12 @@ Use for a user-selected portrait cell after master review and role-resolution
 preparation. Read the owning `CHARACTER_VISUAL_BRIEF.md` first; do not use this
 for an unreviewed sheet, overworld movement, or battle animation.
 
-- Portrait role size is **40×40**. Use `$cm-prepare-role-resolution` before
+- Portrait role size is **48×48**. Use `$cm-prepare-role-resolution` before
   PixelLab when the selected source is larger. Preserve Mango/Cooper likeness,
   markings and expressions with high reference influence.
 - Use `create_portrait_character` for conversion: `character_to_portrait` for
   a bust from a sprite, `portrait_to_character` for the reverse, preferably
-  with `image_url` and `result_size=40`. This is asynchronous; poll with
+  with `image_url` and `result_size=48`. This is asynchronous; poll with
   `get_portrait_character` and inspect crop, transparency, likeness and size.
 - Use `create_image_pro` only for a genuinely new static portrait direction;
   label references and use a transparent background. It costs more than

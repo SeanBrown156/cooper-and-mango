@@ -25,7 +25,7 @@ master canvas first.
 5. Save the provisional result under `assets/characters/<character>/portrait/02_input/`.
    Never overwrite an existing candidate; use a versioned name.
 6. Send selected static portrait candidates through
-   `$cm-prepare-role-resolution` for the governed **40×40** target before
+   `$cm-prepare-role-resolution` for the governed **48×48** target before
    PixelLab refinement. Do not normalize, recolour, or promote to WIP here.
 
 The output is a portrait input sheet for later cleanup, not final SpriteFrames.

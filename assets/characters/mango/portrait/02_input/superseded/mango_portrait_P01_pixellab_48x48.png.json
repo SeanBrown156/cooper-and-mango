@@ -1,0 +1,10 @@
+{
+  "source": "assets/characters/mango/portrait/02_input/mango_portrait_P01_from_master_master-v5-clean.png",
+  "provider": "pixellab",
+  "job_id": "f89dd96b-2062-4949-9e10-61cf2ae0bf87",
+  "direction": "character_to_portrait",
+  "view": "low top-down",
+  "size": [48, 48],
+  "seed": 887598931,
+  "review": "Provisional input only. Mango likeness, orange fur, ears and purple hoodie are retained, but the P01 sleepy half-lidded expression changed to a broad-eyed smile. Do not promote without expression-preserving reroll or manual correction."
+}

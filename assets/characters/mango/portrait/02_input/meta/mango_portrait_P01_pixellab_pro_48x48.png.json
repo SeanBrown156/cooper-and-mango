@@ -1,0 +1,17 @@
+{
+  "source": "assets/characters/mango/portrait/02_input/mango_portrait_P01_from_master_master-v5-clean.png",
+  "provider": "pixellab",
+  "model": "pro",
+  "job_id": "e431b4d5-f797-4ea3-b7b0-40dd600d845f",
+  "size": [48, 48],
+  "candidate_index": 15,
+  "candidate_count": 16,
+  "references": [
+    {
+      "path": "assets/characters/mango/portrait/02_input/mango_portrait_P01_from_master_master-v5-clean.png",
+      "usage": "exact Mango P01 identity, sleepy half-lidded expression, orange markings, ears, muzzle and purple hoodie"
+    }
+  ],
+  "prompt_intent": "Faithful resolution/style conversion; preserve the supplied P01 expression and bust crop; do not invent a smile or new mood.",
+  "review": "Best of 16 candidates. Retains the sleepy/aloof half-lidded P01 expression and Mango identity more closely than the portrait-converter result. Provisional input; human review still required."
+}

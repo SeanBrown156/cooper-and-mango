@@ -6,7 +6,13 @@ description: Create Cooper & Mango orthographic top-down environment tilesets, r
 # CM PixelLab Environments
 
 Use for rooms, terrain, wall/floor atlases, Wang tilesets and environment
-extensions. Use `$cm-pixellab-props` for a standalone object with a silhouette.
+extensions. Use `$cm-pixellab-props` for a standalone object with a
+silhouette.
+
+Tilesets are room-agnostic packages under `assets/tilesets/<tileset_name>/`,
+not bespoke per-room folders — a room references tileset IDs from its
+`environment_manifest.json` rather than owning its own tile lifecycle. Raw
+licensed pack downloads live in `assets/tilesets/shared/02_input/<pack_name>/`.
 
 ## Contract
 
@@ -28,8 +34,10 @@ extensions. Use `$cm-pixellab-props` for a standalone object with a silhouette.
   manifest `assets/environments/tutorial_room_mango/environment_manifest.json`
   is mandatory for that room.
 
-Raw results/licensed source stay in `input/`; remapped atlases, masters,
-candidate TileSets and room scenes stay together in `wip/`. An approved package
-may contain atlas `.png`/`.aseprite`, TileSet `.tres` and room `.tscn`. Validate
-seams, walkability, collisions, camera readability, palette and character
-contrast in Godot before approval. Record job IDs and prompts.
+Raw results/licensed source stay in `02_input/`; remapped atlases, masters and
+candidate TileSets stay together in the tileset package's own `03_wip/`. An
+approved tileset package may contain atlas `.png`/`.aseprite` and TileSet
+`.tres`. Room-level composition (which tilesets/items go where, the assembled
+`.tscn`) lives in the owning `assets/environments/<room_name>/` package, not
+here. Validate seams, walkability, collisions, camera readability, palette and
+character contrast in Godot before approval. Record job IDs and prompts.

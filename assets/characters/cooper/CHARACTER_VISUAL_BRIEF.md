@@ -31,7 +31,7 @@
 
 - Overworld: 20×16, quadruped low-top-down, four cardinal directions, consistent footprint and baseline.
 - Battle: 32×32, primarily standing or seated upright on two legs; quadruped attacks are a minority.
-- Portrait: 40×40, expressive upright likeness with face, muzzle, ears and accessory detail.
+- Portrait: 48×48, expressive upright likeness with face, muzzle, ears and accessory detail.
 
 ## Signature items and props
 
