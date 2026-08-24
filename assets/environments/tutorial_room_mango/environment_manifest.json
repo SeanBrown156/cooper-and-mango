@@ -5,13 +5,13 @@
   "status": "generation_manifest",
   "canonical_spec": "assets/environments/tutorial_room_mango/ENVIRONMENT_SPEC.md",
   "source_hierarchy": {
-    "composition": "assets/environments/tutorial_room_mango/input/gemini/tutorial_room-day.png",
+    "composition": "assets/environments/tutorial_room_mango/wip/tutorial_room-day.png",
     "lighting_variants": [
-      "assets/environments/tutorial_room_mango/input/gemini/tutorial_room-dawn.png",
-      "assets/environments/tutorial_room_mango/input/gemini/tutorial_room-dusk.png",
-      "assets/environments/tutorial_room_mango/input/gemini/tutorial_room-night.png"
+      "assets/environments/tutorial_room_mango/wip/tutorial_room-dawn.png",
+      "assets/environments/tutorial_room_mango/wip/tutorial_room-dusk.png",
+      "assets/environments/tutorial_room_mango/wip/tutorial_room-night.png"
     ],
-    "identity_reference_glob": "assets/environments/tutorial_room_mango/reference/photos/*.jpg",
+    "identity_reference_glob": "assets/environments/tutorial_room_mango/01_reference/*.jpg",
     "rule": "Gemini controls layout and priority; photos control identity and materials; the Art Bible controls pixel discipline."
   },
   "technical_contract": {
