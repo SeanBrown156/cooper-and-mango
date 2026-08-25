@@ -47,7 +47,7 @@ with `$cm-character-visual-brief`.
 
 - [Production Roadmap](production/PRODUCTION_ROADMAP.md) — stages, sequencing and scope.
 - [Vertical Slice](production/VERTICAL_SLICE.md) — the current playable validation target and definition of done.
-- [Project Management Convention](production/PROJECT_MANAGEMENT.md) — how GitHub Projects, Milestones, Issues and Labels divide the work.
+- [Project Management Convention](production/PROJECT_MANAGEMENT.md) — how GitHub Issues, Milestones, Labels and Assignees divide and allocate the work.
 - [Tutorial Room Build Card](production/slices/TUTORIAL_ROOM_BUILD.md) — current executable work order and Godot acceptance checks for Mango's first playable postcard.
 
 ## Audio
