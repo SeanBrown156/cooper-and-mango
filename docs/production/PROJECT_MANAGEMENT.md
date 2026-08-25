@@ -20,7 +20,6 @@ A Milestone corresponds directly to a stage in
 [`PRODUCTION_ROADMAP.md`](PRODUCTION_ROADMAP.md):
 
 - `Stage 0 — Toy`
-- `Stage 1.5 — Title Screen`
 - `Stage 1 — Mango's Room`
 - `Stage 1 — Cooper's Room`
 - `Stage 1 — Shared`
@@ -28,21 +27,17 @@ A Milestone corresponds directly to a stage in
 - `Stage 3 — Neighbourhood`
 - `Stage 4 — Open World`
 
-Stage 1 is split into four milestones because its five exit criteria in
+Stage 1 is split into three milestones because its five exit criteria in
 [`PRODUCTION_ROADMAP.md`](PRODUCTION_ROADMAP.md) aren't all room-specific:
 
-- `Stage 1.5 — Title Screen` — the protagonist-choice screen (exit criterion
-  #1). It happens chronologically *before* the room split, so it isn't
-  Mango's or Cooper's work specifically. It's still Stage 1, not a new
-  roadmap stage — the "1.5" is a milestone-naming convenience, not a change
-  to `PRODUCTION_ROADMAP.md`'s stage sequence.
 - `Stage 1 — Mango's Room` / `Stage 1 — Cooper's Room` — the room-specific
   art, greybox, sprite and spider-plant-trigger work (exit criteria #2-3),
   because [`VERTICAL_SLICE.md`](VERTICAL_SLICE.md) requires both starting
   choices to be independently playable.
-- `Stage 1 — Shared` — leaving the room and party formation (exit criteria
-  #4-5), which happen after both paths converge and aren't specific to
-  either.
+- `Stage 1 — Shared` — everything that isn't tied to one room: the
+  protagonist-choice title screen (exit criterion #1, which happens before
+  the room split), leaving the room, and party formation (exit criteria
+  #4-5, which happen after both paths converge).
 
 Everything else stays one milestone per stage. Issues that are cross-cutting
 systems or infrastructure (core mechanics, tooling, pipeline docs, licensing)
