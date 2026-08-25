@@ -20,19 +20,35 @@ A Milestone corresponds directly to a stage in
 [`PRODUCTION_ROADMAP.md`](PRODUCTION_ROADMAP.md):
 
 - `Stage 0 — Toy`
+- `Stage 1.5 — Title Screen`
 - `Stage 1 — Mango's Room`
 - `Stage 1 — Cooper's Room`
+- `Stage 1 — Shared`
 - `Stage 2 — House`
 - `Stage 3 — Neighbourhood`
 - `Stage 4 — Open World`
 
-Stage 1 is split into two milestones — Mango's and Cooper's — because
-[`VERTICAL_SLICE.md`](VERTICAL_SLICE.md) requires both starting choices to be
-independently playable, and issues (art, greybox, sprite work) genuinely
-belong to one path or the other. Everything else stays one milestone per
-stage. Issues that are cross-cutting systems or infrastructure (core
-mechanics, tooling, pipeline docs, licensing) and aren't bound to a single
-stage are left unmilestoned rather than forced into one.
+Stage 1 is split into four milestones because its five exit criteria in
+[`PRODUCTION_ROADMAP.md`](PRODUCTION_ROADMAP.md) aren't all room-specific:
+
+- `Stage 1.5 — Title Screen` — the protagonist-choice screen (exit criterion
+  #1). It happens chronologically *before* the room split, so it isn't
+  Mango's or Cooper's work specifically. It's still Stage 1, not a new
+  roadmap stage — the "1.5" is a milestone-naming convenience, not a change
+  to `PRODUCTION_ROADMAP.md`'s stage sequence.
+- `Stage 1 — Mango's Room` / `Stage 1 — Cooper's Room` — the room-specific
+  art, greybox, sprite and spider-plant-trigger work (exit criteria #2-3),
+  because [`VERTICAL_SLICE.md`](VERTICAL_SLICE.md) requires both starting
+  choices to be independently playable.
+- `Stage 1 — Shared` — leaving the room and party formation (exit criteria
+  #4-5), which happen after both paths converge and aren't specific to
+  either.
+
+Everything else stays one milestone per stage. Issues that are cross-cutting
+systems or infrastructure (core mechanics, tooling, pipeline docs, licensing)
+and aren't bound to a single stage are left unmilestoned rather than forced
+into one — see [Tracking cross-stage work](#tracking-cross-stage-work)
+below.
 
 Milestones are deliberately not the "small win" tier any more — a stage can
 run for weeks and contain dozens of issues. That's fine: **issue completion
@@ -106,6 +122,14 @@ A saved issue search/filter (for example `milestone:"Stage 2 — House"` or
 `label:"type:engineering" label:"kind:bug"`) is a live, always-current board.
 Because it's just filtering repo-native issues, any repo collaborator sees
 it automatically — unlike Projects (see below).
+
+## Tracking cross-stage work
+
+Unmilestoned issues aren't untracked — `is:issue is:open no:milestone` in
+the repo's Issues search is a live view of exactly the cross-stage/tooling
+set, always current, bookmarkable by anyone with repo access. Narrow it
+further with a discipline, e.g. `is:issue is:open no:milestone
+label:"type:engineering"` for engineering-only tooling work.
 
 ## Why not Projects
 
