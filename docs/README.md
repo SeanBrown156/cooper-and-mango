@@ -38,6 +38,7 @@ with `$cm-character-visual-brief`.
 ## Design and content
 
 - [Combat Design](design/COMBAT_DESIGN.md) — battle identity and progression built around Instinct reactions, Zoom and Companionship.
+- [Items, Abilities and Progression Catalogue](design/ITEMS_ABILITIES_PROGRESSION.md) — exploratory first draft of pet-themed character kits, items, equipment, statuses and progression; not a locked implementation roster.
 - [Technical Game Design](design/TECHNICAL_GAME_DESIGN.md) — reusable runtime contracts for player movement, interaction, dialogue, encounters, states and scene responsibility.
 - [Content Schema](design/CONTENT_SCHEMA.md) — structured content records, IDs, relationships and publishing shape.
 - [Content Schema Plan](design/CONTENT_SCHEMA_PLAN.md) — exploratory schema map, JRPG content domains, authoring/runtime boundaries and open decisions.
